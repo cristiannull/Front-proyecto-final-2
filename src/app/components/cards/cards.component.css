@@ -1,0 +1,32 @@
+.product {
+    position: relative;
+    width: 300px;
+  }
+  
+  .product figure img {
+    width: 100%;
+    aspect-ratio: 1 / 1.1;
+    object-fit: cover;
+  }
+  .product figure figcaption {
+    margin-top: 0.5rem;
+  }
+  
+  .product figure figcaption .featured {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: white;
+    background: blue;
+    font-weight: 600;
+    padding: 0.2rem 0.4rem;
+    letter-spacing: 0.1rem;
+  }
+  
+  .product figure figcaption h3 {
+    margin: 0;
+    font-size: 1rem;
+  }
+  
