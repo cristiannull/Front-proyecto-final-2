@@ -1,0 +1,80 @@
+<app-nav />
+<section id="products" class="my-5 pt-5">
+    <div class="container">
+        <div class="section-text-combo text-light">
+            <h2>Ad lorem ipsum</h2>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti
+                accusantium voluptas voluptatibus perferendis velit nostrum qui
+                repellendus laboriosam.
+            </p>
+        </div>
+        <div class="d-flex justify-content-between wrap">
+            @for(videogame of videogames; track videogame){
+            <app-cards [title]="videogame.title" [price]="videogame.price" [image]="videogame.image" />
+            }
+        </div>
+    </div>
+</section>
+<section id="newsletter" class="my-5">
+    <div class="container">
+        <div class="row text-light">
+            <div class="col-md-6">
+                <h2>Ad lorem ipsum</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta
+                    reprehenderit atque inventore obcaecati!
+                </p>
+            </div>
+            <div class="col-md-6">
+                <div class="input-group mb-1">
+                    <input type="text" class="form-control" placeholder="Recipient's username"
+                        aria-label="Recipient's username" aria-describedby="button-addon2" />
+                    <button class="btn btn-outline-dark text-light" type="button" id="button-addon2">
+                        Button
+                    </button>
+                </div>
+                <small class="text-light">Lorem ipsum dolor sit amet.</small>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-3 mb-4">
+                <strong>BIT Shop</strong>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+                <ul>
+                    <li class="list-title">Title 1</li>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                    <li>Item 4</li>
+                </ul>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+                <ul>
+                    <li class="list-title">Title 1</li>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                    <li>Item 4</li>
+                </ul>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+                <ul>
+                    <li class="list-title">Title 1</li>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                    <li>Item 4</li>
+                </ul>
+            </div>
+            <div class="col-12 pt-5 text-center">
+                <p class="copyright">© Bogotá Institute of Technology 2024</p>
+            </div>
+        </div>
+    </div>
+</footer>

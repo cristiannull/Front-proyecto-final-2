@@ -1,205 +1,133 @@
-<nav
-      class="navbar navbar-light navbar-expand-md justify-content-center fixed-top bg-light"
-    >
-      <div class="container-fluid">
-        <a href="#" class="navbar-brand d-flex w-50 mr-auto">
-          <strong>BIT Shop</strong>
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mainNavBar"
-          aria-controls="mainNavBar"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse w-100" id="mainNavBar">
-          <ul class="navbar-nav w-100 justify-content-center">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Products</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Categories
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-          </ul>
-          <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Register</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><i class="bi bi-bag"></i></a>
-            </li>
-          </ul>
-        </div>
+<app-nav />
+<main>
+  <section id="hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-6"></div>
+        <div class="col-6"></div>
       </div>
-    </nav>
-
-    <main>
-      <section id="hero">
-        <div class="container">
-          <div class="row">
-            <div class="col-6"></div>
-            <div class="col-6"></div>
-          </div>
-        </div>
-      </section>
-      <section id="services" class="py-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 col-sm-4 col-md-4 text-center">
-              <figure class="info">
-                <img src="./images/truck.svg" alt="" />
-                <figcaption>
-                  <h4>Envío gratuito</h4>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Earum, perferendis!
-                  </p>
-                </figcaption>
-              </figure>
-            </div>
-            <div class="col-12 col-sm-4 col-md-4 text-center">
-              <figure class="info">
-                <img src="./images/clock.svg" alt="" />
-                <figcaption>
-                  <h4>Soporte 24/7</h4>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Ullam, possimus.
-                  </p>
-                </figcaption>
-              </figure>
-            </div>
-            <div class="col-12 col-sm-4 col-md-4 text-center">
-              <figure class="info">
-                <img src="./images/dollar-sign.svg" alt="" />
-                <figcaption>
-                  <h4>Reembolso</h4>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad,
-                    cumque.
-                  </p>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="featured" class="py-5">
-        <div class="container">
-          <div class="section-text-combo">
-            <h2>Ad lorem ipsum</h2>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti
-              accusantium voluptas voluptatibus perferendis velit nostrum qui
-              repellendus laboriosam.
-            </p>
-          </div>
-          <div class=" d-flex justify-content-between">
-            @for(videogame of videogames; track videogame){
-              <app-cards
-              [title]="videogame.title"
-              [price]="videogame.price"
-              [image]="videogame.image"
-              />
-            }
-          </div>
-        </div>
-     
-      </section>
-      <section id="newsletter" class="py-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <h2>Ad lorem ipsum</h2>
+    </div>
+  </section>
+  <section id="services" class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-4 col-md-4 text-center">
+          <figure class="info">
+            <img src="./images/truck.svg" alt="" />
+            <figcaption>
+              <h4>Envío gratuito</h4>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta
-                reprehenderit atque inventore obcaecati!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Earum, perferendis!
               </p>
-            </div>
-            <div class="col-md-6">
-              <div class="input-group mb-1">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Recipient's username"
-                  aria-label="Recipient's username"
-                  aria-describedby="button-addon2"
-                />
-                <button
-                  class="btn btn-outline-secondary"
-                  type="button"
-                  id="button-addon2"
-                >
-                  Button
-                </button>
-              </div>
-              <small>Lorem ipsum dolor sit amet.</small>
-            </div>
-          </div>
+            </figcaption>
+          </figure>
         </div>
-      </section>
-    </main>
-    <footer class="pt-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-sm-6 col-md-3 mb-4">
-            <strong>BIT Shop</strong>
-          </div>
-          <div class="col-12 col-sm-6 col-md-3">
-            <ul>
-              <li class="list-title">Title 1</li>
-              <li>Item 1</li>
-              <li>Item 2</li>
-              <li>Item 3</li>
-              <li>Item 4</li>
-            </ul>
-          </div>
-          <div class="col-12 col-sm-6 col-md-3">
-            <ul>
-              <li class="list-title">Title 1</li>
-              <li>Item 1</li>
-              <li>Item 2</li>
-              <li>Item 3</li>
-              <li>Item 4</li>
-            </ul>
-          </div>
-          <div class="col-12 col-sm-6 col-md-3">
-            <ul>
-              <li class="list-title">Title 1</li>
-              <li>Item 1</li>
-              <li>Item 2</li>
-              <li>Item 3</li>
-              <li>Item 4</li>
-            </ul>
-          </div>
-          <div class="col-12 pt-5 text-center">
-            <p class="copyright">© Bogotá Institute of Technology 2024</p>
-          </div>
+        <div class="col-12 col-sm-4 col-md-4 text-center">
+          <figure class="info">
+            <img src="./images/clock.svg" alt="" />
+            <figcaption>
+              <h4>Soporte 24/7</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Ullam, possimus.
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-12 col-sm-4 col-md-4 text-center">
+          <figure class="info">
+            <img src="./images/dollar-sign.svg" alt="" />
+            <figcaption>
+              <h4>Reembolso</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad,
+                cumque.
+              </p>
+            </figcaption>
+          </figure>
         </div>
       </div>
-    </footer>
+    </div>
+  </section>
+  <section id="featured" class="py-5">
+    <div class="container">
+      <div class="section-text-combo">
+        <h2>Ad lorem ipsum</h2>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti
+          accusantium voluptas voluptatibus perferendis velit nostrum qui
+          repellendus laboriosam.
+        </p>
+      </div>
+      <div class="d-flex justify-content-between">
+        @for(videogame of videogames; track videogame){
+        <app-cards [title]="videogame.title" [price]="videogame.price" [image]="videogame.image" />
+        }
+      </div>
+    </div>
+
+  </section>
+  <section id="newsletter" class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Ad lorem ipsum</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta
+            reprehenderit atque inventore obcaecati!
+          </p>
+        </div>
+        <div class="col-md-6">
+          <div class="input-group mb-1">
+            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"
+              aria-describedby="button-addon2" />
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+              Button
+            </button>
+          </div>
+          <small>Lorem ipsum dolor sit amet.</small>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="pt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-6 col-md-3 mb-4">
+        <strong>BIT Shop</strong>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3">
+        <ul>
+          <li class="list-title">Title 1</li>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          <li>Item 4</li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3">
+        <ul>
+          <li class="list-title">Title 1</li>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          <li>Item 4</li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3">
+        <ul>
+          <li class="list-title">Title 1</li>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          <li>Item 4</li>
+        </ul>
+      </div>
+      <div class="col-12 pt-5 text-center">
+        <p class="copyright">© Bogotá Institute of Technology 2024</p>
+      </div>
+    </div>
+  </div>
+</footer>

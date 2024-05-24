@@ -3,6 +3,10 @@ main {
   margin-top: 54px;
 }
 
+.wrap {
+  flex-wrap: wrap;
+}
+
 .section-text-combo {
   display: flex;
   flex-direction: column;
@@ -16,21 +20,6 @@ main {
   font-size: 0.9rem;
   line-height: 1.2rem;
 }
-
-/* ====================
-  - Hero section
-  ==================== */
-
-#hero {
-  height: 350px;
-  background-image: url("https://i.pinimg.com/originals/10/dd/02/10dd02f9476f82d05f17d88a31e3c80b.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-/* ====================
-  - Products Section
-  ==================== */
 
 /* ====================
   - Newsletter
@@ -78,15 +67,15 @@ footer .copyright {
 }
 
 /* ====================
-      - Media queries
-      
-        xs   <  576px
-        sm   ≥  576px
-        md   ≥  768px
-        lg   ≥  992px
-        xl   ≥  1200px
-        xxl  ≥  1400px
-      ==================== */
+    - Media queries
+    
+      xs   <  576px
+      sm   ≥  576px
+      md   ≥  768px
+      lg   ≥  992px
+      xl   ≥  1200px
+      xxl  ≥  1400px
+    ==================== */
 
 @media screen and (max-width: 992px) {
 }

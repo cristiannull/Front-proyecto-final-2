@@ -1,0 +1,7 @@
+nav {
+  border-bottom: 2px rgb(164, 0, 164) solid;
+  border-left: 2px rgb(164, 0, 164) solid;
+  border-right: 2px rgb(164, 0, 164) solid;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px rgb(164, 0, 164);
+}
