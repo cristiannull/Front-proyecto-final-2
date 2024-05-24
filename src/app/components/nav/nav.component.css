@@ -20,16 +20,19 @@
 
 .login-button {
   background-color: cyan;
-  color: #fff;
+  color: #000;
   font-size: 14px;
   padding: 8px 20px;
   border-radius: 50px;
   text-decoration: none;
   transition: 0.3s background-color;
+  transition: transform 0.3s ease;
 }
 
 .login-button:hover {
-  background-color: rgb(147, 0, 147);
+  background-color: rgb(22, 211, 211);
+  box-shadow: 2px 2px 15px white;
+  transform: scale(1.1);
 }
 
 .navbar-toggler {
@@ -39,11 +42,6 @@
 
 .offcanvas-title {
   color: white;
-}
-
-.offcanvas-body,
-.offcanvas-header {
-  background-color: #212529;
 }
 
 .navbar-toggler:focus,

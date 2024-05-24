@@ -1,16 +1,14 @@
 import { Component } from '@angular/core';
-import { CardsComponent } from '../../components/cards/cards.component';
-import { NavComponent } from '../../components/nav/nav.component';
-import { PrincipalComponent } from '../../components/principal/principal.component';
+import { CardsComponent } from '../cards/cards.component';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-principal',
   standalone: true,
-  imports: [CardsComponent, NavComponent, PrincipalComponent],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
+  imports: [CardsComponent],
+  templateUrl: './principal.component.html',
+  styleUrl: './principal.component.css'
 })
-export class HomeComponent {
+export class PrincipalComponent {
   videogames = [
     {
       title: 'Gears of war 4',
@@ -41,3 +39,4 @@ export class HomeComponent {
     },
   ];
 }
+

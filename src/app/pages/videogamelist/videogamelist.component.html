@@ -1,14 +1,6 @@
 <app-nav />
 <section id="products" class="my-5 pt-5">
     <div class="container">
-        <div class="section-text-combo text-light">
-            <h2>Ad lorem ipsum</h2>
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti
-                accusantium voluptas voluptatibus perferendis velit nostrum qui
-                repellendus laboriosam.
-            </p>
-        </div>
         <div class="d-flex justify-content-between wrap">
             @for(videogame of videogames; track videogame){
             <app-cards [title]="videogame.title" [price]="videogame.price" [image]="videogame.image" />
