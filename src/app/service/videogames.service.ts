@@ -1,17 +1,13 @@
-import { Component } from '@angular/core';
-import { CardsComponent } from '../cards/cards.component';
+import { Injectable, signal } from '@angular/core';
 
-@Component({
-  selector: 'app-principal',
-  standalone: true,
-  imports: [CardsComponent],
-  templateUrl: './principal.component.html',
-  styleUrl: './principal.component.css'
+@Injectable({
+  providedIn: 'root',
 })
-export class PrincipalComponent {
-  videogames = [
+export class VideogamesService {
+  constructor() {}
+  videogames = signal([
     {
-      title: 'Gears of war 4',
+      title: 'Gears of war',
       price: '20',
       image:
         'https://www.neoteo.com/wp-content/uploads/2016/09/Gears-of-War-4-1.jpg',
@@ -28,7 +24,7 @@ export class PrincipalComponent {
       title: 'God of war',
       price: '100',
       image:
-      'https://cdn1.epicgames.com/offer/3ddd6a590da64e3686042d108968a6b2/EGS_GodofWar_SantaMonicaStudio_S2_1200x1600-fbdf3cbc2980749091d52751ffabb7b7_1200x1600-fbdf3cbc2980749091d52751ffabb7b7',
+        'https://cdn1.epicgames.com/offer/3ddd6a590da64e3686042d108968a6b2/EGS_GodofWar_SantaMonicaStudio_S2_1200x1600-fbdf3cbc2980749091d52751ffabb7b7_1200x1600-fbdf3cbc2980749091d52751ffabb7b7',
     },
 
     {
@@ -37,6 +33,5 @@ export class PrincipalComponent {
       image:
         'https://image.api.playstation.com/vulcan/ap/rnd/202010/0114/b4Q1XWYaTdJLUvRuALuqr0wP.png',
     },
-  ];
+  ]);
 }
-

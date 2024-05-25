@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand me-auto" href="#">Bit Shop</a>
+        <a class="navbar-brand me-auto" routerLink="/">Bit Shop</a>
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header bg-dark">
                 <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Bit Shop</h5>
@@ -9,13 +9,14 @@
             <div class="offcanvas-body bg-dark">
                 <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
                     <li class="nav-item">
-                        <a class="nav-link mx-lg-2 " aria-current="page" href="#">Home</a>
+                        <a class="nav-link mx-lg-2 " aria-current="page" routerLink="/"
+                            routerLinkActive="active">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mx-lg-2 " href="videogamelist">products</a>
+                        <a class="nav-link mx-lg-2" routerLink="/videogamelist" routerLinkActive="active">Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mx-lg-2 " href="#">About</a>
+                        <a class="nav-link mx-lg-2 " routerLink="About" routerLinkActive="active">About</a>
                     </li>
                 </ul>
             </div>

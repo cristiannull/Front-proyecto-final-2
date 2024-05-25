@@ -3,6 +3,10 @@ main {
   margin-top: 54px;
 }
 
+.hero {
+  margin-top: 6rem;
+}
+
 .section-text-combo {
   display: flex;
   flex-direction: column;
@@ -18,25 +22,26 @@ main {
 }
 
 /* ====================
-  - Hero section
-  ==================== */
+- Hero section
+==================== */
 
 #hero {
   height: 350px;
   background-image: url("https://i.pinimg.com/originals/10/dd/02/10dd02f9476f82d05f17d88a31e3c80b.jpg");
   background-size: cover;
   background-position: center;
+  margin-top: 6rem;
 }
 
 /* ====================
-  - Products Section
-  ==================== */
-  .wrap {
-    flex-wrap: wrap;
-  }
+- Products Section
+==================== */
+.wrap {
+  flex-wrap: wrap;
+}
 /* ====================
-  - Newsletter
-  ==================== */
+- Newsletter
+==================== */
 
 #newsletter p {
   font-size: 0.9rem;
@@ -47,8 +52,8 @@ main {
 }
 
 /* ====================
-    - Footer section
-    ==================== */
+- Footer section
+==================== */
 
 footer {
   background-color: #212529;
@@ -77,16 +82,20 @@ footer .copyright {
   color: #888;
 }
 
+.activebutton {
+  background-color: red;
+}
+
 /* ====================
-      - Media queries
-      
-        xs   <  576px
-        sm   ≥  576px
-        md   ≥  768px
-        lg   ≥  992px
-        xl   ≥  1200px
-        xxl  ≥  1400px
-      ==================== */
+- Media queries
+
+xs   <  576px
+sm   ≥  576px
+md   ≥  768px
+lg   ≥  992px
+xl   ≥  1200px
+xxl  ≥  1400px
+==================== */
 
 @media screen and (max-width: 992px) {
 }

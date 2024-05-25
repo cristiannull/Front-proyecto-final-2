@@ -22,11 +22,9 @@ main {
 }
 
 /* ====================
-  - Newsletter
-  ==================== */
+- Newsletter
+==================== */
 
-#newsletter h2 {
-}
 #newsletter p {
   font-size: 0.9rem;
   line-height: 1.2rem;
@@ -34,48 +32,6 @@ main {
 #newsletter small {
   color: red;
 }
-
-/* ====================
-    - Footer section
-    ==================== */
-
-footer {
-  background-color: #212529;
-  color: white;
-}
-
-footer ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-footer ul li {
-  color: #888;
-  font-size: 0.9rem;
-}
-
-footer ul li.list-title {
-  padding-bottom: 1rem;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-}
-
-footer .copyright {
-  font-size: 0.9rem;
-  color: #888;
-}
-
-/* ====================
-    - Media queries
-    
-      xs   <  576px
-      sm   ≥  576px
-      md   ≥  768px
-      lg   ≥  992px
-      xl   ≥  1200px
-      xxl  ≥  1400px
-    ==================== */
 
 @media screen and (max-width: 992px) {
 }
