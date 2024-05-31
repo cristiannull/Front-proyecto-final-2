@@ -1,6 +1,9 @@
 <app-nav />
 <section id="products" class="my-5 pt-5">
     <div class="container">
+        <div class="section-text-combo text-light pt-4">
+            <h2>Juegos Disponibles</h2>
+        </div>
         <div class="d-flex justify-content-between wrap mt-5">
             @for(videogame of infoGames(); track videogame){
             <app-cards [title]="videogame.title" [price]="videogame.price" [image]="videogame.image" />
