@@ -7,7 +7,7 @@ import { NgClass, CommonModule, CurrencyPipe } from '@angular/common';
 @Component({
   selector: 'app-detail',
   standalone: true,
-  imports: [NavComponent],
+  imports: [NavComponent, CurrencyPipe, NgClass],
   templateUrl: './detail.component.html',
   styleUrl: './detail.component.css',
 })

@@ -1,6 +1,6 @@
 export interface Videogame {
   _id: string;
-  title: string;
+  name: string;
   price: string;
   image: string;
   category: string;
@@ -9,4 +9,5 @@ export interface Videogame {
   pegi: string;
   theme: string;
   paymentMethod: string;
+  description: string;
 }

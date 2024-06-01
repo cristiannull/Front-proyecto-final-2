@@ -22,6 +22,8 @@ export class HomeComponent {
   private videogamesService = inject(VideogamesService);
 
   videogames = signal<any>([]);
+  featuredVideogames = signal<any>([]);
+  saleVideogames = signal<any>([]);
 
   ngOnInit() {
     console.warn(
@@ -30,11 +32,17 @@ export class HomeComponent {
     this.videogamesService.getVideogames().subscribe({
       next: (videogames: any) => {
         console.log(videogames.data);
-        this.videogames.set(videogames?.data);
+        this.videogames.set(videogames.data);
+        this.setFeaturedVideogames(4);
+        this.setSaleVideogames(4);
       },
     });
   }
-  ngDoCheck() {
-    console.log(this.videogames());
+
+  setFeaturedVideogames(quantity: number) {
+    this.featuredVideogames.set(this.videogames().slice(0, quantity));
+  }
+  setSaleVideogames(quantity: number) {
+    this.saleVideogames.set(this.videogames().slice(0, quantity));
   }
 }

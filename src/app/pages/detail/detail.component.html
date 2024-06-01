@@ -6,17 +6,30 @@
         <div class="col-12 col-sm-6 ">
           <img [src]="videogame()?.image" />
         </div>
+
         <div class="col-12 col-sm-6 mt-4 mt-sm-0 text-light">
-        <h1 class="title-videogame">{{videogame()?.title}}</h1>
+          <h1 class="title-videogame">{{videogame()?.name}}</h1>
           <p class="price-videogame">$ {{videogame()?.price}}</p>
           <article class="card-videogame">
             <ul>
-              <li class="item">category: {{videogame()?.category }}</li>
-              <li class="item">developer: {{videogame()?.developer }}</li>
-              <li class="item">gender: {{videogame()?.gender}}</li>
-              <li class="item">pegi:  {{videogame()?.pegi }}</li>
-              <li class="item">theme:  {{videogame()?.theme}}</li>
+              <li class="item">
+                category:
+                @for(category of videogame()?.category; track category._id){
+                {{category.name}}
+                }
+              </li>
+              <li class="item">developer: {{videogame()?.developer[0]?.name}}</li>
+              <li class="item">gender:
+                @for(gender of videogame()?.gender; track gender._id){
+                {{gender.name}}
+                }</li>
+              <li class="item">pegi: {{videogame()?.pegi[0]?.name}}</li>
+              <li class="item">theme:
+                @for(theme of videogame()?.theme; track theme._id){
+                {{theme.name}}
+                }</li>
             </ul>
+            <p class="price-videogame"> {{videogame()?.description}}</p>
           </article>
         </div>
       </div>
@@ -35,18 +48,9 @@
         </div>
         <div class="col-md-6">
           <div class="input-group mb-1">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Recipient's username"
-              aria-label="Recipient's username"
-              aria-describedby="button-addon2"
-            />
-            <button
-              class="btn btn-outline-secondary"
-              type="button"
-              id="button-addon2"
-            >
+            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"
+              aria-describedby="button-addon2" />
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">
               Button
             </button>
           </div>
@@ -95,6 +99,3 @@
     </div>
   </div>
 </footer>
-
-        
-            

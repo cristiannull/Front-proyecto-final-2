@@ -14,8 +14,8 @@ export class CardsComponent {
   private videogamesService = inject(VideogamesService);
 
   videogames = signal<any>([]);
-
-  @Input() title: string = '';
+  @Input() id: string = '';
+  @Input() name: string = '';
   @Input() price: string = '';
   @Input() image: string = '';
 

@@ -1,12 +1,12 @@
 <div class="col-12 col-sm-6 col-lg-3">
   <div class="product text-light">
-    <a [routerLink]="['/videogame/', videogames()._id]">
+    <a [routerLink]="['/detail/', id]">
       <figure>
-        <img [src]="videogames()?.image" />
+        <img [src]="image" />
         <figcaption>
           <span class="featured">Featured</span>
-          <h3>{{videogames()?.title}}</h3>
-          <p>$ {{videogames()?.price}}</p>
+          <h3>{{name}}</h3>
+          <p>${{price}}</p>
         </figcaption>
       </figure>
     </a>
