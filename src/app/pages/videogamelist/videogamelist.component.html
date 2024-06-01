@@ -5,8 +5,12 @@
             <h2>Juegos Disponibles</h2>
         </div>
         <div class="d-flex justify-content-between wrap mt-5">
-            @for(videogame of infoGames(); track videogame){
-            <app-cards [title]="videogame.title" [price]="videogame.price" [image]="videogame.image" />
+            @if(videogames().length !== 0){
+
+            @for(videogame of videogames(); track videogame._id){
+            <app-cards [title]="videogame?.title" [price]="videogame?.price" [image]="videogame?.image" />
+
+            }
             }
         </div>
     </div>
