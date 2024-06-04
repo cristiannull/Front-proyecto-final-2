@@ -3,6 +3,7 @@ export interface Videogame {
   name: string;
   price: string;
   image: string;
+  video: string;
   category: string;
   developer: string;
   gender: string;

@@ -1,13 +1,14 @@
 import { Component, inject, Input, signal } from '@angular/core';
 import { NavComponent } from '../../components/nav/nav.component';
 import { VideogamesService } from '../../service/videogames.service';
-import { Videogame } from '../../models/videogame.models';
-import { NgClass, CommonModule, CurrencyPipe } from '@angular/common';
+import { CurrencyPipe } from '@angular/common';
+import { NgClass, CommonModule } from '@angular/common';
+import { SafeUrlPipe } from '../../safe-url.pipe';
 
 @Component({
   selector: 'app-detail',
   standalone: true,
-  imports: [NavComponent, CurrencyPipe, NgClass],
+  imports: [CommonModule, NavComponent, CurrencyPipe, NgClass, SafeUrlPipe],
   templateUrl: './detail.component.html',
   styleUrl: './detail.component.css',
 })
@@ -20,9 +21,8 @@ export class DetailComponent {
 
   ngOnInit() {
     console.warn('[ngOnInit] Se ha inicializado el componente Detail');
-    this.vidogamesService.getOneVideogameById(this.id).subscribe({
+    this.vidogamesService.getOneVideogameByName(this.id).subscribe({
       next: (videogame) => {
-        console.log(videogame);
         this.videogame.set(videogame);
       },
       error: (error) => {

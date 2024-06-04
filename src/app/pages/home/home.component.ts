@@ -1,4 +1,4 @@
-import { Component, SimpleChanges, inject, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CardsComponent } from '../../components/cards/cards.component';
 import { NavComponent } from '../../components/nav/nav.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
@@ -31,13 +31,13 @@ export class HomeComponent {
     );
     this.videogamesService.getVideogames().subscribe({
       next: (videogames: any) => {
-        console.log(videogames.data);
         this.videogames.set(videogames.data);
         this.setFeaturedVideogames(4);
         this.setSaleVideogames(4);
       },
     });
   }
+  
 
   setFeaturedVideogames(quantity: number) {
     this.featuredVideogames.set(this.videogames().slice(0, quantity));

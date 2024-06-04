@@ -4,37 +4,27 @@
     <div class="container">
       <div class="row">
         <div id="carouselExampleDark" class="carousel carousel-dark slide carouselsize">
-          <div class="carousel-inner ">
+          <div class="carousel-inner">
             <div class="carousel-item active">
-              <img [src]="videogame()?.image[0]" class="d-block w-80 imagesize" />
+              <iframe class="d-block videosize"
+                [src]="'http://www.youtube.com/embed/' + (videogame().video) + '?autoplay=1&mute=1'| safeUrl"
+                allowfullscreen></iframe>
             </div>
-            <div class="carousel-item">
-              <img [src]="videogame()?.image[1]" class="d-block w-80 imagesize" />
-            </div>
-            <div class="carousel-item">
-              <iframe src="https://www.youtube.com/embed/SgSX3gOrj60?si=B5xlIiHeIOj1JQUd" [src]="videogame()?.image[2]"
-                class="d-block w-99 videosize" title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div *ngFor="let image of videogame().image; let i = index" class="carousel-item">
+              <img [src]="image" class="d-block w-80 imagesize" />
             </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+          <button class="carousel-control-prev sizebutton" type="button" data-bs-target="#carouselExampleDark"
             data-bs-slide="prev">
             <span class="carousel-control-prev-icon " aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+          <button class="carousel-control-next sizebutton" type="button" data-bs-target="#carouselExampleDark"
             data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
         </div>
-        <!-- <div class="col-12 col-sm-6 ">
-          @for(image of videogame()?.image; track image){
-          <img [src]="image" />
-          }
-        </div>
- -->
         <div class="col-12 col-sm-6 mt-4 mt-sm-0 text-light">
           <h1 class="title-videogame">{{videogame()?.name}}</h1>
           <p class="price-videogame">$ {{videogame()?.price}}</p>
