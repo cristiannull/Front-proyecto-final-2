@@ -8,7 +8,7 @@
             @if(videogames().length !== 0){
 
             @for(videogame of videogames(); track videogame._id){ <app-cards [id]="videogame._id"
-                [name]="videogame.name" [price]="videogame.price" [image]="videogame.image" />
+                [name]="videogame.name" [price]="videogame.price" [image]="videogame.image[0]" />
             }
 
             }

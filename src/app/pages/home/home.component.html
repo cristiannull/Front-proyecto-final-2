@@ -15,7 +15,19 @@
       </div>
       <div class="d-flex justify-content-between wrap">
         @for(videogame of featuredVideogames(); track videogame._id){
-        <app-cards [id]="videogame._id" [name]="videogame.name" [price]="videogame.price" [image]="videogame.image" />
+        <app-cards [id]="videogame._id" [name]="videogame.name" [price]="videogame.price" [image]="videogame.image[0]" />
+        }
+      </div>
+    </div>
+  </section>
+  <section id="services" class="py-5">
+    <div class="container">
+      <div class="section-text-combo text-light">
+        <h2>prueba</h2>
+      </div>
+      <div class="d-flex justify-content-between wrap">
+        @for(videogame of pegi18videogames(); track videogame._id){
+        <app-cards [id]="videogame._id" [name]="videogame.name" [price]="videogame.price" [image]="videogame.image[0]" />
         }
       </div>
     </div>
@@ -27,7 +39,7 @@
       </div>
       <div class="d-flex justify-content-between wrap">
         @for(videogame of saleVideogames(); track videogame._id){
-        <app-cards [id]="videogame._id" [name]="videogame.name" [price]="videogame.price" [image]="videogame.image" />
+        <app-cards [id]="videogame._id" [name]="videogame.name" [price]="videogame.price" [image]="videogame.image[0]" />
         }
       </div>
     </div>

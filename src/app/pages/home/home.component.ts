@@ -24,7 +24,7 @@ export class HomeComponent {
   videogames = signal<any>([]);
   featuredVideogames = signal<any>([]);
   saleVideogames = signal<any>([]);
-
+pegi18videogames =signal<any>([]);
   ngOnInit() {
     console.warn(
       '[ngOnInit] El componente lista de videojuegos ha sido inicializado'
@@ -36,6 +36,11 @@ export class HomeComponent {
         this.setSaleVideogames(4);
       },
     });
+    this.videogamesService.getvideogamesofpegi().subscribe({
+      next: (videogames: any) => {
+        this.pegi18videogames.set(videogames.data.slice(0,4));
+      },
+    })
   }
   
 
@@ -45,4 +50,6 @@ export class HomeComponent {
   setSaleVideogames(quantity: number) {
     this.saleVideogames.set(this.videogames().slice(0, quantity));
   }
+
 }
+

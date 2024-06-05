@@ -20,4 +20,8 @@ export class VideogamesService {
   getOneVideogameByName(name: string) {
     return this.http.get('http://localhost:3000/api/videogame/' + name);
   }
+
+  getvideogamesofpegi() {
+    return this.http.get('http://localhost:3000/api/videogame?pegi=PEGI 18'   )
+  }
 }
