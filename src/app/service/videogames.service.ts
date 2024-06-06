@@ -21,7 +21,15 @@ export class VideogamesService {
     return this.http.get('http://localhost:3000/api/videogame/' + name);
   }
 
-  getvideogamesofpegi() {
-    return this.http.get('http://localhost:3000/api/videogame?pegi=PEGI 18'   )
+  getVideogamesOfFeatured() {
+    return this.http.get(
+      'http://localhost:3000/api/videogame?typeoffer=Featured'
+    );
+  }
+
+  getVideogamesOfOnSale() {
+    return this.http.get(
+      'http://localhost:3000/api/videogame?typeoffer=On Sale'
+    );
   }
 }

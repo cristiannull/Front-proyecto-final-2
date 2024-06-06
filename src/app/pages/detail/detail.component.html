@@ -25,7 +25,13 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
-        <div class="col-12 col-sm-6 mt-4 mt-sm-0 text-light">
+      </div>
+    </div>
+  </section>
+  <section id="product-detail" class="pt-8">
+    <div class="container">
+      <div class="row">
+        <div class="col text-light infogame">
           <h1 class="title-videogame">{{videogame()?.name}}</h1>
           <p class="price-videogame">$ {{videogame()?.price}}</p>
           <article class="card-videogame">
@@ -47,7 +53,17 @@
                 {{theme.name}}
                 }</li>
             </ul>
-            <p class="price-videogame"> {{videogame()?.description}}</p>
+          </article>
+        </div>
+        <div class="col text-light infogame">
+          <article class="card-videogame">
+            <h2 class="title-description">ACERCA DE ESTE JUEGO</h2>
+            <hr>
+            <div *ngFor="let description of videogame().description">
+              <p>
+                {{description}}
+              </p>
+            </div>
           </article>
         </div>
       </div>

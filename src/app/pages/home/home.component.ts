@@ -24,7 +24,10 @@ export class HomeComponent {
   videogames = signal<any>([]);
   featuredVideogames = signal<any>([]);
   saleVideogames = signal<any>([]);
-pegi18videogames =signal<any>([]);
+  pegi18videogames = signal<any>([]);
+  featuredvideogames = signal<any>([]);
+  onsalevideogames = signal<any>([]);
+
   ngOnInit() {
     console.warn(
       '[ngOnInit] El componente lista de videojuegos ha sido inicializado'
@@ -36,13 +39,17 @@ pegi18videogames =signal<any>([]);
         this.setSaleVideogames(4);
       },
     });
-    this.videogamesService.getvideogamesofpegi().subscribe({
+    this.videogamesService.getVideogamesOfFeatured().subscribe({
       next: (videogames: any) => {
-        this.pegi18videogames.set(videogames.data.slice(0,4));
+        this.featuredvideogames.set(videogames.data.slice(0, 4));
       },
-    })
+    });
+    this.videogamesService.getVideogamesOfOnSale().subscribe({
+      next: (videogames: any) => {
+        this.onsalevideogames.set(videogames.data.slice(0, 4));
+      },
+    });
   }
-  
 
   setFeaturedVideogames(quantity: number) {
     this.featuredVideogames.set(this.videogames().slice(0, quantity));
@@ -50,6 +57,4 @@ pegi18videogames =signal<any>([]);
   setSaleVideogames(quantity: number) {
     this.saleVideogames.set(this.videogames().slice(0, quantity));
   }
-
 }
-
