@@ -13,7 +13,7 @@ import { SafeUrlPipe } from '../../safe-url.pipe';
   styleUrl: './detail.component.css',
 })
 export class DetailComponent {
-  private vidogamesService = inject(VideogamesService);
+  private videogamesService = inject(VideogamesService);
 
   notAvailable = true;
   videogame = signal<any>({});
@@ -21,7 +21,7 @@ export class DetailComponent {
 
   ngOnInit() {
     console.warn('[ngOnInit] Se ha inicializado el componente Detail');
-    this.vidogamesService.getOneVideogameByName(this.id).subscribe({
+    this.videogamesService.getOneVideogameByName(this.id).subscribe({
       next: (videogame) => {
         this.videogame.set(videogame);
       },

@@ -36,9 +36,77 @@ main {
 /* ====================
 - Products Section
 ==================== */
-.wrap {
-  flex-wrap: wrap;
+.carrusel-featured,
+.carrusel-on-sale {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  margin: 0 auto;
 }
+
+.tarjeta-wrapper {
+  max-width: 1165px;
+  padding: 24px 0px;
+  overflow-x: hidden;
+  display: flex;
+  gap: 12px;
+  position: relative;
+  z-index: 100;
+  margin: 0 auto;
+}
+
+.carrusel:hover .next-game {
+  display: block;
+}
+
+.next-game {
+  position: absolute;
+  background-color: #fff;
+  z-index: 200;
+  color: black;
+  width: 70px;
+  height: 70px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  outline: none;
+  border: none;
+  top: 35%;
+  right: -35px;
+  cursor: pointer;
+}
+
+.next-game:hover {
+  transition: box-shadow 0, 2s ease-in-out;
+  box-shadow: 1px 1px 15px 0 rgba(255, 255, 255, 0.708);
+}
+
+.prev-game {
+  position: absolute;
+  background-color: #fff;
+  z-index: 200;
+  color: black;
+  width: 70px;
+  height: 70px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  outline: none;
+  border: none;
+  top: 35%;
+  left: -35px;
+  cursor: pointer;
+}
+
+.prev-game:hover {
+  transition: box-shadow 0, 2s ease-in-out;
+  box-shadow: 1px 1px 16px 0 rgba(255, 255, 255, 0.708);
+}
+
 /* ====================
 - Newsletter
 ==================== */
@@ -50,13 +118,6 @@ main {
 #newsletter small {
   color: red;
 }
-
-/* ====================
-- Footer section
-==================== */
-
-
-
 /* ====================
 - Media queries
 
@@ -68,12 +129,24 @@ xl   ≥  1200px
 xxl  ≥  1400px
 ==================== */
 
+@media screen and (max-width: 1200px) {
+  .tarjeta-wrapper {
+    max-width: 900px;
+  }
+}
+
 @media screen and (max-width: 992px) {
+  .tarjeta-wrapper {
+    max-width: 700px;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .section-text-combo p {
     width: 80%;
+  }
+  .tarjeta-wrapper {
+    max-width: 590px;
   }
 }
 
@@ -83,5 +156,8 @@ xxl  ≥  1400px
   }
   .section-text-combo p {
     width: 100%;
+  }
+  .tarjeta-wrapper {
+    max-width: 390px;
   }
 }

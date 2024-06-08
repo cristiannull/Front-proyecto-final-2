@@ -35,26 +35,49 @@ export class HomeComponent {
     this.videogamesService.getVideogames().subscribe({
       next: (videogames: any) => {
         this.videogames.set(videogames.data);
-        this.setFeaturedVideogames(4);
-        this.setSaleVideogames(4);
       },
     });
     this.videogamesService.getVideogamesOfFeatured().subscribe({
       next: (videogames: any) => {
-        this.featuredvideogames.set(videogames.data.slice(0, 4));
+        this.featuredvideogames.set(videogames.data.slice(0, 20));
       },
     });
     this.videogamesService.getVideogamesOfOnSale().subscribe({
       next: (videogames: any) => {
-        this.onsalevideogames.set(videogames.data.slice(0, 4));
+        this.onsalevideogames.set(videogames.data.slice(0, 10));
       },
     });
   }
 
-  setFeaturedVideogames(quantity: number) {
-    this.featuredVideogames.set(this.videogames().slice(0, quantity));
+  nextGame() {
+    const tarjetas = document.getElementById('tarjetas');
+    tarjetas?.scrollTo({
+      left: tarjetas.scrollLeft + tarjetas.offsetWidth,
+      behavior: 'smooth',
+    });
   }
-  setSaleVideogames(quantity: number) {
-    this.saleVideogames.set(this.videogames().slice(0, quantity));
+
+  prevGame() {
+    const tarjetas = document.getElementById('tarjetas');
+    tarjetas?.scrollTo({
+      left: tarjetas.scrollLeft - tarjetas.offsetWidth,
+      behavior: 'smooth',
+    });
+  }
+
+  nextOnSaleGame() {
+    const tarjetas = document.getElementById('tarjetas-on-sale');
+    tarjetas?.scrollTo({
+      left: tarjetas.scrollLeft + tarjetas.offsetWidth,
+      behavior: 'smooth',
+    });
+  }
+
+  prevOnSaleGame() {
+    const tarjetas = document.getElementById('tarjetas-on-sale');
+    tarjetas?.scrollTo({
+      left: tarjetas.scrollLeft - tarjetas.offsetWidth,
+      behavior: 'smooth',
+    });
   }
 }

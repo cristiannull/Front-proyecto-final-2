@@ -1,36 +1,55 @@
 <app-nav />
 <main>
   <section id="hero">
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
         <div class="col-6"></div>
         <div class="col-6"></div>
       </div>
     </div>
   </section>
+
   <section id="services" class="py-5">
-    <div class="container">
+    <div>
       <div class="section-text-combo text-light">
         <h2>Featured</h2>
       </div>
-      <div class="d-flex justify-content-between wrap">
-        @for(videogame of featuredvideogames(); track videogame._id){
-        <app-cards [id]="videogame._id" [name]="videogame.name" [price]="videogame.price"
-          [image]="videogame.image[0]" />
-        }
+      <div class="d-flex justify-content-between">
+        <div class="carrusel-featured">
+          <button class="prev-game" (click)="prevOnSaleGame()">
+            < </button>
+              <div class="tarjeta-wrapper" id="tarjetas-on-sale">
+                @for(videogame of featuredvideogames(); track videogame._id){
+                <app-cards [id]="videogame._id" [name]="videogame.name" [price]="videogame.price"
+                  [image]="videogame.image[0]" />
+                }
+              </div>
+              <button class="next-game" (click)="nextOnSaleGame()">
+                >
+              </button>
+        </div>
       </div>
     </div>
   </section>
   <section id="featured" class="py-5">
-    <div class="container">
+    <div class="container-fluid">
       <div class="section-text-combo text-light">
         <h2>On Sale</h2>
       </div>
       <div class="d-flex justify-content-between wrap">
-        @for(videogame of onsalevideogames(); track videogame._id){
-        <app-cards [id]="videogame._id" [name]="videogame.name" [price]="videogame.price"
-          [image]="videogame.image[0]" />
-        }
+        <div class="carrusel-on-sale">
+          <button class="prev-game" (click)="prevGame()">
+            < </button>
+              <div class="tarjeta-wrapper" id="tarjetas">
+                @for(videogame of onsalevideogames(); track videogame._id){
+                <app-cards [id]="videogame._id" [name]="videogame.name" [price]="videogame.price"
+                  [image]="videogame.image[0]" />
+                }
+              </div>
+              <button class="next-game" (click)="nextGame()">
+                >
+              </button>
+        </div>
       </div>
     </div>
 
