@@ -1,0 +1,49 @@
+<main>
+    <section id="login">
+      <div class="container py-5">
+        <div class="row">
+          <div
+            class="col-12 col-sm-10 col-md-8 col-lg-6 offset-sm-1 offset-md-2 offset-lg-3"
+          >
+            <div class="section-text-combo text-light">
+              <h2>Ad lorem ipsum</h2>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Corrupti accusantium voluptas voluptatibus perferendis velit
+                nostrum qui repellendus laboriosam.
+              </p>
+            </div>
+            <form [formGroup]="loginForm" (submit)="onSubmit()">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label text-light"
+                  >Email</label 
+                >
+                <input
+                  type="email"
+                  formControlName="email"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                />
+                <small class="error">Ad lorem ipsum</small>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label text-light"
+                  >Password</label
+                >
+                <input
+                  type="password"
+                  formControlName="password"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                />
+                <small class="error">Ad lorem ipsum!</small>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
