@@ -37,9 +37,9 @@
           <article class="card-videogame">
             <ul>
               <li class="item">
-                category:
-                @for(category of videogame()?.category; track category._id){
-                {{category.name}}
+                Game mode:
+                @for(gamemode of videogame()?.gamemode; track gamemode._id){
+                {{gamemode.name}}
                 }
               </li>
               <li class="item">developer: {{videogame()?.developer[0]?.name}}</li>

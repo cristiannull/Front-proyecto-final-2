@@ -4,7 +4,7 @@ export interface Videogame {
   price: string;
   image: string;
   video: string;
-  category: string;
+  gamemode: string;
   developer: string;
   gender: string;
   pegi: string;
