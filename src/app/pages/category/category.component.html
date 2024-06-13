@@ -1,15 +1,15 @@
 <app-nav />
-<section id="products" class="my-5 pt-5">
+<section id="products" class="my-3 pt-3">
     <div class="container">
         <div class="section-text-combo text-light pt-4">
             <h2>Juegos Disponibles</h2>
         </div>
         <div class="d-flex justify-content-between wrap mt-5">
             @if(videogames().length !== 0){
-                @for(videogame of videogames(); track videogame._id){
-                    <app-cards [id]="videogame._id" [name]="videogame.name" [price]="videogame.price"
-                      [image]="videogame.image[0]" />
-                    }
+            @for(videogame of videogames(); track videogame._id){
+            <app-cards [id]="videogame._id" [name]="videogame.name" [price]="videogame.price"
+                [image]="videogame.image[0]" />
+            }
             }
         </div>
     </div>

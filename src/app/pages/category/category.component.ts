@@ -22,22 +22,32 @@ export class CategoryComponent {
   private categoriesService = inject(CategoriesService);
 
   videogames = signal<any>([]);
- 
+
   @Input() filterBy: string = '';
   @Input() filterValue: string = '';
-
+  @Input() name: string = '';
   ngOnInit() {
     console.warn(
       '[ngOnInit] El componente lista de videojuegos ha sido inicializado'
     );
-    this.categoriesService
-      .getProducts(this.filterBy, this.filterValue)
-      .subscribe({
+    if (this.filterBy !== '' && this.filterValue !== '') {
+      this.categoriesService
+        .getProducts(this.filterBy, this.filterValue)
+        .subscribe({
+          next: (videogames: any) => {
+            this.videogames.set(videogames.data);
+          },
+        });
+    }
+    if (this.name !== '') {
+      this.categoriesService.getVideogameSearch(this.name).subscribe({
         next: (videogames: any) => {
           this.videogames.set(videogames.data);
         },
       });
+    }
   }
+
   ngOnChanges(changes: SimpleChanges) {
     if (changes['filterBy'] || changes['filterValue']) {
       this.categoriesService

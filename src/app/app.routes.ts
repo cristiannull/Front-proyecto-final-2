@@ -6,6 +6,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { loginGuard } from './components/guards/login.guard';
 import { redirectIfLogged } from './components/guards/redirectIfLogged.guard';
 import { CategoryComponent } from './pages/category/category.component';
+import { SearchComponent } from './pages/search/search.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -21,6 +22,10 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
     path: 'category/:filterBy/:filterValue',
-    component: CategoryComponent
+    component: CategoryComponent,
+  },
+  {
+    path: 'search/:name',
+    component: SearchComponent,
   },
 ];

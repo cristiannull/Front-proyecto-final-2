@@ -25,6 +25,14 @@ main {
 - Products
 ==================== */
 
+.product {
+  margin-top: 0;
+}
+
+.justify-content-between {
+  justify-content: space-around !important;
+}
+
 /* ====================
 - Newsletter
 ==================== */

@@ -14,7 +14,7 @@ export class VideogamesService {
   }
 
   getOneVideogameByName(name: string) {
-    return this.http.get('http://localhost:3000/api/videogame/' + name);
+    return this.http.get('http://localhost:3000/api/videogamebyid/' + name);
   }
 
   getVideogamesOfFeatured() {

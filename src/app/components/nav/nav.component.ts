@@ -1,17 +1,16 @@
-import { Component, inject,signal,Input } from '@angular/core';
+import { Component, inject, signal, Input } from '@angular/core';
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 import { UserService } from '../../service/user.service';
 import { AuthService } from '../../service/auth.service';
 import { CommonModule } from '@angular/common';
-import { VideogamesService } from '../../service/videogames.service';
-import { NgClass,} from '@angular/common';
+import { NgClass } from '@angular/common';
 import { CategoriesService } from '../../service/categories.service';
-
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [RouterLinkActive, RouterLink, CommonModule,NgClass],
+  imports: [RouterLinkActive, RouterLink, CommonModule, NgClass, FormsModule],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css',
 })
@@ -20,9 +19,8 @@ export class NavComponent {
   private userService = inject(UserService);
   private authService = inject(AuthService);
   private router = inject(Router);
-  private videogamesService = inject(VideogamesService);
   private categoriesService = inject(CategoriesService);
-  
+
   constructor() {}
   @Input() id: string = '';
   @Input() name: string = '';
@@ -30,38 +28,42 @@ export class NavComponent {
   ngAfterViewInit() {
     this.bodyElement = document.querySelector('body') as HTMLElement;
   }
-  gamemodes= signal<any>([]);
+  gamemodes = signal<any>([]);
   videogames = signal<any>([]);
   notAvailable = true;
-  genders= signal<any>([]);
-  themes= signal<any>([]);
-  pegis= signal<any>([]);
-  gendervideogames= signal<any>([]);
+  genders = signal<any>([]);
+  themes = signal<any>([]);
+  pegis = signal<any>([]);
+  gendervideogames = signal<any>([]);
   featuredvideogames = signal<any>([]);
 
   ngOnInit() {
     console.warn('[ngOnInit] Se ha inicializado el componente Detail');
+
     this.categoriesService.getGender().subscribe({
-      next: (genders) => {  
+      next: (genders) => {
         this.genders.set(genders);
       },
     });
     this.categoriesService.getTheme().subscribe({
-      next: (themes) => {  
+      next: (themes) => {
         this.themes.set(themes);
       },
     });
     this.categoriesService.getGameMode().subscribe({
-      next: (gamemodes) => {  
+      next: (gamemodes) => {
         this.gamemodes.set(gamemodes);
       },
     });
     this.categoriesService.getPegi().subscribe({
-      next: (pegis) => {  
+      next: (pegis) => {
         this.pegis.set(pegis);
       },
     });
-    
+  }
+
+  onSubmit() {
+    this.router.navigate([`/search/${this.name}`]);
   }
 
   isLogged() {
@@ -72,6 +74,4 @@ export class NavComponent {
     this.authService.removeToken();
     this.router.navigate(['/login']);
   }
-
-  
 }

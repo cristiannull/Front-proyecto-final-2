@@ -2,11 +2,11 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CategoriesService {
   private http = inject(HttpClient);
-  constructor() { }
+  constructor() {}
 
   getVideogames() {
     return this.http.get('http://localhost:3000/api/videogame');
@@ -28,11 +28,20 @@ export class CategoriesService {
     return this.http.get('http://localhost:3000/api/pegis');
   }
 
-getProducts(filter?: string, value?: string) {
-  let endpoint = "http://localhost:3000/api/videogame";
-  if(filter && value) {
-    endpoint = `${endpoint}?${filter}=${value}`
+  getProducts(filter?: string, value?: string) {
+    let endpoint = 'http://localhost:3000/api/videogame';
+    if (filter && value) {
+      endpoint = `${endpoint}?${filter}=${value}`;
+    }
+    return this.http.get(endpoint);
   }
-  return this.http.get(endpoint)
-}
+
+  getVideogameSearch(name?: String) {
+    let endpoint = 'http://localhost:3000/api/videogame/';
+    if (name) {
+      endpoint = `${endpoint}${name}`;
+    }
+
+    return this.http.get(endpoint);
+  }
 }
