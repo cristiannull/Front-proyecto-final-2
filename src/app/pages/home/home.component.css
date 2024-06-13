@@ -59,9 +59,9 @@ main {
 
 .next-game {
   position: absolute;
-  background-color: #fff;
   z-index: 200;
-  color: black;
+  background: none;
+  color: white;
   width: 70px;
   height: 70px;
   font-size: 30px;
@@ -83,9 +83,9 @@ main {
 
 .prev-game {
   position: absolute;
-  background-color: #fff;
+  background: none;
   z-index: 200;
-  color: black;
+  color: white;
   width: 70px;
   height: 70px;
   font-size: 30px;

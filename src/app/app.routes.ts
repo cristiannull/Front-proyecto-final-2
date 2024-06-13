@@ -7,6 +7,7 @@ import { loginGuard } from './components/guards/login.guard';
 import { redirectIfLogged } from './components/guards/redirectIfLogged.guard';
 import { CategoryComponent } from './pages/category/category.component';
 import { SearchComponent } from './pages/search/search.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -28,4 +29,5 @@ export const routes: Routes = [
     path: 'search/:name',
     component: SearchComponent,
   },
+  { path: 'not-found', component: NotFoundComponent },
 ];

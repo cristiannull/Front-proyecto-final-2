@@ -36,6 +36,7 @@ export class NavComponent {
   pegis = signal<any>([]);
   gendervideogames = signal<any>([]);
   featuredvideogames = signal<any>([]);
+  showCart = signal(false);
 
   ngOnInit() {
     console.warn('[ngOnInit] Se ha inicializado el componente Detail');
@@ -63,7 +64,24 @@ export class NavComponent {
   }
 
   onSubmit() {
-    this.router.navigate([`/search/${this.name}`]);
+    if (this.name !== '') {
+      const searchName = this.name.toLowerCase();
+      this.categoriesService.getVideogameSearch(searchName).subscribe({
+        next: (videogames: any) => {
+          if (videogames && videogames.length > 0) {
+            this.router.navigate([`/search/${this.name}`]);
+          } else {
+            this.router.navigate(['/not-found']);
+          }
+        },
+        error: (error: any) => {
+          console.error('Error fetching videogames:', error);
+          this.router.navigate(['/not-found']);
+        },
+      });
+    } else {
+      this.router.navigate(['/videogamelist']);
+    }
   }
 
   isLogged() {
@@ -73,5 +91,9 @@ export class NavComponent {
   logout() {
     this.authService.removeToken();
     this.router.navigate(['/login']);
+  }
+
+  toggleCartVisibility() {
+    this.showCart.update((prevState) => !prevState);
   }
 }

@@ -35,12 +35,13 @@ nav .wrapper {
 .nav-links {
   margin-bottom: 0;
   padding: 0;
-  margin-right: -4%;
+  margin-left: 15%;
 }
 
 .nav-links li {
   list-style: none;
 }
+
 .nav-links li a {
   color: #f2f2f2;
   text-decoration: none;
@@ -50,9 +51,11 @@ nav .wrapper {
   border-radius: 5px;
   transition: all 0.3s ease;
 }
+
 .nav-links li a:hover {
   background: #3a3b3c;
 }
+
 .nav-links .mobile-item {
   display: none;
 }
@@ -73,6 +76,12 @@ nav .wrapper {
   border-radius: 15px;
   box-shadow: 1px 7px 15px cyan;
 }
+
+.mega-box.show {
+  opacity: 0;
+  visibility: hidden;
+}
+
 .mega-box .content {
   background: #242526;
   padding: 25px 20px;
@@ -82,27 +91,27 @@ nav .wrapper {
   justify-content: space-between;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
+
 .mega-box .content .row {
   width: calc(25% - 30px);
   line-height: 45px;
 }
-.content .row img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+
 .content .row header {
   color: #f2f2f2;
   font-size: 20px;
   font-weight: 500;
 }
+
 .content .row .mega-links {
   margin-left: -40px;
   border-left: 1px solid rgba(255, 255, 255, 0.09);
 }
+
 .row .mega-links li {
   padding: 0 20px;
 }
+
 .row .mega-links li a {
   padding: 0px;
   padding: 0 20px;
@@ -110,15 +119,18 @@ nav .wrapper {
   font-size: 17px;
   display: block;
 }
+
 .row .mega-links li a:hover {
   color: #f2f2f2;
 }
+
 .wrapper .btn {
   color: #fff;
   font-size: 20px;
   cursor: pointer;
   display: none;
 }
+
 .wrapper .btn.close-btn {
   position: absolute;
   right: 30px;
@@ -136,25 +148,26 @@ form {
   display: block;
 }
 
-.login-button {
-  margin-left: 15px;
-  background-color: cyan;
-  color: #000;
-  font-size: 14px;
-  padding: 8px 20px;
-  border-radius: 13px;
-  text-decoration: none;
-  transition: 0.3s background-color;
-  transition: transform 0.3s ease;
-  right: 0;
-  height: 35px;
+.button-icon {
+  right: 20px;
+  top: 23px;
+  background: none;
+  border: none;
+  color: white;
   text-align: center;
+  margin: 0 8px;
 }
 
-.login-button:hover {
-  background-color: rgb(22, 211, 211);
-  box-shadow: 2px 2px 15px white;
-  transform: scale(1.1);
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "wght" 800, "GRAD" 0, "opsz" 48;
+  font-size: 30px;
+}
+
+.search-button {
+  margin: 0;
+  border: 1px white solid;
+  padding: 1px;
+  border-radius: 5px;
 }
 
 .container-button {
@@ -162,13 +175,82 @@ form {
   align-items: center;
 }
 
+/*===================
+  aside-cart
+  ===================
+*/
+aside.cart {
+  width: 28vw;
+  height: 85%;
+  max-width: 400px;
+  min-width: 350px;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  right: 10px;
+  top: 100px;
+  bottom: 10px;
+  background-color: #242526;
+  box-shadow: 0 14px 18px cyan, 0 10px 10px rgb(107, 104, 104);
+  border-radius: 15px;
+  transform: translateX(110%);
+  transition: all 0.4s ease-in-out;
+  z-index: 5000;
+}
+
+aside .close {
+  position: absolute;
+  right: 20px;
+  top: 23px;
+  background: none;
+  border: none;
+  color: white;
+}
+
+aside h2,
+aside h3 {
+  color: white;
+}
+
+aside h3 {
+  position: absolute;
+  bottom: 60px;
+}
+
+aside a.checkout {
+  position: absolute;
+  width: 92.75%;
+  bottom: 15px;
+  display: inline-block;
+  background: cyan;
+  border: none;
+  color: black;
+  text-align: center;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+}
+
+aside a.checkout:hover {
+  box-shadow: 0 0px 18px cyan, 0 -3px 10px rgb(107, 104, 104);
+}
+
+aside.cart.show {
+  transform: translateX(0);
+}
+/*===================
+  media query
+  ===================
+*/
 @media screen and (max-width: 1150px) {
   .mega-box {
     width: 90%;
     left: 4.8%;
   }
   .nav-links {
-    margin-right: -10%;
+    margin-left: 2%;
   }
 }
 
@@ -247,7 +329,7 @@ form {
     visibility: visible;
     padding: 0 20px;
     max-height: 0px;
-    overflow: hidden;
+    overflow: visible;
     transition: all 0.3s ease;
   }
   .mega-box .content {
@@ -278,29 +360,16 @@ form {
 nav input {
   display: none;
 }
-.body-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  text-align: center;
-  padding: 0 30px;
-}
-.body-text div {
-  font-size: 45px;
-  font-weight: 600;
-}
 
-@media screen and (max-width: 570px) {
+@media screen and (max-width: 576px) {
   nav {
     position: sticky;
   }
   nav .wrapper {
-    padding: 0;
+    padding-left: 10px;
+    line-height: 21px;
   }
   .wrapper .logo a {
-    font-size: 28px;
-    margin-left: 5px;
+    font-size: 20px;
   }
 }

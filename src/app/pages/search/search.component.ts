@@ -29,7 +29,7 @@ export class SearchComponent {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes['name'] && this.name) {
+    if (changes['name'] && this.name.toLowerCase()) {
       const searchName = this.name;
       this.categoriesService.getVideogameSearch(searchName).subscribe({
         next: (videogames: any) => {

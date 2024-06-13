@@ -1,0 +1,11 @@
+.not-found {
+  align-items: center;
+  justify-content: center;
+}
+h2,
+span {
+  font-size: 30px;
+  color: red;
+  margin: 0;
+  margin-left: 10px;
+}

@@ -4,11 +4,19 @@ import { VideogamesService } from '../../service/videogames.service';
 import { CurrencyPipe } from '@angular/common';
 import { NgClass, CommonModule } from '@angular/common';
 import { SafeUrlPipe } from '../../safe-url.pipe';
+import { FooterComponent } from '../../components/footer/footer.component';
 
 @Component({
   selector: 'app-detail',
   standalone: true,
-  imports: [CommonModule, NavComponent, CurrencyPipe, NgClass, SafeUrlPipe],
+  imports: [
+    FooterComponent,
+    CommonModule,
+    NavComponent,
+    CurrencyPipe,
+    NgClass,
+    SafeUrlPipe,
+  ],
   templateUrl: './detail.component.html',
   styleUrl: './detail.component.css',
 })

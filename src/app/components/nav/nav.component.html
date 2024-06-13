@@ -1,15 +1,19 @@
 <nav>
   <div class="wrapper">
-    <div class="logo"><a href="#">Bit Shoop</a></div>
+    <div class="logo"><a routerLink="/home">Bit Shoop</a></div>
     <input type="radio" name="slider" id="menu-btn">
     <input type="radio" name="slider" id="close-btn">
 
     <ul class="nav-links">
-      <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+      <label for="close-btn" class="btn close-btn"><span class="button-icon material-symbols-outlined">
+          close
+        </span></label>
       <li><a routerLink="/home">Home</a></li>
       <li><a routerLink="/videogamelist">Games</a></li>
       <li>
-        <a href="#" class="desktop-item">Categories</a>
+        <a class="desktop-item">Categories <span class="material-symbols-outlined">
+            arrow_drop_down
+          </span></a>
         <input type="checkbox" id="showMega">
         <label for="showMega" class="mobile-item">Categories</label>
         <div class="mega-box">
@@ -57,17 +61,47 @@
           <input type="text" id="search-bar" class="form-control" placeholder="Search Game" aria-label="Game"
             aria-describedby="button-addon2" [(ngModel)]="name" name="name" required>
           <button class="navbar-toggler pe-0" type="submit">
-            <a class="login-button">Search</a>
+            <span class="button-icon search-button material-symbols-outlined">
+              search
+            </span>
           </button>
         </form>
       </div>
-      <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-        <a *ngIf="!isLogged()" routerLink="/login" class="login-button">Login</a>
+      <button class="button-icon navbar-toggler pe-0" type="button">
+        <span *ngIf="!isLogged()" routerLink="/login" class="material-symbols-outlined">
+          person
+        </span>
       </button>
-      <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+      <button class="button-icon navbar-toggler pe-0" (click)="toggleCartVisibility()">
+        <span class="material-symbols-outlined">
+          shopping_cart
+        </span>
+      </button>
+      <label for="menu-btn" class="btn menu-btn navbar-toggler pe-0"><span class="material-symbols-outlined">
+          menu
+        </span></label>
     </div>
 
   </div>
 
 </nav>
+
+<aside [ngClass]="showCart() ? 'cart show' : 'cart'">
+  <h2>
+    Carrito(88)
+  </h2>
+  <button class="close" (click)="toggleCartVisibility()">
+    <span class="material-symbols-outlined">
+      close
+    </span>
+  </button>
+  <section class="card-cart">
+
+  </section>
+  <div class="details">
+    <h3>total
+      <span>$100</span>
+    </h3>
+    <a routerLink="/checkout" class="checkout">checkout</a>
+  </div>
+</aside>
