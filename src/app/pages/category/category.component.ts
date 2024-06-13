@@ -39,13 +39,6 @@ export class CategoryComponent {
           },
         });
     }
-    if (this.name !== '') {
-      this.categoriesService.getVideogameSearch(this.name).subscribe({
-        next: (videogames: any) => {
-          this.videogames.set(videogames.data);
-        },
-      });
-    }
   }
 
   ngOnChanges(changes: SimpleChanges) {
