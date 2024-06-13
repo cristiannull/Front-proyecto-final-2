@@ -1,6 +1,5 @@
 main {
   min-height: 80vh;
-  margin-top: 54px;
 }
 
 .hero {
@@ -30,7 +29,6 @@ main {
   background-image: url("https://i.pinimg.com/originals/10/dd/02/10dd02f9476f82d05f17d88a31e3c80b.jpg");
   background-size: cover;
   background-position: center;
-  margin-top: 6rem;
 }
 
 /* ====================
@@ -158,6 +156,6 @@ xxl  ≥  1400px
     width: 100%;
   }
   .tarjeta-wrapper {
-    max-width: 390px;
+    max-width: 320px;
   }
 }

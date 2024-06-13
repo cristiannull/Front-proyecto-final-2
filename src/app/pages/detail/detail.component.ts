@@ -15,7 +15,6 @@ import { SafeUrlPipe } from '../../safe-url.pipe';
 export class DetailComponent {
   private videogamesService = inject(VideogamesService);
 
-  notAvailable = true;
   videogame = signal<any>({});
   @Input() id: string = '';
 

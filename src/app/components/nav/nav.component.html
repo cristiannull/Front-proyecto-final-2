@@ -1,30 +1,73 @@
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand me-auto" routerLink="/">Bit Shop</a>
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header bg-dark">
-                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Bit Shop</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+<nav>
+  <div class="wrapper">
+    <div class="logo"><a href="#">Bit Shoop</a></div>
+    <input type="radio" name="slider" id="menu-btn">
+    <input type="radio" name="slider" id="close-btn">
+
+    <ul class="nav-links">
+      <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+      <li><a routerLink="/home">Home</a></li>
+      <li><a routerLink="/videogamelist">Games</a></li>
+      <li>
+        <a href="#" class="desktop-item">Categories</a>
+        <input type="checkbox" id="showMega">
+        <label for="showMega" class="mobile-item">Categories</label>
+        <div class="mega-box">
+          <div class="content">
+            <div class="row">
+              <header>Gender</header>
+              <ul class="mega-links">
+                <li> @for(gender of genders(); track gender._id ){ <a
+                    [routerLink]="['/category/gender/',gender.name]">{{gender.name}}</a>
+                  }</li>
+              </ul>
             </div>
-            <div class="offcanvas-body bg-dark">
-                <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
-                    <li class="nav-item">
-                        <a class="nav-link mx-lg-2 " aria-current="page" routerLink="/home"
-                            routerLinkActive="active">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link mx-lg-2" routerLink="/videogamelist" routerLinkActive="active">Productos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link mx-lg-2 " routerLink="About" routerLinkActive="active">About</a>
-                    </li>
-                </ul>
+            <div class="row">
+              <header>Theme</header>
+              <ul class="mega-links">
+                <li>@for(theme of themes(); track theme._id ){ <a
+                    [routerLink]="['/category/theme/',theme.name]">{{theme.name}}</a>
+                  }</li>
+              </ul>
             </div>
+            <div class="row">
+              <header>Game mode </header>
+              <ul class="mega-links">
+                <li>@for(gamemode of gamemodes(); track gamemode._id ){ <a
+                    [routerLink]="['/category/gamemode/',gamemode.name]">{{gamemode.name}}</a>
+                  }</li>
+              </ul>
+            </div>
+            <div class="row">
+              <header>Pegi </header>
+              <ul class="mega-links">
+                <li>@for(pegi of pegis(); track pegi._id ){ <a
+                    [routerLink]="['/category/pegi/',pegi.name]">{{pegi.name}}</a>
+                  }</li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </li>
+    </ul>
+
+    <div class=" container-button">
+      <div class="search">
+        <form (ngSubmit)="onSubmit()">
+          <input type="text" id="search-bar" class="form-control" placeholder="Search Game" aria-label="Game"
+            aria-describedby="button-addon2" [(ngModel)]="name" name="name" required>
+          <button class="navbar-toggler pe-0" type="submit">
+            <a class="login-button">Search</a>
+          </button>
+        </form>
+      </div>
+      <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <a *ngIf="!isLogged()" routerLink="/login" class="login-button">Login</a>
-        <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-            aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+      </button>
+      <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
     </div>
+
+  </div>
+
 </nav>

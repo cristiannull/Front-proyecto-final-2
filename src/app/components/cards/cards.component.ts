@@ -1,6 +1,5 @@
 import { Component, signal, inject, Input } from '@angular/core';
 import { VideogamesService } from '../../service/videogames.service';
-import { NgClass, CommonModule, CurrencyPipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
