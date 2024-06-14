@@ -1,7 +1,9 @@
 <div class="product text-light">
   <a [routerLink]="['/detail/', name, id]">
     <figure>
-      <img [src]="image" />
+      <div class="block shadow">
+        <img [src]="image" />
+      </div>
       <figcaption>
         <h3>{{name}}</h3>
         <p>${{price}}</p>

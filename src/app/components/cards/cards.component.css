@@ -20,30 +20,72 @@
   height: 100%;
 }
 
+.block {
+  border-radius: 16px;
+  position: relative;
+  width: 280px;
+  background: linear-gradient(0deg, #000, #262626);
+}
+
+.shadow:hover {
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    background: linear-gradient(
+      45deg,
+      #fb00c9,
+      #0ef,
+      #d90000,
+      #fb00c9,
+      #0ef,
+      #d90000
+    );
+    background-size: 400%;
+    border-radius: 16px;
+    z-index: -1;
+    animation: shadow 20s linear infinite;
+    transition: all 1s ease-in-out;
+  }
+
+  &:after {
+    top: -8px;
+    left: -8px;
+    width: calc(100% + 16px);
+    height: calc(100% + 16px);
+    filter: blur(24px);
+    opacity: 0.9;
+    transition: all 1s ease-in-out;
+  }
+}
+
+@keyframes shadow {
+  0% {
+    background-position: 0 0;
+  }
+  50.01% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
 .product figure img {
   width: 100%;
   height: 100%;
   aspect-ratio: 1 / 1.1;
   object-fit: cover;
-  border-radius: 10px;
-  border: 2px cyan solid;
-  box-shadow: 3px 3px 10px cyan;
-}
-.product figure figcaption {
-  margin-top: 0.5rem;
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0, 238, 255, 0.597);
 }
 
-.product figure figcaption .featured {
-  position: absolute;
-  top: 0;
-  right: 0;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  color: white;
-  background: blue;
-  font-weight: 600;
-  padding: 0.2rem 0.4rem;
-  letter-spacing: 0.1rem;
+.product figure figcaption {
+  margin-top: 0.5rem;
 }
 
 .product figure figcaption h3 {

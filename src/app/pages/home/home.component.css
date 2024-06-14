@@ -44,7 +44,7 @@ main {
 
 .tarjeta-wrapper {
   max-width: 1165px;
-  padding: 24px 0px;
+  padding: 75px 4px 15px;
   overflow-x: hidden;
   display: flex;
   gap: 12px;
@@ -57,34 +57,11 @@ main {
   display: block;
 }
 
-.next-game {
-  position: absolute;
-  z-index: 200;
-  background: none;
-  color: white;
-  width: 70px;
-  height: 70px;
-  font-size: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 100%;
-  outline: none;
-  border: none;
-  top: 35%;
-  right: -35px;
-  cursor: pointer;
-}
-
-.next-game:hover {
-  transition: box-shadow 0, 2s ease-in-out;
-  box-shadow: 1px 1px 15px 0 rgba(255, 255, 255, 0.708);
-}
-
+.next-game,
 .prev-game {
   position: absolute;
-  background: none;
   z-index: 200;
+  background: none;
   color: white;
   width: 70px;
   height: 70px;
@@ -95,12 +72,21 @@ main {
   border-radius: 100%;
   outline: none;
   border: none;
-  top: 35%;
-  left: -35px;
+
   cursor: pointer;
 }
 
-.prev-game:hover {
+.next-game {
+  top: 42%;
+  right: -4%;
+}
+.prev-game {
+  top: 42%;
+  left: -2.5%;
+}
+
+.prev-game:hover,
+.next-game:hover {
   transition: box-shadow 0, 2s ease-in-out;
   box-shadow: 1px 1px 16px 0 rgba(255, 255, 255, 0.708);
 }
