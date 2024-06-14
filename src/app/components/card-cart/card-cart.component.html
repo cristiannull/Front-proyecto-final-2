@@ -1,17 +1,17 @@
-<article>
+<article class="product">
     <figure>
-        <img [src]="videogame.image" alt="">
+        <img [src]="videogame.image[0]" alt="">
         <figcaption>
             <p>{{videogame.name}}</p>
-            <p>{{videogame.price}}</p>
+            <p>{{videogame.price | currency}}</p>
         </figcaption>
     </figure>
     <div class="actions">
-        <button><i class="fa-regular fa-trash-can"></i></button>
-        <form action="" class="action">
-            <button class="decrement">-</button>
-            <input type="text">
-            <button class="increment"></button>+
+        <button>Borrar</button>
+        <form action="">
+            <button type="button" class="decrement" (click)="decrement(videogame._id)">-</button>
+            <input type="number" name="quantity" id="quantity" [formControl]="productQuantity">
+            <button type="button" class="increment" (click)="increment(videogame._id)">+</button>
         </form>
     </div>
 </article>

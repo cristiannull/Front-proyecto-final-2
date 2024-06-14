@@ -23,9 +23,9 @@ export class CardsComponent {
       '[ngOnInit] El componente lista de videojuegos ha sido inicializado'
     );
     this.videogamesService.getVideogames().subscribe({
-      next: (videogames) => {
-        this.videogames.set(videogames);
+      next: (videogames: any) => {
+        this.videogames.set(videogames.data);
       },
     });
-  }
+  }  
 }

@@ -6,11 +6,13 @@ import { CommonModule } from '@angular/common';
 import { NgClass } from '@angular/common';
 import { CategoriesService } from '../../service/categories.service';
 import { FormsModule } from '@angular/forms';
+import { CartService } from '../../service/cart.service';
+import { CardCartComponent } from '../card-cart/card-cart.component';
 
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [RouterLinkActive, RouterLink, CommonModule, NgClass, FormsModule],
+  imports: [RouterLinkActive, RouterLink, CommonModule, NgClass, FormsModule, CardCartComponent],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css',
 })
@@ -20,6 +22,7 @@ export class NavComponent {
   private authService = inject(AuthService);
   private router = inject(Router);
   private categoriesService = inject(CategoriesService);
+  private cartService = inject(CartService)
 
   constructor() {}
   @Input() id: string = '';
@@ -37,6 +40,7 @@ export class NavComponent {
   gendervideogames = signal<any>([]);
   featuredvideogames = signal<any>([]);
   showCart = signal(false);
+  cart = this.cartService.videogames
 
   ngOnInit() {
     console.warn('[ngOnInit] Se ha inicializado el componente Detail');

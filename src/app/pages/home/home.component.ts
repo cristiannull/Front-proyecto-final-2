@@ -4,6 +4,7 @@ import { NavComponent } from '../../components/nav/nav.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { VideogamesService } from '../../service/videogames.service';
 import { FooterComponent } from '../../components/footer/footer.component';
+import { CartService } from '../../service/cart.service';
 
 @Component({
   selector: 'app-home',
@@ -20,6 +21,7 @@ import { FooterComponent } from '../../components/footer/footer.component';
 })
 export class HomeComponent {
   private videogamesService = inject(VideogamesService);
+  private cartService = inject(CartService)
 
   videogames = signal<any>([]);
   featuredVideogames = signal<any>([]);
@@ -41,6 +43,7 @@ export class HomeComponent {
         this.onsalevideogames.set(videogames.data.slice(0, 10));
       },
     });
+
   }
 
   nextGame() {
@@ -73,5 +76,11 @@ export class HomeComponent {
       left: tarjetas.scrollLeft - tarjetas.offsetWidth,
       behavior: 'smooth',
     });
+  }
+
+  addToCart(videogame: any) {
+    console.log(videogame);
+    
+    this.cartService.addToCart(videogame)
   }
 }
