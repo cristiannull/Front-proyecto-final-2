@@ -76,6 +76,7 @@
         <span class="material-symbols-outlined">
           shopping_cart
         </span>
+        {{cart().size}}
       </button>
       <label for="menu-btn" class="btn menu-btn navbar-toggler pe-0"><span class="material-symbols-outlined">
           menu
@@ -101,9 +102,7 @@
 }
   </section>
   <div class="details">
-    <h3>total
-      <span>$100</span>
-    </h3>
+    <h3>Total:&nbsp;<span> {{ total() | currency}}</span> </h3>
     <a routerLink="/checkout" class="checkout">checkout</a>
   </div>
 </aside>

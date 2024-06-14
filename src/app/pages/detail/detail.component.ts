@@ -38,11 +38,6 @@ export class DetailComponent {
         console.error(error);
       },
     });
-    this.videogamesService.getVideogames().subscribe({
-      next: (videogames: any) => {
-        this.videogame.set(videogames.data);
-      },
-    });
   }
 
   addToCart(videogame: any) {

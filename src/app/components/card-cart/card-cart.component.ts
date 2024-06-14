@@ -11,7 +11,6 @@ import { CurrencyPipe } from '@angular/common';
   styleUrl: './card-cart.component.css',
 })
 export class CardCartComponent {
-  private videogameService = inject(VideogamesService);
 private cartservice = inject(CartService)
   videogames = signal<any>([]);
   @Input() videogame: any;
@@ -34,4 +33,7 @@ decrement(videogameId: string) {
   this.cartservice.decrementQuantity(videogameId)
 }
 
+deleteToCart(videogameId: string) {
+  this.cartservice.deleteItem(videogameId)
+}
 }

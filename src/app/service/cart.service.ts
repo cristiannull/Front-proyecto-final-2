@@ -1,4 +1,4 @@
-import { Injectable, signal} from '@angular/core';
+import { Injectable, signal, computed} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -6,6 +6,16 @@ import { Injectable, signal} from '@angular/core';
 export class CartService {
 
  videogames = signal(new Map())
+
+total = computed(() => {
+  let mapActual = this.videogames()
+  let totalParcial = 0;
+
+  for(let videogame of mapActual.values()) {
+    totalParcial += videogame.price * videogame.quantity
+  }
+  return totalParcial
+})
 
  addToCart(videogame: any) {
   this.videogames.update((mapActual: any) => {
@@ -43,5 +53,15 @@ export class CartService {
   })
  }
 
+deleteItem(videogameId: string) {
+  this.videogames.update(mapActual => {
+    const videogameExist = mapActual.get(videogameId)
+    if(videogameExist !== undefined) {
+      mapActual.delete(videogameId)
+    }
+    return new Map(mapActual)
+  })
+
+}
   constructor() { }
 }
