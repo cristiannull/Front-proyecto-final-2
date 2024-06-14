@@ -7,7 +7,7 @@
         </figcaption>
     </figure>
     <div class="actions">
-        <button>Borrar</button>
+        <button (click)="deleteToCart(videogame._id)">Borrar</button>
         <form action="">
             <button type="button" class="decrement" (click)="decrement(videogame._id)">-</button>
             <input type="number" name="quantity" id="quantity" [formControl]="productQuantity">

@@ -34,7 +34,7 @@
         <div class="col text-light infogame">
           <h1 class="title-videogame">{{videogame().name}}</h1>
           <p class="price-videogame">$ {{videogame().price}}</p>
-          <button class="button-icon navbar-toggler pe-0" (click)="addToCart(videogame)" >
+          <button class="button-icon navbar-toggler pe-0" (click)="addToCart(videogame())" >
             <span class="material-symbols-outlined">
               shopping_cart
             </span>
@@ -46,7 +46,6 @@
                 @for(gamemode of videogame()?.gamemode; track gamemode._id){
                 {{gamemode.name}}
                 }
-                <button class="add-cart" (click)="addToCart(videogame)">Agregar al carrito</button>
               </li>
               <li class="item">developer: {{videogame()?.developer[0]?.name}}</li>
               <li class="item">gender:

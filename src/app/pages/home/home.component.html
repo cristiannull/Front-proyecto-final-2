@@ -25,7 +25,6 @@
             @for(videogame of featuredvideogames(); track videogame._id){
             <app-cards [id]="videogame._id" [name]="videogame.name" [price]="videogame.price"
               [image]="videogame.image[0]" />
-              <button class="add-cart" (click)="addToCart(videogame)">Agregar al carrito</button>
             }
           </div>
           <button class="next-game" (click)="nextOnSaleGame()">
@@ -53,7 +52,6 @@
             @for(videogame of onsalevideogames(); track videogame._id){
             <app-cards [id]="videogame._id" [name]="videogame.name" [price]="videogame.price"
               [image]="videogame.image[0]" />
-              <button class="add-cart" (click)="addToCart(videogame)">Agregar al carrito</button>
             }
           </div>
           <button class="next-game" (click)="nextGame()">
