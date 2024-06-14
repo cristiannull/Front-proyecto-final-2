@@ -5,6 +5,7 @@ import { CurrencyPipe } from '@angular/common';
 import { NgClass, CommonModule } from '@angular/common';
 import { SafeUrlPipe } from '../../safe-url.pipe';
 import { FooterComponent } from '../../components/footer/footer.component';
+import { CartService } from '../../service/cart.service';
 
 @Component({
   selector: 'app-detail',
@@ -22,10 +23,11 @@ import { FooterComponent } from '../../components/footer/footer.component';
 })
 export class DetailComponent {
   private videogamesService = inject(VideogamesService);
+  private cartService = inject(CartService)
 
   videogame = signal<any>({});
   @Input() id: string = '';
-
+  
   ngOnInit() {
     console.warn('[ngOnInit] Se ha inicializado el componente Detail');
     this.videogamesService.getOneVideogameByName(this.id).subscribe({
@@ -36,5 +38,14 @@ export class DetailComponent {
         console.error(error);
       },
     });
+    this.videogamesService.getVideogames().subscribe({
+      next: (videogames: any) => {
+        this.videogame.set(videogames.data);
+      },
+    });
   }
+
+  addToCart(videogame: any) {
+  this.cartService.addToCart(videogame)
+}
 }

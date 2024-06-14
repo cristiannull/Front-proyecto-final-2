@@ -76,6 +76,29 @@ iframe {
   font-size: 18px;
 }
 
+.button-icon {
+  right: 20px;
+  top: 23px;
+  background: none;
+  border: none;
+  color: cyan;
+  text-align: center;
+  margin: 0 8px;
+  box-shadow: 0 0px 18px cyan, 0 -3px 10px rgb(107, 104, 104);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center ;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "wght" 800, "GRAD" 0, "opsz" 48;
+  font-size: 40px;
+  padding: 10px;
+}
+
 /* ====================
   - Newsletter
   ==================== */

@@ -240,6 +240,21 @@ aside a.checkout:hover {
 aside.cart.show {
   transform: translateX(0);
 }
+section.cart-products {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-grow: 1;
+  margin-top: 2rem;
+}
+
+aside .details {}
+
+aside .details h3 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
 /*===================
   media query
   ===================
