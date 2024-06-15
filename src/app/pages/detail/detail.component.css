@@ -1,6 +1,6 @@
 main {
   min-height: 80vh;
-  margin-top: 54px;
+  margin-top: 20px;
 }
 .container {
   padding: 0 !important;
@@ -87,10 +87,14 @@ iframe {
   box-shadow: 0 0px 18px cyan, 0 -3px 10px rgb(107, 104, 104);
   border-radius: 10px;
   display: flex;
-  justify-content: center ;
+  justify-content: center;
   align-items: center;
   text-align: center;
   margin-bottom: 15px;
+}
+
+.button-icon h2 {
+  padding-right: 15px;
 }
 
 .material-symbols-outlined {

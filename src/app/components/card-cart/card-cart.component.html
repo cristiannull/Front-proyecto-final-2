@@ -1,17 +1,34 @@
 <article class="product">
-    <figure>
-        <img [src]="videogame.image[0]" alt="">
-        <figcaption>
-            <p>{{videogame.name}}</p>
-            <p>{{videogame.price | currency}}</p>
-        </figcaption>
-    </figure>
+    <div class="image block shadow">
+        <a [routerLink]="['/detail/', videogame.name,videogame._id]">
+            <img [src]="videogame.image[0]" alt="">
+        </a>
+    </div>
+    <div class="detail">
+        <p>{{videogame.name}}</p>
+        <p>{{videogame.price | currency}}</p>
+    </div>
     <div class="actions">
-        <button (click)="deleteToCart(videogame._id)">Borrar</button>
+
         <form action="">
-            <button type="button" class="decrement" (click)="decrement(videogame._id)">-</button>
+            <button type="button" class="decrement" (click)="decrement(videogame._id)">
+                <span class="material-symbols-outlined">
+                    remove
+                </span>
+            </button>
             <input type="number" name="quantity" id="quantity" [formControl]="productQuantity">
-            <button type="button" class="increment" (click)="increment(videogame._id)">+</button>
+            <button type="button" class="increment" (click)="increment(videogame._id)">
+                <span class="material-symbols-outlined">
+                    add
+                </span>
+            </button>
         </form>
+        <div class="delete-button">
+            <button (click)="deleteToCart(videogame._id)">
+                <span class="material-symbols-outlined">
+                    delete
+                </span>
+            </button>
+        </div>
     </div>
 </article>

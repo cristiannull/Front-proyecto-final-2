@@ -34,10 +34,11 @@
         <div class="col text-light infogame">
           <h1 class="title-videogame">{{videogame().name}}</h1>
           <p class="price-videogame">$ {{videogame().price}}</p>
-          <button class="button-icon navbar-toggler pe-0" (click)="addToCart(videogame())" >
+          <button class="button-icon navbar-toggler pe-0" (click)="addToCart(videogame())">
             <span class="material-symbols-outlined">
               shopping_cart
             </span>
+            <h2>Add to cart</h2>
           </button>
           <article class="card-videogame">
             <ul>

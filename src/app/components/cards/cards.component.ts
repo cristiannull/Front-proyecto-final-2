@@ -1,5 +1,5 @@
-import { Component, signal, inject, Input } from '@angular/core';
-import { VideogamesService } from '../../service/videogames.service';
+import { Component, signal, Input } from '@angular/core';
+
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -10,22 +10,9 @@ import { RouterLink } from '@angular/router';
   styleUrl: './cards.component.css',
 })
 export class CardsComponent {
-  private videogamesService = inject(VideogamesService);
-
   videogames = signal<any>([]);
   @Input() id: string = '';
   @Input() name: string = '';
   @Input() price: string = '';
   @Input() image: string = '';
-
-  ngOnInit() {
-    console.warn(
-      '[ngOnInit] El componente lista de videojuegos ha sido inicializado'
-    );
-    this.videogamesService.getVideogames().subscribe({
-      next: (videogames: any) => {
-        this.videogames.set(videogames.data);
-      },
-    });
-  }  
 }
