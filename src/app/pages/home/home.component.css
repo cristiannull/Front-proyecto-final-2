@@ -1,9 +1,21 @@
+.placeholder {
+  background-color: grey;
+  border-radius: 6px;
+}
+.loader-nav {
+  border: 1px solid grey;
+  height: 85px;
+  margin: 5px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  padding: 15px;
+}
+/* ====================
+- main
+==================== */
+
 main {
   min-height: 80vh;
-}
-
-.hero {
-  margin-top: 6rem;
 }
 
 .section-text-combo {
@@ -34,63 +46,10 @@ main {
 /* ====================
 - Products Section
 ==================== */
-.carrusel-featured,
-.carrusel-on-sale {
-  position: relative;
-  width: fit-content;
-  height: fit-content;
+.swiper-container {
   margin: 0 auto;
+  width: 81%;
 }
-
-.tarjeta-wrapper {
-  max-width: 1165px;
-  padding: 75px 4px 15px;
-  overflow-x: hidden;
-  display: flex;
-  gap: 25px;
-  position: relative;
-  z-index: 100;
-  margin: 0 auto;
-}
-
-.carrusel:hover .next-game {
-  display: block;
-}
-
-.next-game,
-.prev-game {
-  position: absolute;
-  z-index: 200;
-  background: none;
-  color: white;
-  width: 70px;
-  height: 70px;
-  font-size: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 100%;
-  outline: none;
-  border: none;
-
-  cursor: pointer;
-}
-
-.next-game {
-  top: 42%;
-  right: -4%;
-}
-.prev-game {
-  top: 42%;
-  left: -2.5%;
-}
-
-.prev-game:hover,
-.next-game:hover {
-  transition: box-shadow 0, 2s ease-in-out;
-  box-shadow: 1px 1px 16px 0 rgba(255, 255, 255, 0.708);
-}
-
 /* ====================
 - Newsletter
 ==================== */

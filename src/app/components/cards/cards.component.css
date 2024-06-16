@@ -1,6 +1,6 @@
 .product {
   position: relative;
-  width: 280px;
+  max-width: 280px;
   transition: transform 0.3s ease;
   padding: 6px 6px 0 6px;
   text-align: left;
@@ -23,7 +23,7 @@
 .block {
   border-radius: 16px;
   position: relative;
-  width: 280px;
+  max-width: 280px;
   background: linear-gradient(0deg, #000, #262626);
 }
 

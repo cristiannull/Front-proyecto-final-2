@@ -2,9 +2,6 @@ main {
   min-height: 80vh;
   margin-top: 20px;
 }
-.container {
-  padding: 0 !important;
-}
 
 .carouselsize {
   height: 400px;
@@ -68,6 +65,7 @@ iframe {
 }
 
 .container {
+  padding: 0 !important;
   padding-left: 200px;
   padding-right: 200px;
 }
@@ -113,37 +111,6 @@ iframe {
 }
 #newsletter small {
   color: red;
-}
-
-/* ====================
-    - Footer section
-    ==================== */
-
-footer {
-  background-color: #212529;
-  color: white;
-}
-
-footer ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-footer ul li {
-  color: #888;
-  font-size: 0.9rem;
-}
-
-footer ul li.list-title {
-  padding-bottom: 1rem;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-}
-
-footer .copyright {
-  font-size: 0.9rem;
-  color: #888;
 }
 
 /* ====================

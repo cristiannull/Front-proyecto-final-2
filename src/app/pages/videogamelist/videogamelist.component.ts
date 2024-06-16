@@ -4,11 +4,13 @@ import { NavComponent } from '../../components/nav/nav.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { VideogamesService } from '../../service/videogames.service';
 import { FooterComponent } from '../../components/footer/footer.component';
+import { SkeletonModule } from 'primeng/skeleton';
 
 @Component({
   selector: 'app-videogamelist',
   standalone: true,
   imports: [
+    SkeletonModule,
     CardsComponent,
     NavComponent,
     RouterLinkActive,
@@ -22,6 +24,8 @@ export class VideogamelistComponent {
   private videogamesService = inject(VideogamesService);
 
   videogames = signal<any>([]);
+  isLoading: boolean = true;
+  data: any;
 
   ngOnInit() {
     console.warn(
@@ -30,6 +34,16 @@ export class VideogamelistComponent {
     this.videogamesService.getVideogames().subscribe({
       next: (videogames: any) => {
         this.videogames.set(videogames.data);
+      },
+    });
+    this.videogamesService.getVideogames().subscribe({
+      next: (response) => {
+        this.data = response;
+        this.isLoading = false;
+      },
+      error: (error) => {
+        console.error('Error loading data', error);
+        this.isLoading = false;
       },
     });
   }

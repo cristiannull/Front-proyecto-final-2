@@ -5,15 +5,19 @@
     <input type="radio" name="slider" id="close-btn">
 
     <ul class="nav-links">
-      <label for="close-btn" class="btn close-btn"><span class="button-icon material-symbols-outlined">
+      <label for="close-btn" class="btn close-btn">
+        <span class="button-icon material-symbols-outlined">
           close
-        </span></label>
+        </span>
+      </label>
       <li><a routerLink="/home">Home</a></li>
       <li><a routerLink="/videogamelist">Games</a></li>
       <li>
-        <a class="desktop-item">Categories <span class="material-symbols-outlined">
+        <a class="desktop-item">Categories
+          <span class="material-symbols-outlined">
             arrow_drop_down
-          </span></a>
+          </span>
+        </a>
         <input type="checkbox" id="showMega">
         <label for="showMega" class="mobile-item">Categories</label>
         <div class="mega-box">
@@ -78,9 +82,11 @@
         </span>
         {{cart().size}}
       </button>
-      <label for="menu-btn" class="btn menu-btn navbar-toggler pe-0"><span class="material-symbols-outlined">
+      <label for="menu-btn" class="btn menu-btn navbar-toggler pe-0">
+        <span class="material-symbols-outlined">
           menu
-        </span></label>
+        </span>
+      </label>
     </div>
 
   </div>
@@ -108,7 +114,9 @@
     </section>
     <div class="details">
       <div class="checkout-box">
-        <h3>Total:&nbsp;<span> {{ total() | currency}}</span> </h3>
+        <h3>Total:&nbsp;
+          <span> {{ total() | currency}}</span>
+        </h3>
         <a routerLink="/checkout" class="checkout">checkout</a>
       </div>
     </div>

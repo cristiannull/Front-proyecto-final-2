@@ -48,16 +48,24 @@
                 {{gamemode.name}}
                 }
               </li>
-              <li class="item">developer: {{videogame()?.developer[0]?.name}}</li>
+              <li class="item">
+                developer:
+                @for(developer of videogame()?.developer; track developer._id){
+                {{developer.name}}
+                } </li>
               <li class="item">gender:
                 @for(gender of videogame()?.gender; track gender._id){
                 {{gender.name}}
-                }</li>
-              <li class="item">pegi: {{videogame()?.pegi[0]?.name}}</li>
+                }
+              </li>
+              <li class="item">pegi: @for(pegi of videogame()?.pegi; track pegi._id){
+                {{pegi.name}}
+                } </li>
               <li class="item">theme:
                 @for(theme of videogame()?.theme; track theme._id){
                 {{theme.name}}
-                }</li>
+                }
+              </li>
             </ul>
           </article>
         </div>

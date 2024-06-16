@@ -1,4 +1,4 @@
-import { Component, inject, Input, signal } from '@angular/core';
+import { Component, inject, Input, signal, SimpleChanges } from '@angular/core';
 import { NavComponent } from '../../components/nav/nav.component';
 import { VideogamesService } from '../../service/videogames.service';
 import { CurrencyPipe } from '@angular/common';
@@ -23,11 +23,15 @@ import { CartService } from '../../service/cart.service';
 })
 export class DetailComponent {
   private videogamesService = inject(VideogamesService);
-  private cartService = inject(CartService)
+  private cartService = inject(CartService);
 
   videogame = signal<any>({});
+  videogames = signal<any>({});
   @Input() id: string = '';
-  
+  @Input() filterBy: string = '';
+  @Input() filterValue: string = '';
+  @Input() name: string = '';
+
   ngOnInit() {
     console.warn('[ngOnInit] Se ha inicializado el componente Detail');
     this.videogamesService.getOneVideogameByName(this.id).subscribe({
@@ -40,7 +44,17 @@ export class DetailComponent {
     });
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['name'] || changes['id']) {
+      this.videogamesService.getOneVideogameByName(this.id).subscribe({
+        next: (videogame) => {
+          this.videogame.set(videogame);
+        },
+      });
+    }
+  }
+
   addToCart(videogame: any) {
-  this.cartService.addToCart(videogame)
-}
+    this.cartService.addToCart(videogame);
+  }
 }

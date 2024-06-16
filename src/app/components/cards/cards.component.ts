@@ -1,5 +1,4 @@
 import { Component, signal, Input } from '@angular/core';
-
 import { RouterLink } from '@angular/router';
 
 @Component({

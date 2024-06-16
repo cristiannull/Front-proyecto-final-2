@@ -1,3 +1,62 @@
+@if(isLoading){
+<nav>
+    <div class="loader-nav d-flex justify-content-between align-items-center">
+        <div>
+            <p-skeleton class="placeholder" width="5rem" height="3rem" />
+        </div>,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        <div class="d-flex gap-3 align-items-center">
+            <div>
+                <p-skeleton class="placeholder" width="4rem" height="3rem" />
+            </div>
+            <div>
+                <p-skeleton class="placeholder" width="4rem" height="3rem" />
+            </div>
+            <div>
+                <p-skeleton class="placeholder" width="4rem" height="3rem" />
+            </div>
+        </div>,,,
+        <div class="d-flex align-items-center gap-3">
+            <div>
+                <p-skeleton class="placeholder" width="7rem" height="2rem" />
+            </div>
+            <div>
+                <p-skeleton class="placeholder" shape="circle" size="2rem" styleClass="mr-2" />
+            </div>
+            <div>
+                <p-skeleton class="placeholder" shape="circle" size="2rem" styleClass="mr-2" />
+            </div>
+        </div>
+    </div>
+</nav>
+<section id="products" class="my-3 pt-3">
+    <div class="container">
+        <div class="section-text-combo text-light pt-4">
+            <h2 class="card-title placeholder-glow d-flex justify-content-center">
+                <p-skeleton class="placeholder" width="14rem" height="3rem" />
+            </h2>
+        </div>
+        <div class="d-flex justify-content-between wrap mt-5">
+            @if(videogames().length !== 0){
+            @for(videogame of videogames(); track videogame._id){
+            <figure>
+                <div class="placeholder-glow">
+                    <p-skeleton class="placeholder" width="18rem" height="20rem" />
+                </div>
+                <figcaption class="placeholder-glow mt-1">
+                    <div>
+                        <p-skeleton class="placeholder" width="11rem" height="1rem" />
+                    </div>
+                    <div>
+                        <p-skeleton class="placeholder" width="5rem" height="1rem" />
+                    </div>
+                </figcaption>
+            </figure>
+            }
+            }
+        </div>
+    </div>
+</section>
+}@else{
 <app-nav />
 <section id="products" class="my-3 pt-3">
     <div class="container">
@@ -6,14 +65,13 @@
         </div>
         <div class="d-flex justify-content-between wrap mt-5">
             @if(videogames().length !== 0){
-
             @for(videogame of videogames(); track videogame._id){ <app-cards [id]="videogame._id"
                 [name]="videogame.name" [price]="videogame.price" [image]="videogame.image[0]" />
             }
-
             }
         </div>
     </div>
 </section>
+}
 
-<app-footer>
+<app-footer />

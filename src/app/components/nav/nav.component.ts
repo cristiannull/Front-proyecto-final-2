@@ -2,7 +2,7 @@ import { Component, inject, signal, Input } from '@angular/core';
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 import { UserService } from '../../service/user.service';
 import { AuthService } from '../../service/auth.service';
-import { CommonModule,CurrencyPipe,NgClass } from '@angular/common';
+import { CommonModule, CurrencyPipe, NgClass } from '@angular/common';
 import { CategoriesService } from '../../service/categories.service';
 import { FormsModule } from '@angular/forms';
 import { CartService } from '../../service/cart.service';
@@ -11,7 +11,15 @@ import { CardCartComponent } from '../card-cart/card-cart.component';
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [RouterLinkActive, RouterLink, CommonModule, NgClass, FormsModule, CardCartComponent,CurrencyPipe],
+  imports: [
+    RouterLinkActive,
+    RouterLink,
+    CommonModule,
+    NgClass,
+    FormsModule,
+    CardCartComponent,
+    CurrencyPipe,
+  ],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css',
 })
@@ -21,7 +29,7 @@ export class NavComponent {
   private authService = inject(AuthService);
   private router = inject(Router);
   private categoriesService = inject(CategoriesService);
-  private cartService = inject(CartService)
+  private cartService = inject(CartService);
 
   constructor() {}
   @Input() id: string = '';
@@ -39,8 +47,8 @@ export class NavComponent {
   gendervideogames = signal<any>([]);
   featuredvideogames = signal<any>([]);
   showCart = signal(false);
-  cart = this.cartService.videogames
-  total = this.cartService.total
+  cart = this.cartService.videogames;
+  total = this.cartService.total;
 
   ngOnInit() {
     console.warn('[ngOnInit] Se ha inicializado el componente Detail');
