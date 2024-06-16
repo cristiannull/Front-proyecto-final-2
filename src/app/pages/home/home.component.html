@@ -100,20 +100,17 @@
   <section id="hero">
   </section>
   <section id=" services" class="py-5">
+    <div class="section-text-combo text-light">
+      <h2>Featured</h2>
+    </div>
     <div>
-      <div class="section-text-combo text-light">
-        <h2>Featured</h2>
-      </div>
-      <div>
-        <swiper-container class="swiper-container" slides-per-view="4" loop="true" navigation="true">
-          @for(videogame of featuredvideogames(); track videogame._id){
-          <swiper-slide>
-            <app-cards [id]="videogame._id" [name]="videogame.name" [price]="videogame.price"
-              [image]="videogame.image[0]" />
-          </swiper-slide>
-          }
-        </swiper-container>
-      </div>
+      <swiper-container class="swiper-container" slides-per-view="4" loop="true" navigation="true">
+        @for(videogame of featuredvideogames(); track videogame._id){
+        <swiper-slide>
+          <app-cards [id]="videogame._id" [name]="videogame.name" [price]="videogame.price" [cover]="videogame.cover" />
+        </swiper-slide>
+        }
+      </swiper-container>
     </div>
   </section>
   <section id="featured" class="py-5">
@@ -122,19 +119,19 @@
         <h2>On Sale</h2>
       </div>
       <div>
-        <!-- <swiper-container class="swiper-container" slides-per-view="4" loop="true" navigation="true">
+        <swiper-container class="swiper-container" slides-per-view="4" loop="true" navigation="true">
           @for(videogame of onsalevideogames(); track videogame._id){
           <swiper-slide>
             <app-cards [id]="videogame._id" [name]="videogame.name" [price]="videogame.price"
-              [image]="videogame.image[0]" />
+              [cover]="videogame.cover" />
           </swiper-slide>
-          } 
-        </swiper-container> -->
+          }
+
+        </swiper-container>
+
       </div>
     </div>
-
   </section>
-
 </main>
 }
 <app-footer />

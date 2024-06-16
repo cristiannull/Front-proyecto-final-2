@@ -66,7 +66,7 @@
         <div class="d-flex justify-content-between wrap mt-5">
             @if(videogames().length !== 0){
             @for(videogame of videogames(); track videogame._id){ <app-cards [id]="videogame._id"
-                [name]="videogame.name" [price]="videogame.price" [image]="videogame.image[0]" />
+                [name]="videogame.name" [price]="videogame.price" [cover]="videogame.cover" />
             }
             }
         </div>
