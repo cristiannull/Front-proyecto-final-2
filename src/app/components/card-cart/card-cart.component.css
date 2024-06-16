@@ -1,72 +1,141 @@
 .product {
-    display: flex;
-    gap: 1rem;
-    position: relative;
+  display: grid;
+  grid-template-areas:
+    "a b c"
+    "a b c";
+  grid-template-columns: 2fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  position: relative;
+  width: 100%;
+  gap: 5px;
+  margin-bottom: 25px;
 }
 
-.product figure {
-    width: 60%;
-    display: flex;
-    gap: 1rem;
+.product .image {
+  grid-area: a;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.product figure img {
-    width: 40%;
-    object-fit: cover;
-    border-radius: 3px;
-    aspect-ratio: 1;
+.product .image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  aspect-ratio: 1;
 }
 
-.product figure figcaption {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    font-size: 1rem;
-    flex-grow: 1;
+.product .detail {
+  flex-grow: 1;
+  grid-area: b;
+  color: white;
+  font-size: 16px;
+  align-content: center;
+  text-align: center;
 }
-
-.product figure figcaption p {
-    color: white;
-}
-
-.product figure figcaption {}
 
 .product .actions {
-    height: 100%;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
-    right: 0;
+  grid-area: c;
+  align-content: center;
+  height: 100%;
 }
 
-.product .actions button.delete {}
+.product .actions .material-symbols-outlined:hover {
+  color: rgb(204, 204, 204);
+}
+
+.product .actions button,
+.product .actions form input {
+  background: none;
+  border: none;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .product .actions form {
-    display: flex;
-    gap: 0.5rem
+  display: flex;
+  margin-bottom: 8px;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-
 .product .actions form input {
-    width: 2rem;
-
-    text-align: center;
+  width: 2rem;
+  text-align: center;
 }
 
 .product .actions form button.increment,
 .product .actions form button.decrement {
-    display: inline-block;
-    width: 1.6rem;
-    aspect-ratio: 1 / 1;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+  width: 1.6rem;
+  aspect-ratio: 1 / 1;
+  text-align: center;
+}
+
+.block {
+  border-radius: 16px;
+  position: relative;
+  width: 280px;
+  background: linear-gradient(0deg, #000, #262626);
+}
+
+.shadow:hover {
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    background: linear-gradient(
+      45deg,
+      #fb00c9,
+      #0ef,
+      #d90000,
+      #fb00c9,
+      #0ef,
+      #d90000
+    );
+    background-size: 400%;
+    border-radius: 16px;
+    z-index: -1;
+    animation: shadow 20s linear infinite;
+    transition: all 1s ease-in-out;
+  }
+
+  &:after {
+    top: -8px;
+    left: -8px;
+    width: calc(100% + 16px);
+    height: calc(100% + 16px);
+    filter: blur(24px);
+    opacity: 0.9;
+    transition: all 1s ease-in-out;
+  }
+}
+
+@keyframes shadow {
+  0% {
+    background-position: 0 0;
+  }
+  50.01% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }

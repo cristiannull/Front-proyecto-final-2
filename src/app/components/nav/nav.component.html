@@ -88,21 +88,29 @@
 </nav>
 
 <aside [ngClass]="showCart() ? 'cart show' : 'cart'">
-  <h2>
-    Carrito {{cart().size}}
-  </h2>
-  <button class="close" (click)="toggleCartVisibility()">
-    <span class="material-symbols-outlined">
-      close
-    </span>
-  </button>
-  <section class="cart-products">
-@for(cartProduct of cart().values(); track cartProduct._id){
-  <app-card-cart [videogame]="cartProduct"/>
-}
-  </section>
-  <div class="details">
-    <h3>Total:&nbsp;<span> {{ total() | currency}}</span> </h3>
-    <a routerLink="/checkout" class="checkout">checkout</a>
+  <div>
+    <div>
+      <h2>
+        Carrito {{cart().size}}
+      </h2>
+      <button class="close" (click)="toggleCartVisibility()">
+        <span class="material-symbols-outlined">
+          close
+        </span>
+      </button>
+    </div>
+    <section class="cart-products">
+      <div class="item-list">
+        @for(cartProduct of cart().values(); track cartProduct._id){
+        <app-card-cart [videogame]="cartProduct" />
+        }
+      </div>
+    </section>
+    <div class="details">
+      <div class="checkout-box">
+        <h3>Total:&nbsp;<span> {{ total() | currency}}</span> </h3>
+        <a routerLink="/checkout" class="checkout">checkout</a>
+      </div>
+    </div>
   </div>
 </aside>

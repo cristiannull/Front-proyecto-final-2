@@ -1,5 +1,5 @@
-import { Component, signal, inject, Input } from '@angular/core';
-import { VideogamesService } from '../../service/videogames.service';
+import { Component, signal, Input } from '@angular/core';
+
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -10,8 +10,6 @@ import { RouterLink } from '@angular/router';
   styleUrl: './cards.component.css',
 })
 export class CardsComponent {
-  private videogamesService = inject(VideogamesService);
-
   videogames = signal<any>([]);
   @Input() id: string = '';
   @Input() name: string = '';
@@ -28,4 +26,5 @@ export class CardsComponent {
       },
     });
   }  
+  @Input() image: string = '';
 }
