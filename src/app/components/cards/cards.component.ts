@@ -1,6 +1,7 @@
-import { Component, signal, Input } from '@angular/core';
+import { Component, signal, Input, inject } from '@angular/core';
 
 import { RouterLink } from '@angular/router';
+import { VideogamesService } from '../../service/videogames.service';
 
 @Component({
   selector: 'app-cards',
@@ -10,6 +11,9 @@ import { RouterLink } from '@angular/router';
   styleUrl: './cards.component.css',
 })
 export class CardsComponent {
+
+private videogamesService = inject(VideogamesService)
+
   videogames = signal<any>([]);
   @Input() id: string = '';
   @Input() name: string = '';
@@ -26,5 +30,5 @@ export class CardsComponent {
       },
     });
   }  
-  @Input() image: string = '';
+
 }
