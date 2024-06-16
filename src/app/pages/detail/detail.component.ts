@@ -1,4 +1,4 @@
-import { Component, inject, Input, signal } from '@angular/core';
+import { Component, inject, Input, signal,  CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { NavComponent } from '../../components/nav/nav.component';
 import { VideogamesService } from '../../service/videogames.service';
 import { CurrencyPipe } from '@angular/common';
@@ -6,10 +6,14 @@ import { NgClass, CommonModule } from '@angular/common';
 import { SafeUrlPipe } from '../../safe-url.pipe';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { CartService } from '../../service/cart.service';
+import { register } from 'swiper/element/bundle';
+
+register();
 
 @Component({
   selector: 'app-detail',
   standalone: true,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     FooterComponent,
     CommonModule,

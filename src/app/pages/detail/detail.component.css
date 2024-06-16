@@ -12,6 +12,67 @@ main {
   margin: 0 auto;
 }
 
+swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+swiper-container {
+  width: 100%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+.mySwiper {
+  height: 80%;
+  width: 100%;
+}
+
+.mySwiper2 {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.mySwiper2 swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.mySwiper2 .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .imagesize {
   height: 400px;
   margin: 0 auto;
@@ -54,13 +115,73 @@ iframe {
   text-shadow: 1px 1px 15px aqua;
 }
 
+p.price-videogame {
+  font-size: 30px;
+}
+
 .infogame {
   background-color: #282d32fd;
   padding: 20px;
   border-radius: 15px;
   margin: 15px;
   margin-top: 80px;
-  box-shadow: 1px 1px 20px rgba(128, 128, 128, 0.41);
+  box-shadow: 1px 1px 20px rgba(85, 85, 85, 0.41);
+}
+
+.description{
+  background-color: rgba(36, 36, 36, 0.747);
+  border-radius: 15px;
+  padding: 25px;
+  line-height: 1.5;
+  list-style-type: none;
+  box-shadow: 1px 1px 20px rgba(85, 85, 85, 0.41)
+}
+
+.information{
+  color: aqua;
+  text-shadow: 1px 1px 15px aqua;
+}
+
+.item{
+  padding-left: 20px;
+}
+
+.requirements{
+  background-color: rgba(36, 36, 36, 0.747);
+  border-radius: 15px;
+  padding: 25px;
+  line-height: 1;
+  position: relative;
+  box-shadow: 1px 1px 20px rgba(85, 85, 85, 0.41)
+}
+
+.requirements-p{
+  padding-left: 18px;
+}
+
+.goku-wrapper {
+  position: absolute;
+  top: 45px;
+  right: 20px; /* Ajusta la distancia a la derecha según tu diseño */
+  z-index: 1; /* Asegura que Goku esté sobre el fondo si es necesario */
+  opacity: 0.15;
+}
+
+.system-requirements{
+  color: aqua;
+  text-shadow: 1px 1px 15px aqua;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.image-container {
+  flex-shrink: 0;
+}
+
+#goku{
+  display: block;
+  width: 100px; /* Ajusta el tamaño de la imagen de Goku */
+  height: 200px;
 }
 
 .row {

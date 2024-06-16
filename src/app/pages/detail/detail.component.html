@@ -2,38 +2,40 @@
 <main>
   <section id="product-detail" class="pt-5">
     <div class="container-fluid">
-      <div class="row">
-        <div id="carouselExampleDark" class="carousel carousel-dark slide carouselsize">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <iframe class="d-block videosize"
-                [src]="'http://www.youtube.com/embed/' + (videogame().video) + '?autoplay=1&mute=1'| safeUrl"
-                allowfullscreen></iframe>
-            </div>
-            <div *ngFor="let image of videogame().image; let i = index" class="carousel-item">
-              <img [src]="image" class="d-block w-80 imagesize" />
-            </div>
-          </div>
-          <button class="carousel-control-prev sizebutton" type="button" data-bs-target="#carouselExampleDark"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon " aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next sizebutton" type="button" data-bs-target="#carouselExampleDark"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+      < class="row">
+        <swiper-container style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="mySwiper"
+    thumbs-swiper=".mySwiper2" space-between="10" navigation="true">
+    <swiper-slide>
+        <iframe class="d-block videosize"
+          [src]="'http://www.youtube.com/embed/' + (videogame().video) + '?autoplay=1&mute=1'| safeUrl"
+          allowfullscreen></iframe>
+    </swiper-slide>
+    <swiper-slide *ngFor="let image of videogame().image" >
+      
+        <img [src]="image" class="d-block w-80 imagesize" />
+    
+    </swiper-slide>
+  </swiper-container>
+
+  <swiper-container class="mySwiper2" space-between="10" slides-per-view="4" free-mode="true"
+    watch-slides-progress="true">
+    <swiper-slide>
+      <iframe 
+      [src]="'http://www.youtube.com/embed/' + (videogame().video) + '?&mute=1'| safeUrl"
+      allowfullscreen></iframe>
+    </swiper-slide>
+    <swiper-slide *ngFor="let image of videogame().image" >
+      <img [src]="image"/>
+  </swiper-slide>
+  </swiper-container>
         </div>
-      </div>
-    </div>
   </section>
   <section id="product-detail" class="pt-8">
     <div class="container-fluid">
       <div class="row">
         <div class="col text-light infogame">
           <h1 class="title-videogame">{{videogame().name}}</h1>
-          <p class="price-videogame">$ {{videogame().price}}</p>
+          <p class="price-videogame">Price: $ {{videogame().price}}</p>
           <button class="button-icon navbar-toggler pe-0" (click)="addToCart(videogame())" >
             <span class="material-symbols-outlined">
               shopping_cart
@@ -47,17 +49,37 @@
                 {{gamemode.name}}
                 }
               </li>
-              <li class="item">developer: {{videogame()?.developer[0]?.name}}</li>
+              <li class="item">
+                developer:
+                @for(developer of videogame()?.developer; track developer._id){
+                {{developer.name}}
+                } </li>
               <li class="item">gender:
                 @for(gender of videogame()?.gender; track gender._id){
                 {{gender.name}}
-                }</li>
-              <li class="item">pegi: {{videogame()?.pegi[0]?.name}}</li>
+                }
+              </li>
+              <li class="item">pegi: @for(pegi of videogame()?.pegi; track pegi._id){
+                {{pegi.name}}
+                } </li>
               <li class="item">theme:
                 @for(theme of videogame()?.theme; track theme._id){
                 {{theme.name}}
-                }</li>
+                }
+              </li>
             </ul>
+            <div class="requirements">
+            <h2 class="system-requirements">System Requirements:</h2>
+            <div *ngFor="let systemRequirements of videogame().systemRequirements">
+              <p class="requirements-p">
+                {{systemRequirements}}
+              </p>
+            </div>
+            <div class="goku-wrapper">
+            <img src="data:image/png;base64,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">
+            <a id="goku" href="https://icons8.com/icon/109713/son-goku"></a><a href="https://icons8.com"></a>
+          </div>
+          </div>
           </article>
         </div>
         <div class="col text-light infogame">

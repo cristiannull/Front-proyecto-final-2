@@ -16,7 +16,7 @@ export class CardsComponent {
   @Input() id: string = '';
   @Input() name: string = '';
   @Input() price: string = '';
-  @Input() image: string = '';
+  @Input() cover: string = '';
 
   ngOnInit() {
     console.warn(
