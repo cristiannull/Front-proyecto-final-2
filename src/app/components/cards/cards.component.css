@@ -1,6 +1,6 @@
 .product {
   position: relative;
-  max-width: 280px;
+  max-height: 345px;
   transition: transform 0.3s ease;
   padding: 6px 6px 0 6px;
   text-align: left;
@@ -13,6 +13,7 @@
 
 .product:hover {
   transform: scale(1.1);
+  z-index: 10000;
 }
 
 .product figure {

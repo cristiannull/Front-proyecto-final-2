@@ -46,10 +46,14 @@ main {
 /* ====================
 - Products Section
 ==================== */
-.swiper-container {
-  margin: 0 auto;
-  width: 81%;
+
+swiper-slide {
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 /* ====================
 - Newsletter
 ==================== */

@@ -108,4 +108,8 @@ export class NavComponent {
   toggleCartVisibility() {
     this.showCart.update((prevState) => !prevState);
   }
+
+  trackById(index: number, item: any): string {
+    return item.key; // Asumiendo que el ID es la clave del Map
+  }
 }

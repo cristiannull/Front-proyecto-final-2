@@ -1,77 +1,29 @@
-main {
-  min-height: 80vh;
-  margin-top: 20px;
+.placeholder {
+  background-color: grey;
+  border-radius: 6px;
+  margin: 6px;
 }
-
-.carouselsize {
-  height: 400px;
-  width: 1000px;
-  margin: 0 auto;
-}
-
-swiper-container {
-  width: 100%;
-  height: 100%;
+.loader-nav {
+  border: 1px solid grey;
+  height: 85px;
+  margin: 5px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  padding: 15px;
 }
 
 swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: none;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-
-swiper-container {
-  width: 100%;
-  height: 300px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-swiper-slide {
-  background-size: cover;
-  background-position: center;
-}
-
-.mySwiper {
-  height: 80%;
-  width: 100%;
-}
-
-.mySwiper2 {
-  height: 20%;
-  box-sizing: border-box;
-  padding: 10px 0;
-}
-
-.mySwiper2 swiper-slide {
-  width: 25%;
-  height: 100%;
-  opacity: 0.4;
-}
-
-.mySwiper2 .swiper-slide-thumb-active {
-  opacity: 1;
-}
-
-swiper-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .imagesize {
-  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 380px;
+  max-width: 500px;
   margin: 0 auto;
   object-fit: cover;
   border-radius: 15px;
@@ -79,29 +31,9 @@ swiper-slide img {
 }
 
 iframe {
-  width: 635px;
-  height: 400px;
-}
-
-.videosize {
-  margin: 0 auto;
-  object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 3px 3px 15px rgba(255, 255, 255, 0.105);
-}
-
-.sizebutton {
-  height: 200px;
-  width: 80px;
-  margin: auto 0;
-}
-
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-  background-color: white;
-  opacity: 30%;
-  transition: 0.9s;
-  border-radius: 20px;
+  border-radius: 10px;
+  width: 55%;
+  height: 100%;
 }
 
 /* ====================
@@ -125,34 +57,34 @@ p.price-videogame {
   box-shadow: 1px 1px 20px rgba(85, 85, 85, 0.41);
 }
 
-.description{
+.description {
   background-color: rgba(36, 36, 36, 0.747);
   border-radius: 15px;
   padding: 25px;
   line-height: 1.5;
   list-style-type: none;
-  box-shadow: 1px 1px 20px rgba(85, 85, 85, 0.41)
+  box-shadow: 1px 1px 20px rgba(85, 85, 85, 0.41);
 }
 
-.information{
+.information {
   color: aqua;
   text-shadow: 1px 1px 15px aqua;
 }
 
-.item{
+.item {
   padding-left: 20px;
 }
 
-.requirements{
+.requirements {
   background-color: rgba(36, 36, 36, 0.747);
   border-radius: 15px;
   padding: 25px;
   line-height: 1;
   position: relative;
-  box-shadow: 1px 1px 20px rgba(85, 85, 85, 0.41)
+  box-shadow: 1px 1px 20px rgba(85, 85, 85, 0.41);
 }
 
-.requirements-p{
+.requirements-p {
   padding-left: 18px;
 }
 
@@ -164,7 +96,7 @@ p.price-videogame {
   opacity: 0.15;
 }
 
-.system-requirements{
+.system-requirements {
   color: aqua;
   text-shadow: 1px 1px 15px aqua;
   margin-bottom: 10px;
@@ -175,7 +107,7 @@ p.price-videogame {
   flex-shrink: 0;
 }
 
-#goku{
+#goku {
   display: block;
   width: 100px; /* Ajusta el tamaño de la imagen de Goku */
   height: 200px;

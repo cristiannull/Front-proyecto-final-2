@@ -12,6 +12,7 @@ import { CurrencyPipe } from '@angular/common';
 import { NgClass, CommonModule } from '@angular/common';
 import { SafeUrlPipe } from '../../safe-url.pipe';
 import { FooterComponent } from '../../components/footer/footer.component';
+import { SkeletonModule } from 'primeng/skeleton';
 import { CartService } from '../../service/cart.service';
 import { register } from 'swiper/element/bundle';
 
@@ -20,8 +21,8 @@ register();
 @Component({
   selector: 'app-detail',
   standalone: true,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
+    SkeletonModule,
     FooterComponent,
     CommonModule,
     NavComponent,
@@ -31,6 +32,7 @@ register();
   ],
   templateUrl: './detail.component.html',
   styleUrl: './detail.component.css',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class DetailComponent {
   private videogamesService = inject(VideogamesService);
@@ -38,6 +40,8 @@ export class DetailComponent {
 
   videogame = signal<any>({});
   videogames = signal<any>({});
+  isLoading: boolean = true;
+  data: any;
   @Input() id: string = '';
   @Input() filterBy: string = '';
   @Input() filterValue: string = '';
@@ -45,6 +49,16 @@ export class DetailComponent {
 
   ngOnInit() {
     console.warn('[ngOnInit] Se ha inicializado el componente Detail');
+    this.videogamesService.getVideogames().subscribe({
+      next: (response) => {
+        this.data = response;
+        this.isLoading = false;
+      },
+      error: (error) => {
+        console.error('Error loading data', error);
+        this.isLoading = false;
+      },
+    });
     this.videogamesService.getOneVideogameByName(this.id).subscribe({
       next: (videogame) => {
         this.videogame.set(videogame);

@@ -88,13 +88,10 @@
         </span>
       </label>
     </div>
-
   </div>
-
 </nav>
-
-<aside [ngClass]="showCart() ? 'cart show' : 'cart'">
-  <div>
+<aside [ngClass]="showCart() ? 'cart show' : ''" class="cart">
+  <div *ngIf="cart().size > 0">
     <div>
       <h2>
         Carrito {{cart().size}}
@@ -107,9 +104,9 @@
     </div>
     <section class="cart-products">
       <div class="item-list">
-        @for(cartProduct of cart().values(); track cartProduct._id){
-        <app-card-cart [videogame]="cartProduct" />
-        }
+        <div *ngFor="let cartProduct of cart() | keyvalue; trackBy: trackById">
+          <app-card-cart [videogame]="cartProduct.value " />
+        </div>
       </div>
     </section>
     <div class="details">

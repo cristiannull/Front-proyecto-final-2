@@ -9,7 +9,6 @@ import { NavComponent } from '../../components/nav/nav.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { VideogamesService } from '../../service/videogames.service';
 import { FooterComponent } from '../../components/footer/footer.component';
-import { CartService } from '../../service/cart.service';
 import { SkeletonModule } from 'primeng/skeleton';
 import { register } from 'swiper/element/bundle';
 
@@ -32,7 +31,6 @@ register();
 })
 export class HomeComponent {
   private videogamesService = inject(VideogamesService);
-  private cartService = inject(CartService);
 
   videogames = signal<any>([]);
   featuredVideogames = signal<any>([]);
