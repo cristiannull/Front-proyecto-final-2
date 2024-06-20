@@ -3,6 +3,7 @@
   max-height: 345px;
   transition: transform 0.3s ease;
   padding: 6px 6px 0 6px;
+  margin-bottom: 25px;
   text-align: left;
 }
 

@@ -43,8 +43,24 @@ main {
   margin-top: 0;
 }
 
-.justify-content-between {
-  justify-content: space-around !important;
+.pagination {
+  margin-top: 15px;
+  padding: 30px 0;
+}
+
+.pagination a {
+  display: inline-block;
+  padding: 10px 18px;
+  color: #fff;
+}
+
+.page-link {
+  cursor: pointer;
+}
+.active > .page-link {
+  background-color: cyan;
+  color: #222;
+  border: cyan;
 }
 
 /* ====================
