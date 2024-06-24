@@ -1,3 +1,4 @@
+/* Global Styles */
 .placeholder {
   background-color: grey;
   border-radius: 6px;
@@ -21,6 +22,11 @@ main {
   flex-wrap: wrap;
 }
 
+.justify-content-between {
+  justify-content: space-around !important;
+}
+
+/* Section Styles */
 .section-text-combo {
   display: flex;
   flex-direction: column;
@@ -35,31 +41,24 @@ main {
   line-height: 1.2rem;
 }
 
-/* ====================
-- Products
-==================== */
-
+/* Product Styles */
 .product {
   margin-top: 0;
 }
 
-.justify-content-between {
-  justify-content: space-around !important;
-}
-
-/* ====================
-- Newsletter
-==================== */
-
+/* Newsletter Styles */
 #newsletter p {
   font-size: 0.9rem;
   line-height: 1.2rem;
 }
+
 #newsletter small {
   color: red;
 }
 
+/* Media Queries */
 @media screen and (max-width: 992px) {
+  /* Add any styles for screens smaller than 992px here */
 }
 
 @media screen and (max-width: 768px) {
