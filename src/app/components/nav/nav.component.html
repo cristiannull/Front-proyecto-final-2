@@ -71,11 +71,17 @@
           </button>
         </form>
       </div>
+      <button (click)="logout()" class="button-icon navbar-toggler pe-0">
+        <span *ngIf="isLogged()" routerLink="/Logaut" class="material-symbols-outlined">
+          logout
+          </span>
+      </button>
       <button class="button-icon navbar-toggler pe-0" type="button">
         <span *ngIf="!isLogged()" routerLink="/login" class="material-symbols-outlined">
           person
         </span>
       </button>
+      
       <button class="button-icon navbar-toggler pe-0" (click)="toggleCartVisibility()">
         <span class="material-symbols-outlined">
           shopping_cart
@@ -91,7 +97,7 @@
   </div>
 </nav>
 <aside [ngClass]="showCart() ? 'cart show' : ''" class="cart">
-  <div *ngIf="cart().size > 0">
+  <div>
     <div>
       <h2>
         Carrito {{cart().size}}
@@ -103,7 +109,7 @@
       </button>
     </div>
     <section class="cart-products">
-      <div class="item-list">
+      <div *ngIf="cart().size > 0" class="item-list">
         <div *ngFor="let cartProduct of cart() | keyvalue; trackBy: trackById">
           <app-card-cart [videogame]="cartProduct.value " />
         </div>
