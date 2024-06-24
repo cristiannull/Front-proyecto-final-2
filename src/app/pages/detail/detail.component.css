@@ -91,8 +91,8 @@ p.price-videogame {
 .goku-wrapper {
   position: absolute;
   top: 45px;
-  right: 20px; /* Ajusta la distancia a la derecha según tu diseño */
-  z-index: 1; /* Asegura que Goku esté sobre el fondo si es necesario */
+  right: 20px; 
+  z-index: 1; 
   opacity: 0.15;
 }
 
@@ -108,9 +108,12 @@ p.price-videogame {
 }
 
 #goku {
-  display: block;
-  width: 100px; /* Ajusta el tamaño de la imagen de Goku */
+  width: 100px; 
   height: 200px;
+}
+
+#description {
+  resize: none;
 }
 
 .row {

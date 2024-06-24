@@ -226,7 +226,7 @@
           space-between="30">
           <swiper-slide>
             <iframe class="d-block videosize"
-              [src]="'http://www.youtube.com/embed/' + (videogame().video) + '?autoplay=1&mute=1'| safeUrl"
+              [src]="'http://www.youtube.com/embed/' + (videogame().videoId) + '?autoplay=1&mute=1'| safeUrl"
               allowfullscreen></iframe>
           </swiper-slide>
           <swiper-slide *ngFor="let image of videogame().image">
@@ -303,7 +303,30 @@
           </article>
         </div>
       </div>
-    </div>
+     <div class="row">
+      <div class="col text-light infogame">
+        <article class="card-videogame">
+          <h2 class="title-description">ACERCA DE ESTE JUEGO</h2>
+          <hr>
+          <div *ngFor="let description of videogame().description">
+            <p>
+              {{description}}
+            </p>
+          </div>
+        </article>
+      </div>
+      <div class="col text-light infogame">
+        <article class="card-videogame">
+          <form action="">
+            <div class="form-group">
+              <label for="">Description:</label>
+              <textarea rows="5" cols="105" id="description" name="description" formControlName="description"></textarea>
+            </div>
+          </form>
+        </article>
+      </div>
+     </div>
+  </div>
   </section>
 </main>
 <app-footer />
