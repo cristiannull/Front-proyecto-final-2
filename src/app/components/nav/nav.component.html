@@ -24,34 +24,34 @@
           <div class="content">
             <div class="row">
               <header>Gender</header>
-              <ul class="mega-links">
-                <li> @for(gender of genders(); track gender._id ){ <a
+              <ul class="mega-links genders">
+                @for(gender of genders(); track gender._id ){ <li><a
                     [routerLink]="['/category/gender/',gender.name]">{{gender.name}}</a>
-                  }</li>
+                </li>}
               </ul>
             </div>
             <div class="row">
               <header>Theme</header>
               <ul class="mega-links">
-                <li>@for(theme of themes(); track theme._id ){ <a
-                    [routerLink]="['/category/theme/',theme.name]">{{theme.name}}</a>
-                  }</li>
+                @for(theme of themes(); track theme._id ){ <li><a
+                    [routerLink]="['/category/theme/',theme.name]">{{theme.name}}</a></li>
+                }
               </ul>
             </div>
             <div class="row">
               <header>Game mode </header>
               <ul class="mega-links">
-                <li>@for(gamemode of gamemodes(); track gamemode._id ){ <a
-                    [routerLink]="['/category/gamemode/',gamemode.name]">{{gamemode.name}}</a>
-                  }</li>
+                @for(gamemode of gamemodes(); track gamemode._id ){ <li><a
+                    [routerLink]="['/category/gamemode/',gamemode.name]">{{gamemode.name}}</a></li>
+                }
               </ul>
             </div>
             <div class="row">
               <header>Pegi </header>
               <ul class="mega-links">
-                <li>@for(pegi of pegis(); track pegi._id ){ <a
-                    [routerLink]="['/category/pegi/',pegi.name]">{{pegi.name}}</a>
-                  }</li>
+                @for(pegi of pegis(); track pegi._id ){ <li><a
+                    [routerLink]="['/category/pegi/',pegi.name]">{{pegi.name}}</a></li>
+                }
               </ul>
             </div>
           </div>
@@ -74,14 +74,14 @@
       <button (click)="logout()" class="button-icon navbar-toggler pe-0">
         <span *ngIf="isLogged()" routerLink="/Logaut" class="material-symbols-outlined">
           logout
-          </span>
+        </span>
       </button>
       <button class="button-icon navbar-toggler pe-0" type="button">
         <span *ngIf="!isLogged()" routerLink="/login" class="material-symbols-outlined">
           person
         </span>
       </button>
-      
+
       <button class="button-icon navbar-toggler pe-0" (click)="toggleCartVisibility()">
         <span class="material-symbols-outlined">
           shopping_cart
@@ -96,6 +96,7 @@
     </div>
   </div>
 </nav>
+
 <aside [ngClass]="showCart() ? 'cart show' : ''" class="cart">
   <div>
     <div>

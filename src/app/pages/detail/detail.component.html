@@ -221,7 +221,7 @@
   <section id="product-detail" class="pt-5">
     <div class="container-fluid">
       <div class="row">
-        <swiper-container class="swiper-container swiper-container mySwiper"
+        <swiper-container class="swiper-container mySwiper"
           style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="mySwiper" navigation="true"
           space-between="30">
           <swiper-slide>
@@ -303,30 +303,7 @@
           </article>
         </div>
       </div>
-     <div class="row">
-      <div class="col text-light infogame">
-        <article class="card-videogame">
-          <h2 class="title-description">ACERCA DE ESTE JUEGO</h2>
-          <hr>
-          <div *ngFor="let description of videogame().description">
-            <p>
-              {{description}}
-            </p>
-          </div>
-        </article>
-      </div>
-      <div class="col text-light infogame">
-        <article class="card-videogame">
-          <form action="">
-            <div class="form-group">
-              <label for="">Description:</label>
-              <textarea rows="5" cols="105" id="description" name="description" formControlName="description"></textarea>
-            </div>
-          </form>
-        </article>
-      </div>
-     </div>
-  </div>
+    </div>
   </section>
 </main>
 <app-footer />

@@ -14,6 +14,7 @@
 }
 
 swiper-slide {
+  margin: auto 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -181,23 +182,16 @@ p.price-videogame {
 /* ====================
   - Media Queries
 ==================== */
-@media screen and (max-width: 1200px) {
-  #product-detail {
-    margin-top: 54px;
-  }
-
-  #product-detail .product-detail__image {
-    width: 100%;
-    object-fit: cover;
-    aspect-ratio: 1 / 1.1;
-  }
-
+@media screen and (max-width: 1000px) {
   .row {
     margin: 0 80px;
+    margin: 0 60px;
+    display: block;
   }
-}
-
-@media screen and (max-width: 992px) {
+  iframe {
+    width: 500px;
+    height: 320px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -225,6 +219,16 @@ p.price-videogame {
     font-size: 18px;
   }
 
+  iframe {
+    max-width: 400px;
+    max-height: 250px;
+  }
+
+  .imagesize {
+    max-height: 380px;
+    max-width: 480px;
+  }
+
   .section-text-combo p {
     width: 100%;
   }
@@ -236,18 +240,12 @@ p.price-videogame {
 
 @media screen and (max-width: 480px) {
   iframe {
-    width: 372px;
-    height: 200px;
-  }
-
-  .carouselsize {
-    height: 200px;
-    width: 380px;
-    margin: 0 auto;
+    max-width: 350px;
+    max-height: 180px;
   }
 
   .imagesize {
-    height: 200px;
-    margin: 0 auto;
+    max-height: 180px;
+    max-width: 350px;
   }
 }
