@@ -1,0 +1,109 @@
+main {
+    max-width: 1000px;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 30px;
+    margin: 0 auto;
+    padding: 1rem
+}
+
+section.payment {
+    width: 60%;
+}
+
+section.payment form {}
+section.payment form .formGroup {
+    display: flex;
+    flex-direction: column
+}
+section.payment form .formGroup label {}
+section.payment form .formGroup input {}
+section.payment form .formGroup select {}
+section.payment form button[type='submit'] {
+    width: 100%;
+    margin-top: 20px;
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.4rem 0.8rem;
+    background-color: rgb(39, 71, 255);
+    color: white;
+}
+
+section.cart {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-grow: 1;
+}
+
+section.cart .product {
+    display: flex;
+    gap: 1rem;
+    position: relative;
+}
+
+section.cart .product figure {
+    width: 60%;
+    display: flex;
+    gap: 1rem;
+}
+
+section.cart .product figure img {
+    width: 40%;
+    object-fit: cover;
+    border-radius: 3px;
+    aspect-ratio: 1;
+}
+
+section.cart .product figure figcaption {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 1rem;
+    flex-grow: 1;
+}
+
+section.cart .product figure figcaption h3 {}
+
+section.cart .product figure figcaption {}
+
+section.cart .product .actions {
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    right: 0;
+}
+
+section.cart .product .actions button.delete {}
+
+section.cart .product .actions form {
+    display: flex;
+    gap: 0.5rem
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+section.cart .product .actions form input {
+    width: 2rem;
+    text-align: center;
+}
+
+section.cart .product .actions form button.increment,
+section.cart .product .actions form button.decrement {
+    display: inline-block;
+    width: 1.6rem;
+    aspect-ratio: 1 / 1;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}

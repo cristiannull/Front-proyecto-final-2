@@ -1,11 +1,12 @@
-import { Injectable, signal, computed } from '@angular/core';
-
+import { Injectable, signal, computed, inject } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
   videogames = signal(new Map());
   private readonly CART_STORAGE_KEY = 'cart';
+  private http = inject(HttpClient);
 
   total = computed(() => {
     let mapActual = this.videogames();
@@ -90,5 +91,40 @@ export class CartService {
       const cartMap = new Map(cartArray);
       this.videogames.set(cartMap);
     }
+  }
+  createOrder(formData: any) {
+    console.log("Create order");
+    console.log(formData)
+    console.log(this.videogames().values())
+
+
+
+    const mapActual = Array.from(this.videogames().values())
+    const videogamesArray = mapActual.map(videogame => {
+      return { videogameId:videogame._id, quantity:videogame.quantity }
+    })
+
+    console.log(videogamesArray)
+
+
+    return this.http.post(
+      "http://localhost:3000/api/shoop",
+      {
+        videogames: videogamesArray,
+        total: this.total(),
+        dato1: formData.dato1,
+        dato2: formData.dato2,
+        dato3: formData.dato3,
+        paymentMethod: formData.paymentMethod
+      },
+      {
+        headers: new HttpHeaders({
+          'Authorization': `Bearer ${localStorage.getItem("user_token")}`,  // Reemplaza 'tu_token_aqui' con el token real
+          'Content-Type': 'application/json'
+        })
+      })
+  }
+  emptyCart(){
+    this.videogames.set(new Map())
   }
 }

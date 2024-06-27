@@ -8,6 +8,8 @@ import { redirectIfLogged } from './components/guards/redirectIfLogged.guard';
 import { CategoryComponent } from './pages/category/category.component';
 import { SearchComponent } from './pages/search/search.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { ThanksComponent } from './pages/thanks/thanks.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -30,4 +32,7 @@ export const routes: Routes = [
     component: SearchComponent,
   },
   { path: 'not-found', component: NotFoundComponent },
+  { path: 'checkout', component: CheckoutComponent },
+  { path: 'thanks', component: ThanksComponent },
+ 
 ];

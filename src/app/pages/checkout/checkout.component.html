@@ -1,0 +1,35 @@
+<app-nav/>
+<main>
+    <section class="payment">
+        <h2>Detalles del pago</h2>
+        <form action="" (submit)="onSubmit()" [formGroup]="paymentDetails">
+            <div class="formGroup">
+                <label for="dato1">Dato 1</label>
+                <input type="text" name="dato1" id="dato1" formControlName="dato1">
+            </div>
+            <div class="formGroup">
+                <label for="dato2">Dato 2</label>
+                <input type="text" name="dato2" id="dato2" formControlName="dato2">
+            </div>
+            <div class="formGroup">
+                <label for="dato3">Dato 3</label>
+                <input type="text" name="dato3" id="dato3" formControlName="dato3">
+            </div>
+            <div class="formGroup">
+                <label for="paymentMethod">Dato 1</label>
+                <select name="paymentMethod" id="paymentMethod" formControlName="paymentMethod">
+                    <option value="paypal">PayPal</option>
+                    <option value="credit-card">Tarjeta de crédito</option>
+                </select>
+            </div>
+            <button type="submit">Realizar compra</button>
+        </form>
+    </section>
+    <section class="cart">
+        <h2>Carrito</h2>
+
+        @for(cartProduct of cart().values(); track cartProduct._id){
+            <app-card-cart [videogame]="cartProduct" />
+            }
+    </section>
+</main>
