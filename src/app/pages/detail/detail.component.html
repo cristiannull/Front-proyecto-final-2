@@ -221,12 +221,12 @@
   <section id="product-detail" class="pt-5">
     <div class="container-fluid">
       <div class="row">
-        <swiper-container class="swiper-container swiper-container mySwiper"
+        <swiper-container class="swiper-container mySwiper"
           style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="mySwiper" navigation="true"
           space-between="30">
           <swiper-slide>
             <iframe class="d-block videosize"
-              [src]="'http://www.youtube.com/embed/' + (videogame().video) + '?autoplay=1&mute=1'| safeUrl"
+              [src]="'http://www.youtube.com/embed/' + (videogame().videoId) + '?autoplay=1&mute=1'| safeUrl"
               allowfullscreen></iframe>
           </swiper-slide>
           <swiper-slide *ngFor="let image of videogame().image">

@@ -1,3 +1,6 @@
+/* ====================
+  - General Styles
+==================== */
 .placeholder {
   background-color: grey;
   border-radius: 6px;
@@ -36,30 +39,50 @@ main {
 }
 
 /* ====================
-- Products
+  - Products
 ==================== */
-
-.product {
-  margin-top: 0;
+.products {
+  margin: 5rem;
 }
 
-.justify-content-between {
-  justify-content: space-around !important;
+.pagination {
+  margin-top: 15px;
+  padding: 20px 0;
+}
+
+.pagination a {
+  display: inline-block;
+  padding: 10px 18px;
+  color: #fff;
+}
+
+.page-link {
+  cursor: pointer;
+}
+
+.active > .page-link {
+  background-color: cyan;
+  color: #222;
+  border: cyan;
 }
 
 /* ====================
-- Newsletter
+  - Newsletter
 ==================== */
-
 #newsletter p {
   font-size: 0.9rem;
   line-height: 1.2rem;
 }
+
 #newsletter small {
   color: red;
 }
 
+/* ====================
+  - Media Queries
+==================== */
 @media screen and (max-width: 992px) {
+  /* Add styles here if needed */
 }
 
 @media screen and (max-width: 768px) {
@@ -72,6 +95,7 @@ main {
   html {
     font-size: 18px;
   }
+
   .section-text-combo p {
     width: 100%;
   }

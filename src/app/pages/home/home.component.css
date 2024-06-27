@@ -1,19 +1,20 @@
+/* General Styles */
 .placeholder {
   background-color: grey;
   border-radius: 6px;
 }
+
 .loader-nav {
   border: 1px solid grey;
   height: 85px;
-  margin: 5px;
-  margin-bottom: 10px;
+  margin: 5px 5px 10px;
   border-radius: 15px;
   padding: 15px;
 }
-/* ====================
-- main
-==================== */
 
+/* ====================
+- Main
+==================== */
 main {
   min-height: 80vh;
 }
@@ -33,9 +34,8 @@ main {
 }
 
 /* ====================
-- Hero section
+- Hero Section
 ==================== */
-
 #hero {
   height: 350px;
   background-image: url("https://i.pinimg.com/originals/10/dd/02/10dd02f9476f82d05f17d88a31e3c80b.jpg");
@@ -46,7 +46,6 @@ main {
 /* ====================
 - Products Section
 ==================== */
-
 swiper-slide {
   height: 450px;
   display: flex;
@@ -57,24 +56,27 @@ swiper-slide {
 /* ====================
 - Newsletter
 ==================== */
-
 #newsletter p {
   font-size: 0.9rem;
   line-height: 1.2rem;
 }
+
 #newsletter small {
   color: red;
 }
-/* ====================
-- Media queries
 
-xs   <  576px
-sm   ≥  576px
-md   ≥  768px
-lg   ≥  992px
-xl   ≥  1200px
-xxl  ≥  1400px
+/* ====================
+- Media Queries
 ==================== */
+
+/* Breakpoints: 
+   xs   <  576px
+   sm   ≥  576px
+   md   ≥  768px
+   lg   ≥  992px
+   xl   ≥  1200px
+   xxl  ≥  1400px
+*/
 
 @media screen and (max-width: 1200px) {
   .tarjeta-wrapper {
@@ -92,6 +94,7 @@ xxl  ≥  1400px
   .section-text-combo p {
     width: 80%;
   }
+
   .tarjeta-wrapper {
     max-width: 590px;
   }
@@ -101,9 +104,11 @@ xxl  ≥  1400px
   html {
     font-size: 18px;
   }
+
   .section-text-combo p {
     width: 100%;
   }
+
   .tarjeta-wrapper {
     max-width: 320px;
   }

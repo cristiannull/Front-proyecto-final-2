@@ -100,16 +100,29 @@
 }@else{
 <app-nav />
 <section id="products" class="my-3 pt-3">
-    <div class="container">
+    <div class="container-fluid">
         <div class="section-text-combo text-light pt-4">
             <h2>Juegos Disponibles</h2>
         </div>
-        <div class="d-flex justify-content-between wrap mt-5">
+        <div class="d-flex justify-content-center wrap mt-5 mx-5">
             @if(videogames().length !== 0){
-            @for(videogame of videogames(); track videogame._id){ <app-cards [id]="videogame._id"
+            @for(videogame of videogames(); track videogame._id){ <app-cards class="px-3" [id]="videogame._id"
                 [name]="videogame.name" [price]="videogame.price" [cover]="videogame.cover" />
             }
             }
+        </div>
+        <div class="pagination justify-content-center" data-bs-theme="dark">
+            <ul class="pagination">
+                <li class="page-item" [class.disabled]="currentPage() === 1">
+                    <a class="page-link" (click)="onPageChange(currentPage() - 1)">&lt;</a>
+                </li>
+                <li class="page-item" *ngFor="let page of pages" [class.active]="currentPage() === page">
+                    <a class="page-link" (click)="onPageChange(page)">{{ page }}</a>
+                </li>
+                <li class="page-item" [class.disabled]="currentPage() === totalPages()">
+                    <a class="page-link" (click)="onPageChange(currentPage() + 1)">&gt;</a>
+                </li>
+            </ul>
         </div>
     </div>
 </section>

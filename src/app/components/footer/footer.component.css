@@ -1,30 +1,31 @@
 footer {
-    background-color: #212529;
-    color: white;
-  }
-  
-  footer ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  footer ul li {
-    color: #888;
-    font-size: 0.9rem;
-  }
-  
-  footer ul li.list-title {
-    padding-bottom: 1rem;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-  }
-  
-  footer .copyright {
-    font-size: 0.9rem;
-    color: #888;
-  }
-  
-  .activebutton {
-    background-color: red;
-  }
+  background-color: #212529;
+  color: white;
+  padding: 2rem 0;
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+footer ul li {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+footer ul li.list-title {
+  padding-bottom: 1rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+
+footer .copyright {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.activebutton {
+  background-color: red;
+}

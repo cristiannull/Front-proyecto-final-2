@@ -1,3 +1,23 @@
+/* ====================
+  - General Styles
+==================== */
+.placeholder {
+  background-color: grey;
+  border-radius: 6px;
+}
+
+.loader-nav {
+  border: 1px solid grey;
+  height: 85px;
+  margin: 5px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+/* ====================
+  - Product Styles
+==================== */
 .product {
   display: grid;
   grid-template-areas:
@@ -28,18 +48,18 @@
 }
 
 .product .detail {
-  flex-grow: 1;
   grid-area: b;
   color: white;
   font-size: 16px;
-  align-content: center;
   text-align: center;
 }
 
 .product .actions {
   grid-area: c;
-  align-content: center;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .product .actions .material-symbols-outlined:hover {
@@ -47,7 +67,7 @@
 }
 
 .product .actions button,
-.product .actions form input {
+.product .actions input {
   background: none;
   border: none;
   color: white;
@@ -56,21 +76,10 @@
   align-items: center;
 }
 
-.delete-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .product .actions form {
   display: flex;
+  align-items: center;
   margin-bottom: 8px;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
 }
 
 .product .actions form input {
@@ -82,7 +91,18 @@ input::-webkit-inner-spin-button {
 .product .actions form button.decrement {
   width: 1.6rem;
   aspect-ratio: 1 / 1;
-  text-align: center;
+}
+
+.delete-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .block {
@@ -92,40 +112,38 @@ input::-webkit-inner-spin-button {
   background: linear-gradient(0deg, #000, #262626);
 }
 
-.shadow:hover {
-  &:before,
-  &:after {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    background: linear-gradient(
-      45deg,
-      #fb00c9,
-      #0ef,
-      #d90000,
-      #fb00c9,
-      #0ef,
-      #d90000
-    );
-    background-size: 400%;
-    border-radius: 16px;
-    z-index: -1;
-    animation: shadow 20s linear infinite;
-    transition: all 1s ease-in-out;
-  }
+.shadow:hover::before,
+.shadow:hover::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  background: linear-gradient(
+    45deg,
+    #fb00c9,
+    #0ef,
+    #d90000,
+    #fb00c9,
+    #0ef,
+    #d90000
+  );
+  background-size: 400%;
+  border-radius: 16px;
+  z-index: -1;
+  animation: shadow 20s linear infinite;
+  transition: all 1s ease-in-out;
+}
 
-  &:after {
-    top: -8px;
-    left: -8px;
-    width: calc(100% + 16px);
-    height: calc(100% + 16px);
-    filter: blur(24px);
-    opacity: 0.9;
-    transition: all 1s ease-in-out;
-  }
+.shadow:hover::after {
+  top: -8px;
+  left: -8px;
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
+  filter: blur(24px);
+  opacity: 0.9;
+  transition: all 1s ease-in-out;
 }
 
 @keyframes shadow {
@@ -137,5 +155,27 @@ input::-webkit-inner-spin-button {
   }
   100% {
     background-position: 0 0;
+  }
+}
+
+/* ====================
+  - Media Queries
+==================== */
+@media screen and (max-width: 992px) {
+  /* Add responsive styles here if needed */
+}
+
+@media screen and (max-width: 768px) {
+  .section-text-combo p {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  html {
+    font-size: 18px;
+  }
+  .section-text-combo p {
+    width: 100%;
   }
 }

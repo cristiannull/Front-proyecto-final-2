@@ -6,6 +6,16 @@
   padding: 0;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #242526;
+}
+::-webkit-scrollbar-thumb {
+  background: #3a3b3c;
+}
+
 @media screen and (max-width: 992px) {
 }
 
