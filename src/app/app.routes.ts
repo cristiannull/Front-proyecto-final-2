@@ -32,7 +32,6 @@ export const routes: Routes = [
     component: SearchComponent,
   },
   { path: 'not-found', component: NotFoundComponent },
-  { path: 'checkout', component: CheckoutComponent },
+  { path: 'checkout', component: CheckoutComponent, canActivate: [loginGuard] },
   { path: 'thanks', component: ThanksComponent },
- 
 ];

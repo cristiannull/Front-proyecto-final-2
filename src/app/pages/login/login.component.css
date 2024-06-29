@@ -4,7 +4,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 80vh;
   background: #242526;
   font-family: "Poppins", sans-serif;
 }
@@ -14,11 +14,12 @@ h2 {
 #login {
   position: relative;
   width: 700px;
-  height: 600px;
+  max-height: 450px;
   background: #00000070;
   box-shadow: 0 0 50px #0ef;
   border-radius: 20px;
   padding: 40px;
+  padding-top: 15px;
   overflow: hidden;
 }
 #login:hover {
@@ -45,7 +46,6 @@ h2 {
 
 #exampleInputEmail1,
 #exampleInputPassword1 {
-  width: 320px;
   height: 40px;
   font-size: 16px;
   color: #fff;
@@ -59,7 +59,7 @@ h2 {
   top: -5px;
 }
 
-button {
+form > button {
   justify-content: center;
   width: 100%;
   padding: 10px;
@@ -73,5 +73,17 @@ button {
   border-radius: 5px;
   border: none;
   outline: none;
+  margin-top: 15px;
   transition: background-color 0.3s ease;
+}
+
+.PasswordVisibility {
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+.error-message h2 {
+  font-size: 15px;
+  margin-top: 5px;
 }

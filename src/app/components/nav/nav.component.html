@@ -72,7 +72,7 @@
         </form>
       </div>
       <button (click)="logout()" class="button-icon navbar-toggler pe-0">
-        <span *ngIf="isLogged()" routerLink="/Logaut" class="material-symbols-outlined">
+        <span *ngIf="isLogged()" class="material-symbols-outlined">
           logout
         </span>
       </button>
@@ -82,7 +82,8 @@
         </span>
       </button>
 
-      <button class="button-icon navbar-toggler pe-0" (click)="toggleCartVisibility()">
+      <button *ngIf="router.url !== '/checkout'" class="button-icon navbar-toggler pe-0"
+        (click)="toggleCartVisibility()">
         <span class="material-symbols-outlined">
           shopping_cart
         </span>

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -8,11 +8,12 @@ import {
 import { UserService } from '../../service/user.service';
 import { Router } from '@angular/router';
 import { NavComponent } from '../../components/nav/nav.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, NavComponent],
+  imports: [ReactiveFormsModule, NavComponent, CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
@@ -29,20 +30,26 @@ export class LoginComponent {
     }),
   });
 
+  showPassword = signal(false);
+  errorMessage: string = '';
+  passwordVisibility = signal(false);
+
   onSubmit() {
     if (this.loginForm.valid) {
-      console.log(this.loginForm.value);
       this.userService.login(this.loginForm.value).subscribe({
         next: (response: any) => {
           localStorage.setItem('user_token', response.token);
           this.router.navigate(['/home']);
         },
         error: (error) => {
-          console.log(error);
+          this.errorMessage = 'Correo electrónico o contraseña incorrectos';
         },
       });
     } else {
-      console.log('Campos no validos');
+      this.errorMessage = 'Por favor, completa todos los campos requeridos';
     }
+  }
+  togglePasswordVisibility() {
+    this.showPassword.update((value) => !value);
   }
 }

@@ -3,43 +3,31 @@
   <section id="login">
     <div class="container py-5">
       <div class="row">
-        <div
-          class="col-12 col-sm-10 col-md-8 col-lg-6 offset-sm-1 offset-md-2 offset-lg-3"
-        >
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6 offset-sm-1 offset-md-2 offset-lg-3">
           <div class="section-text-combo text-light">
             <h2>Login</h2>
           </div>
-
           <form [formGroup]="loginForm" (submit)="onSubmit()">
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label text-light"
-                  >Email</label
-                >
-                <input
-                  type="email"
-                  formControlName="email"
-                  class="form-control"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                />
-              
-              <small class="error">Ad lorem ipsum</small>
+              <label for="exampleInputEmail1" class="form-label text-white">Email</label>
+              <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp" />
             </div>
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label text-light"
-                >Password</label
-              >
-              <input
-                type="password"
-                formControlName="password"
-                class="form-control"
-                id="exampleInputPassword1"
-              />
-              <small class="error">Ad lorem ipsum!</small>
+              <label for="exampleInputPassword1" class="form-label text-light">Password</label>
+              <div class="d-flex align-items-center">
+                <input type="{{ showPassword() ? 'text' : 'password' }}" formControlName="password" class="form-control"
+                  id="exampleInputPassword1" />
+                <span class="material-symbols-outlined PasswordVisibility" (click)="togglePasswordVisibility()">
+                  {{ showPassword() ? 'visibility_off' : 'visibility' }}
+                </span>
+              </div>
             </div>
-
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
+          <div *ngIf="errorMessage" class="error-message text-light section-text-combo">
+            <h2>{{ errorMessage }}</h2>
+          </div>
         </div>
       </div>
     </div>
