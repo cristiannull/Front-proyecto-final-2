@@ -3,36 +3,40 @@
     <section id="register">
         <div class="container py-5">
             <div class="row">
-                <div class="col-12 col-sm-10 col-md-8 col-lg-6 offset-sm-1 offset-md-2 offset-lg-3">
+                <div>
                     <div class="section-text-combo text-light">
                         <h2>Register</h2>
                     </div>
                     <form [formGroup]="registerForm" (submit)="onSubmit($event)">
-                        <div class="mb-3">
-                            <label for="firstname" class="form-label text-white">Firstname</label>
-                            <input type="text" formControlName="firstname" class="form-control" id="firstname"
-                                aria-describedby="firstnameHelp" />
+                        <div class="duo">
+                            <div class="mb-3">
+                                <label for="firstname" class="form-label text-white">Firstname</label>
+                                <input type="text" formControlName="firstname" class="form-control" id="firstname"
+                                    aria-describedby="firstnameHelp" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="lastname" class="form-label text-white">Lastname</label>
+                                <input type="text" formControlName="lastname" class="form-control" id="lastname"
+                                    aria-describedby="lastnameHelp" />
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="lastname" class="form-label text-white">Lastname</label>
-                            <input type="text" formControlName="lastname" class="form-control" id="lastname"
-                                aria-describedby="lastnameHelp" />
-                        </div>
-                        <div class="mb-3">
-                            <label for="age" class="form-label text-white">Age</label>
-                            <input type="number" formControlName="age" class="form-control" id="age"
-                                aria-describedby="ageHelp" />
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label text-white">Email</label>
-                            <input type="email" formControlName="email" class="form-control" id="email"
-                                aria-describedby="emailHelp" />
+                        <div class="duo">
+                            <div class="mb-3">
+                                <label for="age" class="form-label text-white">Age</label>
+                                <input type="number" formControlName="age" class="form-control" id="age"
+                                    aria-describedby="ageHelp" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label text-white">Email</label>
+                                <input type="email" formControlName="email" class="form-control" id="email"
+                                    aria-describedby="emailHelp" />
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label text-light">Password</label>
-                            <div class="d-flex align-items-center">
+                            <div class="d-flex align-items-center" id="password">
                                 <input type="{{ showPassword() ? 'text' : 'password' }}" formControlName="password"
-                                    class="form-control" id="password" />
+                                    class="form-control" />
                                 <span class="material-symbols-outlined PasswordVisibility"
                                     (click)="togglePasswordVisibility()">
                                     {{ showPassword() ? 'visibility_off' : 'visibility' }}

@@ -8,13 +8,21 @@ main {
   background: #242526;
   font-family: "Poppins", sans-serif;
 }
+
+main form .duo {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
 h2 {
   text-align: center;
 }
+
 #register {
   position: relative;
   width: 700px;
-  max-height: 450px;
   background: #00000070;
   box-shadow: 0 0 50px #0ef;
   border-radius: 20px;
@@ -29,6 +37,12 @@ h2 {
     filter: hue-rotate(360deg);
   }
 }
+
+label {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 #registerForm {
   display: flex;
   justify-content: center;
@@ -37,22 +51,12 @@ h2 {
   height: 100%;
   transition: 1s ease-in-out;
 }
-#form-label {
-  position: relative;
-  margin: 30px 0;
-  border-bottom: 2px solid #fff;
+
+#password {
+  margin: 0 auto;
+  width: 50%;
 }
 
-form .exampleInputEmail1,
-#exampleInputPassword1 {
-  height: 40px;
-  font-size: 16px;
-  color: #fff;
-  padding: 0 5px;
-  background: transparent;
-  outline: none;
-  justify-content: center;
-}
 .email input:focus ~ label,
 .email input:valid ~ label {
   top: -5px;
@@ -85,4 +89,11 @@ form > button {
 .error-message h2 {
   font-size: 15px;
   margin-top: 5px;
+}
+
+@media screen and (max-width: 480px) {
+  main form .duo {
+    width: 100%;
+    display: block;
+  }
 }
