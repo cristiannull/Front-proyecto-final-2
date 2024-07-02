@@ -46,8 +46,7 @@ export class NavComponent {
   total = this.cartService.total;
 
   ngOnInit() {
-    console.warn('[ngOnInit] Se ha inicializado el componente Detail');
-
+    console.warn('[ngOnInit] Se ha inicializado el componente Nav');
     this.categoriesService.getGender().subscribe({
       next: (genders) => {
         this.genders.set(genders);
@@ -68,6 +67,14 @@ export class NavComponent {
         this.pegis.set(pegis);
       },
     });
+  }
+
+  goToProfile(): void {
+    const userId = this.authService.getUserIdFromToken();
+    console.log('user:', userId);
+    if (userId) {
+      this.router.navigate(['/profile', userId]);
+    }
   }
 
   onSubmit() {

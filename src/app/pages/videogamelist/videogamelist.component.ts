@@ -6,6 +6,7 @@ import { VideogamesService } from '../../service/videogames.service';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { SkeletonModule } from 'primeng/skeleton';
 import { CommonModule } from '@angular/common';
+import { Videogame } from '../../models/videogame.models';
 
 @Component({
   selector: 'app-videogamelist',
@@ -54,6 +55,10 @@ export class VideogamelistComponent {
     this.videogamesService
       .getVideogamesPages(this.currentPage(), this.pageSize)
       .subscribe((response) => {
+        const sortedVideogames = response.data.sort(
+          (a: Videogame, b: Videogame) => a.name.localeCompare(b.name)
+        );
+        this.videogames.set(sortedVideogames);
         this.videogames.set(response.data);
         this.totalItems.set(response.pagination.totalItems);
       });

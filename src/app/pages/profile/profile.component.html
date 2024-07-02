@@ -1,0 +1,63 @@
+<app-nav />
+<div class="user-dashboard bg-dark">
+    <section class="user-info text-white bg-dark">
+        <h2>Edit Your Information</h2>
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="text-white">
+            <div class="form-group">
+                <label for="firstname">First Name:</label>
+                <input type="text" id="firstname" formControlName="firstname" />
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name:</label>
+                <input type="text" id="lastname" formControlName="lastname" />
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" formControlName="email" />
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label text-light">Password</label>
+                <div class="d-flex align-items-center" id="password">
+                    <input type="{{ showPassword() ? 'text' : 'password' }}" formControlName="password"
+                        class="form-control" placeholder="Enter new password to change" autocomplete="new-password" />
+                    <span class="material-symbols-outlined PasswordVisibility" (click)="togglePasswordVisibility()">
+                        {{ showPassword() ? 'visibility_off' : 'visibility' }}
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" formControlName="age" />
+            </div>
+            <button type="submit">Save Changes</button>
+        </form>
+    </section>
+    <section class="purchase-history ">
+        <h2>Your Purchase History</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Paymenth Merthod</th>
+                    <th>Items</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of orders()">
+                    <td>{{ order._id }}</td>
+                    <td>{{order.paymentMethod.name}}</td>
+                    <td>
+                        <ul>
+                            <li *ngFor="let item of order.videogames">
+                                {{ item.videogameId.name }} - {{ item.quantity }} x {{ item.videogameId.price | currency
+                                }}
+                            </li>
+                        </ul>
+                    </td>
+                    <td>{{ order.total | currency }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</div>

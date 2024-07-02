@@ -38,8 +38,12 @@ export class RegisterComponent {
     age: new FormControl('', {
       validators: [Validators.required],
     }),
+    rol: new FormControl('', {
+      validators: [Validators.required],
+    }),
   });
 
+  userId = signal<string | null>(null);
   showPassword = signal(false);
   errorMessage: string = '';
   passwordVisibility = signal(false);
@@ -50,13 +54,16 @@ export class RegisterComponent {
       console.log(this.registerForm.value);
 
       console.log('Podemos enviar la información');
+      const userId = this.userId() ?? '';
       const formValues = this.registerForm.value;
       const user: User = {
+        _id: userId,
         firstname: formValues.firstname!,
         lastname: formValues.lastname!,
         email: formValues.email!,
         password: formValues.password!,
         age: Number(formValues.age),
+        rol: { _id: formValues.rol || '', name: '' },
       };
 
       this.userService.register(user).subscribe({
