@@ -7,55 +7,105 @@ Este proyecto de Angular constituye una aplicación web para la venta de videoju
 El proyecto está organizado de la siguiente manera:
 
 ├── app/
+
 │   ├── components/
+
 │   │   ├── card-cart/
+
 │   │   │   └── card-cart.component.ts    # Componente para el carrito de compras
+
 │   │   ├── cards/
+
 │   │   │   └── cards.component.ts        # Componente de tarjetas
+
 │   │   ├── footer/
+
 │   │   │   └── footer.component.ts       # Componente del pie de página
+
 │   │   ├── guards/
+
 │   │   │   ├── login.guard.ts            # Guard para rutas protegidas de login
+
 │   │   │   └── redirectIfLogged.guard.ts # Guard para redirigir si ya está logueado
+
 │   │   ├── nav/
+
 │   │   │   └── nav.component.ts          # Componente de navegación
+
 │   │   └── ...                           # Otros componentes
+
 │   ├── models/
+
 │   │   ├── search.ts                     # Modelo para búsqueda
+
 │   │   ├── user.ts                       # Modelo para usuario
+
 │   │   └── videogame.ts                  # Modelo para videojuego
+
 │   ├── pages/
+
 │   │   ├── checkout/
+
 │   │   │   └── checkout.component.ts     # Componente de pago
+
 │   │   ├── detail/
+
 │   │   │   └── detail.component.ts       # Componente de detalle del producto
+
 │   │   ├── home/
+
 │   │   │   └── home.component.ts         # Componente de la página de inicio
+
 │   │   ├── login/
+
 │   │   │   └── login.component.ts        # Componente de login
+
 │   │   ├── not-found/
+
 │   │   │   └── not-found.component.ts    # Componente de página no encontrada
+
 │   │   ├── search/
+
 │   │   │   └── search.component.ts       # Componente de búsqueda
+
 │   │   ├── thanks/
+
 │   │   │   └── thanks.component.ts       # Componente de agradecimiento
+
 │   │   ├── videogamelist/
+
 │   │   │   └── videogamelist.component.ts# Componente de lista de videojuegos
+
 │   │   └── register/
+
 │   │       └── register.component.ts     # Componente de registro
+
 │   ├── service/
+
 │   │   ├── auth.service.ts               # Servicio de autenticación
+
 │   │   ├── cart.service.ts               # Servicio del carrito de compras
+
 │   │   ├── categories.service.ts         # Servicio de categorías
+
 │   │   ├── user.service.ts               # Servicio de usuario
+
 │   │   └── videogames.service.ts         # Servicio de videojuegos
+
 │   ├── app.component.ts                  # Componente principal de la aplicación
+
 │   ├── app.module.ts                     # Módulo principal de la aplicación
+
 │   ├── app.routes.ts                     # Configuración de rutas
+
 │   ├── app.config.ts                     # Configuración de la aplicación
+
 │   └── safe-url.pipe.ts                  # Pipe para URLs seguras
+
 ├── index.html                            # Archivo HTML principal
+
 ├── main.ts                               # Archivo principal de arranque de Angular
+
 └── ...                                   # Otros archivos y carpetas
 
 ## Tecnologías Utilizadas
