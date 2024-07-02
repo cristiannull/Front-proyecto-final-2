@@ -11,7 +11,7 @@ main {
 h2 {
   text-align: center;
 }
-#login {
+#register {
   position: relative;
   width: 700px;
   max-height: 450px;
@@ -20,9 +20,8 @@ h2 {
   border-radius: 20px;
   padding: 40px;
   padding-top: 15px;
-  overflow: hidden;
 }
-#login:hover {
+#register:hover {
   animation: animate 1s linear infinite;
 }
 @keyframes animate {
@@ -30,7 +29,7 @@ h2 {
     filter: hue-rotate(360deg);
   }
 }
-#loginForm {
+#registerForm {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,7 +43,7 @@ h2 {
   border-bottom: 2px solid #fff;
 }
 
-#exampleInputEmail1,
+form .exampleInputEmail1,
 #exampleInputPassword1 {
   height: 40px;
   font-size: 16px;

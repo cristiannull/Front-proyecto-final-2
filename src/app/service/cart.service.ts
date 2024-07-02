@@ -93,38 +93,35 @@ export class CartService {
     }
   }
   createOrder(formData: any) {
-    console.log("Create order");
-    console.log(formData)
-    console.log(this.videogames().values())
+    console.log('Create order');
+    console.log(formData);
+    console.log(this.videogames().values());
 
+    const mapActual = Array.from(this.videogames().values());
+    const videogamesArray = mapActual.map((videogame) => {
+      return { videogameId: videogame._id, quantity: videogame.quantity };
+    });
 
-
-    const mapActual = Array.from(this.videogames().values())
-    const videogamesArray = mapActual.map(videogame => {
-      return { videogameId:videogame._id, quantity:videogame.quantity }
-    })
-
-    console.log(videogamesArray)
-
-
-    return this.http.post(
-      "http://localhost:3000/api/shoop",
-      {
-        videogames: videogamesArray,
-        total: this.total(),
-        dato1: formData.dato1,
-        dato2: formData.dato2,
-        dato3: formData.dato3,
-        paymentMethod: formData.paymentMethod
-      },
-      {
-        headers: new HttpHeaders({
-          'Authorization': `Bearer ${localStorage.getItem("user_token")}`,  // Reemplaza 'tu_token_aqui' con el token real
-          'Content-Type': 'application/json'
-        })
-      })
+    console.log(videogamesArray);
+    const newOrder = {
+      CardNumber: formData.CardNumber,
+      videogames: videogamesArray,
+      paymentMethod: formData.paymentMethod,
+    };
+    return this.http.post('http://localhost:3000/api/shoop', newOrder, {
+      headers: new HttpHeaders({
+        Authorization: `Bearer ${localStorage.getItem('user_token')}`,
+        'Content-Type': 'application/json',
+      }),
+    });
   }
-  emptyCart(){
-    this.videogames.set(new Map())
+
+  getPaymenthMetod() {
+    console.log();
+    return this.http.get('http://localhost:3000/api/paymentMethods');
+  }
+
+  emptyCart() {
+    this.videogames.set(new Map());
   }
 }

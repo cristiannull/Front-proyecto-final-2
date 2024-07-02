@@ -28,6 +28,7 @@ nav .wrapper {
   font-weight: 600;
   text-decoration: none;
 }
+
 .wrapper .nav-links {
   display: inline-flex;
 }
@@ -165,6 +166,7 @@ form {
   color: white;
   text-align: center;
   margin: 0 8px;
+  user-select: none;
 }
 
 .material-symbols-outlined {

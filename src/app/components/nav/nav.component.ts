@@ -24,20 +24,15 @@ import { CardCartComponent } from '../card-cart/card-cart.component';
   styleUrl: './nav.component.css',
 })
 export class NavComponent {
-  private bodyElement!: HTMLElement;
   private userService = inject(UserService);
   private authService = inject(AuthService);
-  private router = inject(Router);
   private categoriesService = inject(CategoriesService);
   private cartService = inject(CartService);
 
-  constructor() {}
+  constructor(public router: Router) {}
   @Input() id: string = '';
   @Input() name: string = '';
 
-  ngAfterViewInit() {
-    this.bodyElement = document.querySelector('body') as HTMLElement;
-  }
   gamemodes = signal<any>([]);
   videogames = signal<any>([]);
   notAvailable = true;

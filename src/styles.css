@@ -5,6 +5,10 @@
   margin: 0;
   padding: 0;
 }
+::selection {
+  background-color: aqua;
+  color: black;
+}
 
 ::-webkit-scrollbar {
   width: 10px;
