@@ -38,9 +38,7 @@ export class RegisterComponent {
     age: new FormControl('', {
       validators: [Validators.required],
     }),
-    rol: new FormControl('', {
-      validators: [Validators.required],
-    }),
+    rol: new FormControl(''),
   });
 
   userId = signal<string | null>(null);
