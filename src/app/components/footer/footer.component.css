@@ -1,7 +1,7 @@
 footer {
   background-color: #212529;
   color: white;
-  padding: 2rem 0;
+  padding:  0;
 }
 
 footer ul {
@@ -11,7 +11,7 @@ footer ul {
 
 footer ul li {
   color: #888;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 footer ul li.list-title {
@@ -19,6 +19,7 @@ footer ul li.list-title {
   color: white;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
+  font-size: 1rem;
 }
 
 footer .copyright {
@@ -26,6 +27,25 @@ footer .copyright {
   color: #888;
 }
 
-.activebutton {
-  background-color: red;
+.list-names{
+  margin-bottom: 25px;
+}
+
+/* Estilos base para la imagen */
+.imgs {
+  transition: transform 0.3s ease, 
+  box-shadow 0.3s ease, 
+  opacity 0.3s ease;
+}
+
+/* Efecto hover */
+.imgs:hover {
+  transform: scale(1.1); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.801); 
+
+  border-radius: 50px;
+}
+
+img{
+  border-radius: 30px;
 }
