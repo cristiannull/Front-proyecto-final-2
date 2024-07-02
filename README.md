@@ -9,54 +9,54 @@ El proyecto está organizado de la siguiente manera:
 ├── app/
 │   ├── components/
 │   │   ├── card-cart/
-│   │   │   └── card-cart.component.ts
+│   │   │   └── card-cart.component.ts    # Componente para el carrito de compras
 │   │   ├── cards/
-│   │   │   └── cards.component.ts
+│   │   │   └── cards.component.ts        # Componente de tarjetas
 │   │   ├── footer/
-│   │   │   └── footer.component.ts
+│   │   │   └── footer.component.ts       # Componente del pie de página
 │   │   ├── guards/
-│   │   │   ├── login.guard.ts
-│   │   │   └── redirectIfLogged.guard.ts
+│   │   │   ├── login.guard.ts            # Guard para rutas protegidas de login
+│   │   │   └── redirectIfLogged.guard.ts # Guard para redirigir si ya está logueado
 │   │   ├── nav/
-│   │   │   └── nav.component.ts
-│   │   └── ...
+│   │   │   └── nav.component.ts          # Componente de navegación
+│   │   └── ...                           # Otros componentes
 │   ├── models/
-│   │   ├── search.ts
-│   │   ├── user.ts
-│   │   └── videogame.ts
+│   │   ├── search.ts                     # Modelo para búsqueda
+│   │   ├── user.ts                       # Modelo para usuario
+│   │   └── videogame.ts                  # Modelo para videojuego
 │   ├── pages/
 │   │   ├── checkout/
-│   │   │   └── checkout.component.ts
+│   │   │   └── checkout.component.ts     # Componente de pago
 │   │   ├── detail/
-│   │   │   └── detail.component.ts
+│   │   │   └── detail.component.ts       # Componente de detalle del producto
 │   │   ├── home/
-│   │   │   └── home.component.ts
+│   │   │   └── home.component.ts         # Componente de la página de inicio
 │   │   ├── login/
-│   │   │   └── login.component.ts
+│   │   │   └── login.component.ts        # Componente de login
 │   │   ├── not-found/
-│   │   │   └── not-found.component.ts
+│   │   │   └── not-found.component.ts    # Componente de página no encontrada
 │   │   ├── search/
-│   │   │   └── search.component.ts
+│   │   │   └── search.component.ts       # Componente de búsqueda
 │   │   ├── thanks/
-│   │   │   └── thanks.component.ts
+│   │   │   └── thanks.component.ts       # Componente de agradecimiento
 │   │   ├── videogamelist/
-│   │   │   └── videogamelist.component.ts
+│   │   │   └── videogamelist.component.ts# Componente de lista de videojuegos
 │   │   └── register/
-│   │        └── register.component.ts
+│   │       └── register.component.ts     # Componente de registro
 │   ├── service/
-│   │   ├── auth.service.ts
-│   │   ├── cart.service.ts
-│   │   ├── categories.service.ts
-│   │   ├── user.service.ts
-│   │   └── videogames.service.ts
-│   ├── app.component.ts
-│   ├── app.module.ts
-│   ├── app.routes.ts
-│   ├── app.config.ts
-│   └── safe-url.pipe.ts
-├── index.html
-├── main.ts
-└── ...
+│   │   ├── auth.service.ts               # Servicio de autenticación
+│   │   ├── cart.service.ts               # Servicio del carrito de compras
+│   │   ├── categories.service.ts         # Servicio de categorías
+│   │   ├── user.service.ts               # Servicio de usuario
+│   │   └── videogames.service.ts         # Servicio de videojuegos
+│   ├── app.component.ts                  # Componente principal de la aplicación
+│   ├── app.module.ts                     # Módulo principal de la aplicación
+│   ├── app.routes.ts                     # Configuración de rutas
+│   ├── app.config.ts                     # Configuración de la aplicación
+│   └── safe-url.pipe.ts                  # Pipe para URLs seguras
+├── index.html                            # Archivo HTML principal
+├── main.ts                               # Archivo principal de arranque de Angular
+└── ...                                   # Otros archivos y carpetas
 
 ## Tecnologías Utilizadas
 - **Angular CLI**: Framework de desarrollo frontend.
