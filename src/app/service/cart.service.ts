@@ -118,7 +118,7 @@ export class CartService {
 
   getPaymenthMetod() {
     console.log();
-    return this.http.get('http://localhost:3000/api/paymentMethods');
+    return this.http.get('http://18.216.177.93:3000/api/paymentMethods');
   }
 
   emptyCart() {
