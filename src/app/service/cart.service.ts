@@ -108,7 +108,7 @@ export class CartService {
       videogames: videogamesArray,
       paymentMethod: formData.paymentMethod,
     };
-    return this.http.post('http://localhost:3000/api/shoop', newOrder, {
+    return this.http.post('http://18.216.177.93:3000/api/shoop', newOrder, {
       headers: new HttpHeaders({
         Authorization: `Bearer ${localStorage.getItem('user_token')}`,
         'Content-Type': 'application/json',
