@@ -105,27 +105,25 @@
             <h2>Juegos Disponibles</h2>
         </div>
         <div class="d-flex justify-content-center wrap mt-5 mx-5">
-            @if(videogames().length !== 0){
-            @for(videogame of videogames(); track videogame._id){ <app-cards class="px-3" [id]="videogame._id"
-                [name]="videogame.name" [price]="videogame.price" [cover]="videogame.cover" />
-            }
+            @for(videogame of store.cards(); track videogame._id){
+            <app-cards class="px-3" [id]="videogame._id" [name]="videogame.name" [price]="videogame.price"
+                [cover]="videogame.cover" />
             }
         </div>
         <div class="pagination justify-content-center" data-bs-theme="dark">
             <ul class="pagination">
                 <li class="page-item" [class.disabled]="currentPage() === 1">
-                    <a class="page-link" (click)="onPageChange(currentPage() - 1)">&lt;</a>
+                    <a class="page-link" (click)="goToPage(currentPage() - 1)">Previous</a>
                 </li>
-                <li class="page-item" *ngFor="let page of pages" [class.active]="currentPage() === page">
-                    <a class="page-link" (click)="onPageChange(page)">{{ page }}</a>
+                <li class="page-item" *ngFor="let page of pages()" [class.active]="currentPage() === page">
+                    <a class="page-link" (click)="goToPage(page)">{{ page }}</a>
                 </li>
-                <li class="page-item" [class.disabled]="currentPage() === totalPages()">
-                    <a class="page-link" (click)="onPageChange(currentPage() + 1)">&gt;</a>
+                <li class="page-item" [class.disabled]="currentPage() === pages().length">
+                    <a class="page-link" (click)="goToPage(currentPage() + 1)">Next</a>
                 </li>
             </ul>
         </div>
     </div>
 </section>
-}
-
 <app-footer />
+}
