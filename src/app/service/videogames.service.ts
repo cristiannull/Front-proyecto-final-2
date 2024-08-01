@@ -17,10 +17,18 @@ export class VideogamesService {
 
   private apiUrl = 'http://18.216.177.93:3000/api/videogame';
 
-  loadCards(page: number) {
+  loadCards(page: number, limit: number) {
     return this.http
-      .get<{ data: Videogames[] }>(`${this.apiUrl}?page=${page}&limit=12`)
-      .pipe(map((response) => response.data));
+      .get<{
+        data: Videogames[];
+        pagination: {
+          totalItems: number;
+          totalPages: number;
+          currentPage: number;
+          nextPage: string;
+        };
+      }>(`${this.apiUrl}?page=${page}&limit=${limit}`)
+      .pipe(map((response) => response));
   }
 
   getOneVideogameByName(id: string) {

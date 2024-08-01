@@ -14,7 +14,6 @@ import { SkeletonModule } from 'primeng/skeleton';
 import { CommonModule } from '@angular/common';
 import { Videogame } from '../../models/videogame.models';
 import { CardStore } from '../../store/cards.store';
-import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-videogamelist',
@@ -27,7 +26,6 @@ import { JsonPipe } from '@angular/common';
     RouterLink,
     FooterComponent,
     CommonModule,
-    JsonPipe,
   ],
   templateUrl: './videogamelist.component.html',
   styleUrl: './videogamelist.component.css',
@@ -45,7 +43,11 @@ export class VideogamelistComponent {
   }
 
   goToPage(page: number) {
-    if (page > 0 && page !== this.currentPage()) {
+    if (
+      page > 0 &&
+      page <= this.store.totalPages() &&
+      page !== this.currentPage()
+    ) {
       this.page.set(page);
       this.store.loadPages(page);
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -53,7 +55,7 @@ export class VideogamelistComponent {
   }
 
   pages(): number[] {
-    const totalPages = Math.ceil(this.store.cardsCount() - 7);
+    const totalPages = this.store.totalPages();
     return Array.from({ length: totalPages }, (_, i) => i + 1);
   }
 
