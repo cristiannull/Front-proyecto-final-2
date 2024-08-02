@@ -6,11 +6,13 @@ import {
 } from '@angular/core';
 import { CardsComponent } from '../../components/cards/cards.component';
 import { NavComponent } from '../../components/nav/nav.component';
+import { CarruselComponent } from '../../components/carrusel/carrusel.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { VideogamesService } from '../../service/videogames.service';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { SkeletonModule } from 'primeng/skeleton';
 import { register } from 'swiper/element/bundle';
+
 
 register();
 
@@ -25,6 +27,7 @@ register();
     RouterLink,
     FooterComponent,
     SkeletonModule,
+    CarruselComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
