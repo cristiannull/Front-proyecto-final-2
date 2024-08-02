@@ -1,4 +1,7 @@
+
+
 nav {
+  font-family: "Montserrat", sans-serif;
   position: sticky;
   z-index: 300;
   width: 100%;
@@ -12,14 +15,12 @@ nav .wrapper {
   padding: 0px 30px;
   height: 85px;
   line-height: 70px;
-  margin: 5px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-radius: 15px;
-  box-shadow: 1px 1px 15px cyan;
-  border: 1px solid cyan;
+  border-bottom: 1px solid #00e1e17e;
 }
 
 .options {
@@ -164,6 +165,38 @@ form {
   display: block;
 }
 
+.navbutton {
+  padding: 0 1em 0 1em;
+  border-radius: 5px;
+  border: none;
+  height: 2em;
+  margin: 0 0.5em 0;
+}
+
+.solid-button-nav{
+  background-color: #00E1E1;
+  color: #212529;
+  border: 1px solid #00E1E1;
+  transition: background-color 0.5s;
+}
+.solid-button-nav:hover{
+  background-color: #1E1E1E;
+  border: 1px solid #00E1E1;
+  color: #00E1E1;
+}
+
+.outline-button-nav{
+  background-color: none;
+  border: 1px solid #00E1E1;
+  color: #00E1E1;
+  transition: background-color 0.5s;
+}
+.outline-button-nav:hover{
+  background-color: #00E1E1;
+  color: #212529;
+  border: 1px solid #00E1E1;
+}
+
 .button-icon {
   right: 20px;
   top: 23px;
@@ -171,7 +204,6 @@ form {
   border: none;
   color: white;
   text-align: center;
-  margin: 0 8px;
   user-select: none;
 }
 
@@ -180,6 +212,14 @@ form {
   font-size: 30px;
 }
 
+#search-bar{
+  background: transparent;
+  color: white;
+  outline: none;
+}
+#search-bar::placeholder{
+  color: rgba(255, 255, 255, 0.616);
+}
 .search-button {
   margin: 0;
   border: 1px white solid;

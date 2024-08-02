@@ -1,0 +1,40 @@
+.carrusel-container {
+    width: 100%;
+    height: 17em;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .carrusel-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carrusel-slide {
+    min-width: 100%;
+  }
+  
+  .carrusel-slide img {
+    width: 100%;
+    display: block;
+  }
+  
+  .carrusel-prev, .carrusel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .carrusel-prev {
+    left: 10px;
+  }
+  
+  .carrusel-next {
+    right: 10px;
+  }
