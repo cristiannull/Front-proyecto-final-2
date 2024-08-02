@@ -32,6 +32,14 @@ h2 {
 #register:hover {
   animation: animate 1s linear infinite;
 }
+
+.areYouRegistered {
+  font-size: 13px;
+  justify-content: center;
+  display: flex;
+  text-decoration: none;
+}
+
 @keyframes animate {
   100% {
     filter: hue-rotate(360deg);

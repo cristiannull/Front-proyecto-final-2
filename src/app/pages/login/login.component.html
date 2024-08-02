@@ -7,6 +7,9 @@
           <div class="section-text-combo text-light">
             <h2>Login</h2>
           </div>
+          <div class="areYouNotRegistered">
+            <h4 class="areYouNotRegistered text-light">Are you not registered yet?<a routerLink="/register" class="areYouNotRegistered">Create an account</a></h4>
+            </div>
           <form [formGroup]="loginForm" (submit)="onSubmit()">
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label text-white">Email</label>
@@ -15,10 +18,12 @@
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label text-light">Password</label>
-              <div class="d-flex align-items-center">
-                <input type="{{ showPassword() ? 'text' : 'password' }}" formControlName="password" class="form-control"
-                  id="exampleInputPassword1" />
-                <span class="material-symbols-outlined PasswordVisibility" (click)="togglePasswordVisibility()">
+              <div class="d-flex align-items-center position-relative">
+                <input type="{{ showPassword() ? 'text' : 'password' }}" formControlName="password" 
+                       class="form-control pr-5" id="exampleInputPassword1" />
+                <span class="material-symbols-outlined PasswordVisibility position-absolute"
+                      style="right: 10px; cursor: pointer;"
+                      (click)="togglePasswordVisibility()">
                   {{ showPassword() ? 'visibility_off' : 'visibility' }}
                 </span>
               </div>

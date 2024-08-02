@@ -5,9 +5,23 @@ main {
   justify-content: center;
   align-items: center;
   min-height: 80vh;
-  background: #242526;
   font-family: "Poppins", sans-serif;
 }
+
+main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://c.wallhere.com/photos/4a/61/pixel_art_crown_skull_sword_lantern-2241184.jpg!d'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  opacity: 0.5;
+}
+
 h2 {
   text-align: center;
 }
@@ -15,8 +29,9 @@ h2 {
   position: relative;
   width: 700px;
   max-height: 450px;
-  background: #00000070;
-  box-shadow: 0 0 50px #0ef;
+  background: #0000004f;
+  backdrop-filter: blur(7px);
+  opacity: 0.9;
   border-radius: 20px;
   padding: 40px;
   padding-top: 15px;
@@ -25,11 +40,15 @@ h2 {
 #login:hover {
   animation: animate 1s linear infinite;
 }
-@keyframes animate {
-  100% {
-    filter: hue-rotate(360deg);
-  }
+
+.areYouNotRegistered {
+  font-size: 13px;
+  justify-content: center;
+  text-decoration: none;
+  width: 110%;
+  height: 50px;
 }
+
 #loginForm {
   display: flex;
   justify-content: center;
@@ -64,8 +83,8 @@ form > button {
   width: 100%;
   padding: 10px;
   background: #0ef;
-  box-shadow: 0 0 10px #0ef;
-  background-color: #7a7672;
+  box-shadow: 0 0 10px rgb(8, 207, 221);
+  background-color: transparent;
   font-size: 16px;
   color: white;
   font-weight: 500;
