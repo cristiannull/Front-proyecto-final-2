@@ -2,6 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Videogames } from '../store/cards.store';
 import { map } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +12,7 @@ export class VideogamesService {
 
   constructor() {}
 
-  getVideogames() {
+  getVideogames(): Observable<any> {
     return this.http.get('http://18.221.10.95:3000/api/videogame');
   }
 

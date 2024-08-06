@@ -4,19 +4,44 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 80vh;
-  background: #242526;
+  min-height: 95vh;
   font-family: "Poppins", sans-serif;
 }
+
+main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://cdn.discordapp.com/attachments/1263274663786582088/1269084526466957322/thumb-1920-1358524.png?ex=66aec691&is=66ad7511&hm=d020a50105cda490c9a0505f3e00c6cd2e8e233cdb8782308a387b14fd9403c2&'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  opacity: 0.35;
+  backdrop-filter: blur(1px);
+}
+
 h2 {
   text-align: center;
 }
+
+.overlay-image img {
+  position: absolute;
+  top: 15px; 
+  left: 15px; 
+  z-index: 100; 
+  width: 60px; 
+  height: auto;
+}
+
 #login {
   position: relative;
   width: 700px;
-  max-height: 450px;
-  background: #00000070;
-  box-shadow: 0 0 50px #0ef;
+  background: #0000004f;
+  backdrop-filter: blur(7px);
+  opacity: 0.9;
   border-radius: 20px;
   padding: 40px;
   padding-top: 15px;
@@ -25,11 +50,16 @@ h2 {
 #login:hover {
   animation: animate 1s linear infinite;
 }
-@keyframes animate {
-  100% {
-    filter: hue-rotate(360deg);
-  }
+
+.areYouNotRegistered {
+  font-size: 13px;
+  text-decoration: none;
+  align-content: center;
+  width: 110%;
+  height: 50px;
+  transform: translateX(-5px);
 }
+
 #loginForm {
   display: flex;
   justify-content: center;
@@ -64,8 +94,8 @@ form > button {
   width: 100%;
   padding: 10px;
   background: #0ef;
-  box-shadow: 0 0 10px #0ef;
-  background-color: #7a7672;
+  box-shadow: 0 0 10px rgb(8, 207, 221);
+  background-color: transparent;
   font-size: 16px;
   color: white;
   font-weight: 500;

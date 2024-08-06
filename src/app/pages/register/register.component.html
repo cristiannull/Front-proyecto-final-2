@@ -1,50 +1,54 @@
-<app-nav></app-nav>
 <main>
     <section id="register">
         <div class="container py-5">
             <div class="row">
                 <div>
+                    <a routerLink="/home" class="overlay-image"><img src='https://i.postimg.cc/R3Hb5rZt/pixil-frame-0-4.png' border='0' alt='pixil-frame-0-4'/></a>
                     <div class="section-text-combo text-light">
                         <h2>Register</h2>
                     </div>
-                    <form [formGroup]="registerForm" (submit)="onSubmit($event)">
-                        <div class="duo">
-                            <div class="mb-3">
-                                <label for="firstname" class="form-label text-white">Firstname</label>
-                                <input type="text" formControlName="firstname" class="form-control" id="firstname"
-                                    aria-describedby="firstnameHelp" />
-                            </div>
-                            <div class="mb-3">
-                                <label for="lastname" class="form-label text-white">Lastname</label>
-                                <input type="text" formControlName="lastname" class="form-control" id="lastname"
-                                    aria-describedby="lastnameHelp" />
-                            </div>
+                    <div class="areYouRegistered">
+                        <h4 class="areYouRegistered text-light">Do you already have an account?&nbsp;&nbsp;<a routerLink="/login" class="areYouRegistered"> Log in</a></h4>
                         </div>
-                        <div class="duo">
-                            <div class="mb-3">
-                                <label for="age" class="form-label text-white">Age</label>
-                                <input type="number" formControlName="age" class="form-control" id="age"
-                                    aria-describedby="ageHelp" />
+                        <form [formGroup]="registerForm" (submit)="onSubmit($event)">
+                            <div class="duo">
+                                <div class="mb-3">
+                                    <label for="firstname" class="form-label text-white">Firstname</label>
+                                    <input type="text" formControlName="firstname" class="form-control" id="firstname"
+                                        aria-describedby="firstnameHelp" style="background-color: transparent; color: white;" />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="lastname" class="form-label text-white">Lastname</label>
+                                    <input type="text" formControlName="lastname" class="form-control" id="lastname"
+                                        aria-describedby="lastnameHelp" style="background-color: transparent; color: white;" />
+                                </div>
+                            </div>
+                            <div class="duo">
+                                <div class="mb-3">
+                                    <label for="age" class="form-label text-white">Age</label>
+                                    <input type="number" formControlName="age" class="form-control" id="age"
+                                        aria-describedby="ageHelp" style="background-color: transparent; color: white;" />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label text-white">Email</label>
+                                    <input type="email" formControlName="email" class="form-control" id="email"
+                                        aria-describedby="emailHelp" style="background-color: transparent; color: white;" />
+                                </div>
                             </div>
                             <div class="mb-3">
-                                <label for="email" class="form-label text-white">Email</label>
-                                <input type="email" formControlName="email" class="form-control" id="email"
-                                    aria-describedby="emailHelp" />
+                                <label for="password" class="form-label text-light">Password</label>
+                                <div class="d-flex align-items-center" id="password">
+                                    <input type="{{ showPassword() ? 'text' : 'password' }}" formControlName="password"
+                                        class="form-control" style="background-color: transparent; color: white;" />
+                                    <span class="material-symbols-outlined PasswordVisibility"
+                                        (click)="togglePasswordVisibility()"
+                                        style="margin-left: -30px; cursor: pointer;">
+                                        {{ showPassword() ? 'visibility_off' : 'visibility' }}
+                                    </span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label text-light">Password</label>
-                            <div class="d-flex align-items-center" id="password">
-                                <input type="{{ showPassword() ? 'text' : 'password' }}" formControlName="password"
-                                    class="form-control" />
-                                <span class="material-symbols-outlined PasswordVisibility"
-                                    (click)="togglePasswordVisibility()">
-                                    {{ showPassword() ? 'visibility_off' : 'visibility' }}
-                                </span>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Register</button>
-                    </form>
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </form>
                     <div *ngIf="errorMessage" class="error-message text-light section-text-combo">
                         <h2>{{ errorMessage }}</h2>
                     </div>
