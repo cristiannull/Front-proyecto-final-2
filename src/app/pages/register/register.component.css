@@ -4,9 +4,23 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 80vh;
-  background: #242526;
+  min-height: 95vh;
   font-family: "Poppins", sans-serif;
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://media.discordapp.net/attachments/1263274663786582088/1269084108580061256/thumb-1920-1205979.png?ex=66b211ed&is=66b0c06d&hm=9b68c4166621e5fa2e4f96956253bb5a84ce760798390bf35cf1461b50224a2a&=&format=webp&quality=lossless&width=1202&height=676'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  opacity: 0.652;
+  backdrop-filter: blur(1px);
 }
 
 main form .duo {
@@ -20,11 +34,21 @@ h2 {
   text-align: center;
 }
 
+.overlay-image img {
+  position: absolute;
+  top: 15px; 
+  left: 15px; 
+  z-index: 100; 
+  width: 60px; 
+  height: auto;
+}
+
 #register {
   position: relative;
   width: 700px;
-  background: #00000070;
-  box-shadow: 0 0 50px #0ef;
+  background: #0000004f;
+  backdrop-filter: blur(7px);
+  opacity: 0.9;
   border-radius: 20px;
   padding: 40px;
   padding-top: 15px;
@@ -38,12 +62,6 @@ h2 {
   justify-content: center;
   display: flex;
   text-decoration: none;
-}
-
-@keyframes animate {
-  100% {
-    filter: hue-rotate(360deg);
-  }
 }
 
 label {
@@ -76,7 +94,7 @@ form > button {
   padding: 10px;
   background: #0ef;
   box-shadow: 0 0 10px #0ef;
-  background-color: #7a7672;
+  background-color: #ffffff00;
   font-size: 16px;
   color: white;
   font-weight: 500;

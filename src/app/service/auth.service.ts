@@ -10,7 +10,7 @@ import { map, catchError } from 'rxjs/operators';
 })
 export class AuthService {
   private router = inject(Router);
-  private readonly API_URL = 'http://18.216.177.93:3000/api';
+  private readonly API_URL = 'http://18.221.10.95:3000/api';
   constructor(private http: HttpClient) {}
 
   setToken(token: string) {

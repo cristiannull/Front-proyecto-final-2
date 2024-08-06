@@ -14,25 +14,25 @@ export class UserService {
   getUserById(id: string): Observable<any> {
     const token = localStorage.getItem('user_token');
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.get<User[]>('http://18.216.177.93:3000/api/users/' + id, {
+    return this.http.get<User[]>('http://18.221.10.95:3000/api/users/' + id, {
       headers,
     });
   }
 
   getRol() {
-    return this.http.get<Rol[]>('http://18.216.177.93:3000/api/rol');
+    return this.http.get<Rol[]>('http://18.221.10.95:3000/api/rol');
   }
 
   updateUser(id: string, data: User) {
     const token = localStorage.getItem('user_token');
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.patch('http://18.216.177.93:3000/api/users/' + id, data, {
+    return this.http.patch('http://18.221.10.95:3000/api/users/' + id, data, {
       headers,
     });
   }
 
   register(formValues: User) {
-    return this.http.post('http://18.216.177.93:3000/api/auth/register', {
+    return this.http.post('http://18.221.10.95:3000/api/auth/register', {
       firstname: formValues.firstname,
       lastname: formValues.lastname,
       age: formValues.age,
@@ -42,7 +42,7 @@ export class UserService {
   }
 
   login(formValues: any) {
-    return this.http.post('http://18.216.177.93:3000/api/auth/login', {
+    return this.http.post('http://18.221.10.95:3000/api/auth/login', {
       email: formValues.email,
       password: formValues.password,
     });

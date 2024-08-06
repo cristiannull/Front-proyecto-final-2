@@ -5,7 +5,6 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { NavComponent } from '../../components/nav/nav.component';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../service/user.service';
 import { Router, RouterLink, RouterLinkActive, } from '@angular/router';
@@ -14,7 +13,7 @@ import { User } from '../../models/User.model';
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [NavComponent, CommonModule, ReactiveFormsModule, RouterLinkActive,RouterLink,],
+  imports: [CommonModule, ReactiveFormsModule, RouterLinkActive,RouterLink,],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
 })
