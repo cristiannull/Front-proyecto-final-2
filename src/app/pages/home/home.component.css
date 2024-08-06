@@ -33,6 +33,11 @@ main {
   line-height: 1.2rem;
 }
 
+swiper-container {
+  width: 85%;
+  margin: 0 auto;
+}
+
 /* ====================
 - Hero Section
 ==================== */

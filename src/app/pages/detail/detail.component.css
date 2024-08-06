@@ -14,7 +14,8 @@
 }
 
 swiper-slide {
-  margin: auto 0;
+  height: 500px;
+  margin: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,7 +35,7 @@ swiper-slide {
 
 iframe {
   border-radius: 10px;
-  width: 55%;
+  width: 75%;
   min-height: 400px;
   height: 100%;
 }
@@ -42,31 +43,65 @@ iframe {
 /* ====================
   - Product Detail Section
 ==================== */
+swiper-container {
+  max-width: 75%;
+  background-color: #2b3036;
+  border-radius: 10px;
+}
+
+.title-price {
+  margin-left: 20px;
+  background-color: #2b3036;
+  min-height: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.product-detail {
+  text-align: center;
+}
+
 .title-videogame {
   color: aqua;
   text-shadow: 1px 1px 15px aqua;
+  font-size: 35px;
+}
+
+.container-info {
+  display: flex;
 }
 
 p.price-videogame {
   font-size: 30px;
+  color: white;
 }
 
 .infogame {
   background-color: #282d32fd;
   padding: 20px;
   border-radius: 15px;
-  margin: 15px;
-  margin-top: 80px;
-  box-shadow: 1px 1px 20px rgba(85, 85, 85, 0.41);
+  margin-top: 20px;
+  width: 75%;
+}
+
+.card-videogame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .description {
-  background-color: rgba(36, 36, 36, 0.747);
+  background-color: #212529;
   border-radius: 15px;
   padding: 25px;
+  width: 50%;
+  height: 100%;
+  margin-right: 15px;
   line-height: 1.5;
   list-style-type: none;
-  box-shadow: 1px 1px 20px rgba(85, 85, 85, 0.41);
 }
 
 .information {
@@ -79,12 +114,13 @@ p.price-videogame {
 }
 
 .requirements {
-  background-color: rgba(36, 36, 36, 0.747);
+  background-color: #212529;
   border-radius: 15px;
   padding: 25px;
+  width: 50%;
+  height: 100%;
   line-height: 1;
   position: relative;
-  box-shadow: 1px 1px 20px rgba(85, 85, 85, 0.41);
 }
 
 .requirements-p {

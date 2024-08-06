@@ -134,7 +134,7 @@ El proyecto está organizado de la siguiente manera:
 
 3. **Iniciar el servidor:**
    - ng serve.
-   - La aplicación estará disponible en `http://18.216.177.93:4200/`.
+   - La aplicación estará disponible en `http://18.221.10.95:4200/`.
    - para que funcione correctamente debes tener tambien la api la cual se encuentra aqui: `https://github.com/cristiannull/Back-proyecto-final-2` no olvides iniciar el servidor en la api.
    - Si quieres hacer cambios debes asegurarte de tener el repositorio de Admin el cual encontraras aqui `https://github.com/cristiannull/Admin-Front` y de ingresar con una cuenta que tenga el rol Admin.
 

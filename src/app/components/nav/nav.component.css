@@ -1,5 +1,3 @@
-
-
 nav {
   font-family: "Montserrat", sans-serif;
   position: sticky;
@@ -173,33 +171,32 @@ form {
   margin: 0 0.5em 0;
 }
 
-.solid-button-nav{
-  background-color: #00E1E1;
+.solid-button-nav {
+  background-color: #00e1e1;
   color: #212529;
-  border: 1px solid #00E1E1;
+  border: 1px solid #00e1e1;
   transition: background-color 0.5s;
 }
-.solid-button-nav:hover{
-  background-color: #1E1E1E;
-  border: 1px solid #00E1E1;
-  color: #00E1E1;
+.solid-button-nav:hover {
+  background-color: #1e1e1e;
+  border: 1px solid #00e1e1;
+  color: #00e1e1;
 }
 
-.outline-button-nav{
+.outline-button-nav {
   background-color: none;
-  border: 1px solid #00E1E1;
-  color: #00E1E1;
+  border: 1px solid #00e1e1;
+  color: #00e1e1;
   transition: background-color 0.5s;
 }
-.outline-button-nav:hover{
-  background-color: #00E1E1;
+.outline-button-nav:hover {
+  background-color: #00e1e1;
   color: #212529;
-  border: 1px solid #00E1E1;
+  border: 1px solid #00e1e1;
 }
 
 .button-icon {
-  right: 20px;
-  top: 23px;
+  margin: 5px;
   background: none;
   border: none;
   color: white;
@@ -212,16 +209,17 @@ form {
   font-size: 30px;
 }
 
-#search-bar{
+#search-bar {
   background: transparent;
   color: white;
   outline: none;
 }
-#search-bar::placeholder{
+#search-bar::placeholder {
   color: rgba(255, 255, 255, 0.616);
 }
 .search-button {
-  margin: 0;
+  font-size: 40px;
+  margin: 0 5px 0 5px;
   border: 1px white solid;
   padding: 1px;
   border-radius: 5px;
@@ -325,14 +323,21 @@ aside .details h3 {
   media query
   ===================
 */
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1310px) {
   .mega-box {
     width: 90%;
     left: 4.8%;
   }
+  .nav-links {
+    margin-left: 0;
+  }
 }
 
-@media screen and (max-width: 999px) {
+@media screen and (max-width: 1120px) {
+  .navbutton {
+    margin: 20px 30px;
+  }
+
   .wrapper .btn {
     display: block;
   }
