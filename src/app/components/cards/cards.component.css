@@ -4,7 +4,7 @@
   max-width: 290px;
   transition: transform 0.3s ease;
   padding: 6px 6px 0 6px;
-  margin-bottom: 40px;
+  margin-bottom: 65px;
   text-align: left;
 }
 
@@ -15,7 +15,7 @@
 
 .product:hover {
   transform: scale(1.1);
-  z-index: 10000;
+  z-index: 1000;
 }
 
 .product figure {

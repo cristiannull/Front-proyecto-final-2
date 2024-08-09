@@ -1,7 +1,7 @@
 nav {
   font-family: "Montserrat", sans-serif;
   position: sticky;
-  z-index: 300;
+  z-index: 3000;
   width: 100%;
   background: #242526;
   top: 0%;

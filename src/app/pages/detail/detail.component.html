@@ -220,7 +220,7 @@
 <main>
   <section id="product-detail" class="pt-2">
     <div class="container-fluid">
-      <div class="d-flex">
+      <div class="container-princi">
         <swiper-container class="swiper-container mySwiper"
           style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="mySwiper" navigation="true"
           space-between="30">
@@ -306,6 +306,9 @@
         </div>
         <div class="text-light more-games">
           <h2>more games</h2>
+          @for(videogame of featuredvideogames(); track videogame._id){
+          <app-cards [id]="videogame._id" [name]="videogame.name" [price]="videogame.price" [cover]="videogame.cover" />
+          }
         </div>
       </div>
     </div>
