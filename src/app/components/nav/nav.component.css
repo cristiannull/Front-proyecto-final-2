@@ -19,7 +19,6 @@ nav .wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-radius: 15px;
   border-bottom: 1px solid #00e1e17e;
 }
 
@@ -32,6 +31,10 @@ nav .wrapper {
   font-size: 30px;
   font-weight: 600;
   text-decoration: none;
+}
+
+.logo a img{
+  width: 150px;
 }
 
 .wrapper .nav-links {
@@ -494,4 +497,5 @@ nav input {
   .wrapper .logo a {
     font-size: 20px;
   }
+
 }

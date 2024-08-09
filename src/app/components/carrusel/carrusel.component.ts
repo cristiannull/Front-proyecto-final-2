@@ -12,10 +12,10 @@ import { CommonModule, NgClass } from '@angular/common';
   styleUrl: './carrusel.component.css'
 })
 export class CarruselComponent {
-  images = [
-    'https://i.pinimg.com/originals/10/dd/02/10dd02f9476f82d05f17d88a31e3c80b.jpg',
-    'https://staticdelivery.nexusmods.com/mods/952/images/headers/7630_1673494337.jpg',
-    'https://via.placeholder.com/600x400?text=Imagen+3'
+  items = [
+    { image: 'http://imgfz.com/i/ADjcXQ0.png', title: '¡Pruebalo el 15 de Agosto! Zenless Zone Zero', text: 'Nueva actualizacion - Zenless Zone Zero Undercover' },
+    { image: 'https://wallpapercave.com/wp/wp14158640.jpg', title: 'Elden Ring', text: '¡Prueba ahora el nuevo DLC de Elden Ring - Shadows of the Erdtree!' },
+    { image: 'https://pbs.twimg.com/media/GUWcnLoXUAAWj0d?format=jpg&name=large', title: 'Título 3', text: 'Texto 3' }
   ];
   currentIndex = 0;
 
@@ -24,10 +24,10 @@ export class CarruselComponent {
   }
 
   prevSlide(): void {
-    this.currentIndex = (this.currentIndex > 0) ? this.currentIndex - 1 : this.images.length - 1;
+    this.currentIndex = (this.currentIndex > 0) ? this.currentIndex - 1 : this.items.length - 1;
   }
 
   nextSlide(): void {
-    this.currentIndex = (this.currentIndex < this.images.length - 1) ? this.currentIndex + 1 : 0;
+    this.currentIndex = (this.currentIndex < this.items.length - 1) ? this.currentIndex + 1 : 0;
   }
 }
