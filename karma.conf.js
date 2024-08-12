@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Tue Aug 06 2024 15:20:23 GMT-0500 (hora estándar de Colombia)
+// Generated on Thu Aug 08 2024 18:39:11 GMT-0500 (hora estándar de Colombia)
 
 module.exports = function(config) {
   config.set({
@@ -15,8 +15,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'test.component.spec.ts',
-      'src/app/test/test.component.spec.ts'
+      'src/app/pages/home/home.component.spec.ts'
     ],
 
 
