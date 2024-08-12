@@ -15,6 +15,7 @@ import { FooterComponent } from '../../components/footer/footer.component';
 import { SkeletonModule } from 'primeng/skeleton';
 import { CartService } from '../../service/cart.service';
 import { register } from 'swiper/element/bundle';
+import { CardsComponent } from '../../components/cards/cards.component';
 
 register();
 
@@ -29,6 +30,7 @@ register();
     CurrencyPipe,
     NgClass,
     SafeUrlPipe,
+    CardsComponent,
   ],
   templateUrl: './detail.component.html',
   styleUrl: './detail.component.css',
@@ -40,6 +42,7 @@ export class DetailComponent {
 
   videogame = signal<any>({});
   videogames = signal<any>({});
+  featuredvideogames = signal<any>([]);
   isLoading: boolean = true;
   data: any;
   @Input() id: string = '';
@@ -57,6 +60,11 @@ export class DetailComponent {
       error: (error) => {
         console.error('Error loading data', error);
         this.isLoading = false;
+      },
+    });
+    this.videogamesService.getVideogamesOfFeatured().subscribe({
+      next: (videogames: any) => {
+        this.featuredvideogames.set(videogames.data.slice(0, 3));
       },
     });
     this.videogamesService.getOneVideogameByName(this.id).subscribe({

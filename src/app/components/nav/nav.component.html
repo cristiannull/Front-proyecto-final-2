@@ -1,6 +1,7 @@
 <nav>
   <div class="wrapper">
     <div class="logo"><a routerLink="/home"><img src="https://i.ibb.co/8x13njD/logo2.png"/></a></div>
+    </div>
     <input type="radio" name="slider" id="menu-btn">
     <input type="radio" name="slider" id="close-btn">
 
@@ -11,7 +12,7 @@
         </span>
       </label>
       <div class="options">
-        <li><a routerLink="/home">Home</a></li>
+        <li><a routerLink="/home">Store</a></li>
         <li><a routerLink="/videogamelist">Games</a></li>
         <li>
           <a class="desktop-item">Categories
@@ -78,21 +79,21 @@
           </span>
         </button>
         <button *ngIf="!isLogged()" routerLink="/login" class="navbutton navbar-toggler solid-button-nav" type="button">
-            Log In
+          Log In
         </button>
         <button *ngIf="isLogged()" (click)="goToProfile()" class="button-icon navbar-toggler pe-0" type="button">
           <span class="material-symbols-outlined">
             person
           </span>
         </button>
-        <button *ngIf="!isLogged()" routerLink="/register" class="navbutton navbar-toggler outline-button-nav" type="button">
-            Sign Up
+        <button *ngIf="!isLogged()" routerLink="/register" class="navbutton navbar-toggler outline-button-nav"
+          type="button">
+          Sign Up
         </button>
-        
         <button *ngIf="router.url !== '/checkout'" class="button-icon navbar-toggler"
           (click)="toggleCartVisibility()">
           <span class="material-symbols-outlined">
-            shopping_cart 
+            shopping_cart
           </span>
           {{cart().size}}
         </button>

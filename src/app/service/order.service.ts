@@ -7,13 +7,13 @@ import { User } from '../models/User.model';
   providedIn: 'root',
 })
 export class OrderService {
-  private apiUrl = 'http://18.216.177.93:3000/api';
+  private apiUrl = 'http://3.136.87.251:3000/api';
   constructor(private http: HttpClient) {}
 
   getOrdersByUser(userId: string): Observable<any> {
     const token = localStorage.getItem('user_token');
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    const endpoint = `${this.apiUrl}/shoops?user=${userId}`; 
+    const endpoint = `${this.apiUrl}/shoops?user=${userId}`;
     return this.http.get(endpoint, { headers });
   }
 }
