@@ -3,7 +3,7 @@ nav {
   position: sticky;
   z-index: 3000;
   width: 100%;
-  background: #242526;
+  background: #212529;
   top: 0%;
   display: flex;
 }
@@ -17,7 +17,6 @@ nav .wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-radius: 15px;
   border-bottom: 1px solid #00e1e17e;
 }
 
@@ -30,6 +29,10 @@ nav .wrapper {
   font-size: 30px;
   font-weight: 600;
   text-decoration: none;
+}
+
+.logo a img{
+  width: 150px;
 }
 
 .wrapper .nav-links {
@@ -80,7 +83,6 @@ nav .wrapper {
   opacity: 0;
   visibility: hidden;
   border-radius: 15px;
-  box-shadow: 1px 7px 15px cyan;
   max-height: 600px;
   overflow-y: auto;
 }
@@ -499,4 +501,5 @@ nav input {
   .wrapper .logo a {
     font-size: 20px;
   }
+
 }

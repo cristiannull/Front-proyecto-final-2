@@ -1,9 +1,13 @@
-<div class="carrusel-container">
-    <div class="carrusel-slides" [style.transform]="transform">
-        <div class="carrusel-slide" *ngFor="let image of images">
-            <img [src]="image" alt="Carrusel Image">
-          </div>
+<div class="carrusel-container container-image">
+  <div class="carrusel-slides" [style.transform]="transform">
+    <div class="carrusel-slide" *ngFor="let item of items; let i = index" [class.active]="i === currentIndex">
+      <img [src]="item.image" sizes="(max-width: 600px) 480px, 800px" alt="{{item.title}}">
+      <div class="carrusel-caption">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.text }}</p>
+      </div>
     </div>
-    <button class="carrusel-prev" (click)="prevSlide()">&#10094;</button>
-    <button class="carrusel-next" (click)="nextSlide()">&#10095;</button>
   </div>
+  <button class="carrusel-prev" (click)="prevSlide()">&#10094;</button>
+  <button class="carrusel-next" (click)="nextSlide()">&#10095;</button>
+</div>
