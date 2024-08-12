@@ -5,7 +5,7 @@ nav {
   position: sticky;
   z-index: 300;
   width: 100%;
-  background: #242526;
+  background: #212529;
   top: 0%;
   display: flex;
 }
@@ -85,7 +85,6 @@ nav .wrapper {
   opacity: 0;
   visibility: hidden;
   border-radius: 15px;
-  box-shadow: 1px 7px 15px cyan;
   max-height: 600px;
   overflow-y: auto;
 }

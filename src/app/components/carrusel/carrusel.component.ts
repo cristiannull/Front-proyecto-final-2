@@ -15,7 +15,7 @@ export class CarruselComponent {
   items = [
     { image: 'http://imgfz.com/i/ADjcXQ0.png', title: '¡Pruebalo el 15 de Agosto! Zenless Zone Zero', text: 'Nueva actualizacion - Zenless Zone Zero Undercover' },
     { image: 'https://wallpapercave.com/wp/wp14158640.jpg', title: 'Elden Ring', text: '¡Prueba ahora el nuevo DLC de Elden Ring - Shadows of the Erdtree!' },
-    { image: 'https://pbs.twimg.com/media/GUWcnLoXUAAWj0d?format=jpg&name=large', title: 'Título 3', text: 'Texto 3' }
+    { image: 'https://pbs.twimg.com/media/GUWcnLoXUAAWj0d?format=jpg&name=large', title: '¡Pruebalo el 15 de Agosto! Wuthering Waves', text: 'Nueva actualizacion - In the Turquoise Moonglow' }
   ];
   currentIndex = 0;
 

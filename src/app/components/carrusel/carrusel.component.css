@@ -12,7 +12,7 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  background-image: linear-gradient(to top, #1E1E1E, transparent);
+  background-image: linear-gradient(to top, #212529, transparent);
 }
 
 .carrusel-caption {
@@ -20,7 +20,7 @@
   width: 100%;
   position: absolute;
   transform: translateY(-90%);
-  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.7));
+  background: linear-gradient(180deg, transparent, #212529);
   color: white;
   margin: none;
   padding-left: 4em;
