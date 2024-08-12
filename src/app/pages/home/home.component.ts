@@ -13,7 +13,6 @@ import { FooterComponent } from '../../components/footer/footer.component';
 import { SkeletonModule } from 'primeng/skeleton';
 import { register } from 'swiper/element/bundle';
 
-
 register();
 
 @Component({
@@ -27,7 +26,7 @@ register();
     RouterLink,
     FooterComponent,
     SkeletonModule,
-    CarruselComponent
+    CarruselComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
@@ -36,7 +35,6 @@ export class HomeComponent {
   private videogamesService = inject(VideogamesService);
 
   videogames = signal<any>([]);
-  featuredVideogames = signal<any>([]);
   saleVideogames = signal<any>([]);
   featuredvideogames = signal<any>([]);
   onsalevideogames = signal<any>([]);

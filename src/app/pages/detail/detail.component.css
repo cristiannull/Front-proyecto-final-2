@@ -14,18 +14,16 @@
 }
 
 swiper-slide {
-  margin: auto 0;
+  height: 500px;
+  margin: 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .imagesize {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   max-height: 400px;
-  max-width: 700px;
+  max-width: 75%;
   margin: 0 auto;
   object-fit: cover;
   border-radius: 15px;
@@ -34,7 +32,7 @@ swiper-slide {
 
 iframe {
   border-radius: 10px;
-  width: 55%;
+  width: 75%;
   min-height: 400px;
   height: 100%;
 }
@@ -42,31 +40,86 @@ iframe {
 /* ====================
   - Product Detail Section
 ==================== */
+.container-princi {
+  display: flex;
+}
+
+swiper-container {
+  max-width: 75%;
+  background-color: #2b3036;
+  border-radius: 10px;
+}
+
+app-cards {
+  max-width: 200px;
+}
+
+.more-games {
+  background-color: #2b3036;
+  margin: 20px 0 0 20px;
+  border-radius: 15px;
+  width: 24%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-price {
+  margin-left: 20px;
+  background-color: #2b3036;
+  min-height: 100%;
+  border-radius: 10px;
+  padding: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+}
+.product-detail {
+  text-align: center;
+  width: 75%;
+}
+
 .title-videogame {
   color: aqua;
   text-shadow: 1px 1px 15px aqua;
+  font-size: 35px;
+}
+
+.container-info {
+  display: flex;
 }
 
 p.price-videogame {
   font-size: 30px;
+  color: white;
 }
 
 .infogame {
   background-color: #282d32fd;
   padding: 20px;
   border-radius: 15px;
-  margin: 15px;
-  margin-top: 80px;
-  box-shadow: 1px 1px 20px rgba(85, 85, 85, 0.41);
+  margin-top: 20px;
+  width: 75%;
+}
+
+.card-videogame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .description {
-  background-color: rgba(36, 36, 36, 0.747);
+  background-color: #212529;
   border-radius: 15px;
   padding: 25px;
+  width: 50%;
+  height: 20rem;
+  margin-right: 15px;
   line-height: 1.5;
   list-style-type: none;
-  box-shadow: 1px 1px 20px rgba(85, 85, 85, 0.41);
 }
 
 .information {
@@ -79,24 +132,17 @@ p.price-videogame {
 }
 
 .requirements {
-  background-color: rgba(36, 36, 36, 0.747);
+  background-color: #212529;
   border-radius: 15px;
   padding: 25px;
+  width: 50%;
+  height: 20rem;
   line-height: 1;
   position: relative;
-  box-shadow: 1px 1px 20px rgba(85, 85, 85, 0.41);
 }
 
 .requirements-p {
   padding-left: 18px;
-}
-
-.goku-wrapper {
-  position: absolute;
-  top: 45px;
-  right: 20px;
-  z-index: 1;
-  opacity: 0.15;
 }
 
 .system-requirements {
@@ -140,19 +186,23 @@ p.price-videogame {
   - Buttons
 ==================== */
 .button-icon {
+  background-color: #00e1e1;
   right: 20px;
   top: 23px;
-  background: none;
   border: none;
-  color: cyan;
+  color: black;
   text-align: center;
   margin: 0 8px 15px;
-  box-shadow: 0 0px 18px cyan, 0 -3px 10px rgb(107, 104, 104);
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   user-select: none;
+}
+
+.button-icon:hover {
+  background-color: #00e1e1;
+  box-shadow: 2px 2px 15px black;
 }
 
 .button-icon h2 {
@@ -192,6 +242,48 @@ p.price-videogame {
   iframe {
     width: 500px;
     height: 320px;
+  }
+  .container-princi {
+    flex-direction: column;
+  }
+
+  swiper-container {
+    max-width: 100%;
+  }
+
+  iframe {
+    width: 80%;
+  }
+
+  .title-price {
+    width: 100%;
+    margin: 20px 0 0 0;
+  }
+
+  .container-info {
+    flex-direction: column;
+  }
+
+  .infogame {
+    width: 100%;
+  }
+
+  .card-videogame {
+    flex-direction: column;
+  }
+
+  .description,
+  .requirements {
+    width: 100%;
+    margin: 10px 0 0 0;
+  }
+
+  .more-games {
+    width: 100%;
+  }
+
+  app-cards {
+    max-width: 300px;
   }
 }
 
