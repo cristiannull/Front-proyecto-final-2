@@ -49,7 +49,8 @@ export class CheckoutComponent {
         next: () => {
           localStorage.removeItem('cart');
           this.cartService.videogames.set(new Map());
-          this.router.navigate(['/thanks']);
+          alert('Gracias por tu compra!');
+          this.router.navigate(['/']);
         },
       });
     }

@@ -5,7 +5,8 @@
         <form action="" (submit)="onSubmit()" [formGroup]="paymentDetails">
             <div class="formGroup">
                 <label for="CardNumber">Card Number</label>
-                <input type="text" name="CardNumber" id="CardNumber" formControlName="CardNumber">
+                <input type="number" name="CardNumber" id="CardNumber" placeholder="0000-0000-0000-0000"
+                    formControlName="CardNumber">
             </div>
             <div class="formGroup">
                 <label for="paymentMethod">Payment Method</label>

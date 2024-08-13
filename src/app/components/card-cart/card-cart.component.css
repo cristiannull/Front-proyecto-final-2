@@ -1,6 +1,10 @@
 /* ====================
   - General Styles
 ==================== */
+* {
+  font-size: 16px;
+}
+
 .placeholder {
   background-color: grey;
   border-radius: 6px;
@@ -23,7 +27,7 @@
   grid-template-areas:
     "a b c"
     "a b c";
-  grid-template-columns: 2fr 2fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   position: relative;
   width: 100%;
@@ -108,8 +112,8 @@ input::-webkit-inner-spin-button {
 .block {
   border-radius: 16px;
   position: relative;
-  width: 280px;
-  background: linear-gradient(0deg, #000, #262626);
+  width: 100%;
+  background: #212529;
 }
 
 .shadow:hover::before,

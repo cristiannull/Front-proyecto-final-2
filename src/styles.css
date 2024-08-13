@@ -2,8 +2,7 @@
 @import "primeng/resources/primeng.css";
 
 * {
-  /* font-family: "Montserrat"; */
-  font-size: 22px;
+  font-family: "Montserrat";
   box-sizing: border-box;
   margin: 0;
   padding: 0;

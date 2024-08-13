@@ -1,10 +1,9 @@
 <nav>
   <div class="wrapper">
-    <div class="logo"><a routerLink="/home"><img src="https://i.ibb.co/8x13njD/logo2.png"/></a></div>
-    </div>
+    <div class="logo"><a routerLink="/home"><img src="https://i.ibb.co/8x13njD/logo2.png" /></a></div>
+
     <input type="radio" name="slider" id="menu-btn">
     <input type="radio" name="slider" id="close-btn">
-
     <ul class="nav-links">
       <label for="close-btn" class="btn close-btn">
         <span class="button-icon material-symbols-outlined">
@@ -60,7 +59,6 @@
           </div>
         </li>
       </div>
-
       <div class=" container-button">
         <div class="search">
           <form (ngSubmit)="onSubmit()">
@@ -90,14 +88,12 @@
           type="button">
           Sign Up
         </button>
-        <button *ngIf="router.url !== '/checkout'" class="button-icon navbar-toggler"
-          (click)="toggleCartVisibility()">
+        <button *ngIf="router.url !== '/checkout'" class="button-icon navbar-toggler" (click)="toggleCartVisibility()">
           <span class="material-symbols-outlined">
             shopping_cart
           </span>
           {{cart().size}}
         </button>
-
       </div>
     </ul>
     <label for="menu-btn" class="btn menu-btn navbar-toggler pe-0">
@@ -105,7 +101,6 @@
         menu
       </span>
     </label>
-
   </div>
 </nav>
 
